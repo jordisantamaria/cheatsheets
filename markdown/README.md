@@ -11,20 +11,18 @@ _this_
 **really**
 
 ## Codigo
-1. \<code> python -v\</code>
+1. < code > python -v </ code \>
 
 <code> python -v</code>
 
-2. \<pre>python -v\</pre>
+2. < pre > python -v </ pre \>
 
 <pre>python -v</pre>
 
 ### Codigo de bloque
-\~~~
-
+~ ~ ~
 python -v
-
-\~~~
+~ ~ ~
 
 ~~~
 python -v
