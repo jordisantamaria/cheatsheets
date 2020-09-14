@@ -81,10 +81,10 @@ Empezarla con un numero + punto + espacio (1. )
 
 
 
-## Divisores, linias horizontales
+# Divisores, linias horizontales
 Usar ***, --- o ___ entre espacios en blanco
 
 ***
 
-## Imagenes:
+# Imagenes:
 \![Texto alternativo]\(/ruta/a/la/imagen.jpg "Título alternativo")
