@@ -1,5 +1,5 @@
 # Programming Cheat-sheets
 
-website: https://jordiviva.github.io/cheatsheets/
+website: https://jordisantamaria.github.io/cheatsheets/
 
-Source code: https://github.com/jordiviva/cheatsheets
+Source code: https://github.com/jordisantamaria/cheatsheets
