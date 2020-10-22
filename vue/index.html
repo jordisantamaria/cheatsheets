@@ -1,0 +1,417 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../webpack/" />
+    
+    
+    <link rel="prev" href="../typeorm/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../markdown/">
+            
+                <a href="../markdown/">
+            
+                    
+                    MARKDOWN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../lecturaRapida/">
+            
+                <a href="../lecturaRapida/">
+            
+                    
+                    LECTURA RAPIDA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../googleAddons/">
+            
+                <a href="../googleAddons/">
+            
+                    
+                    GAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../typeorm/">
+            
+                <a href="../typeorm/">
+            
+                    
+                    TypeOrm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../webpack/">
+            
+                <a href="../webpack/">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vue-router">vue-router</h1>
+<h2 id="basic">Basic</h2>
+<p>Con el setup, nos da acceso a <strong>this.$router</strong> y <strong>this.$route</strong> en los componentes.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> routes = [
+  { path: <span class="hljs-string">&apos;/foo&apos;</span>, component: Foo },
+  { path: <span class="hljs-string">&apos;/bar&apos;</span>, component: Bar }
+]
+
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes <span class="hljs-comment">// short for `routes: routes`</span>
+})
+
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes <span class="hljs-comment">// short for `routes: routes`</span>
+})
+</code></pre>
+<h2 id="named-routes">Named routes</h2>
+<p>En vez de hacer el routing por el slug, se puede hacer por name,
+es lo recomendado.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> routes: <span class="hljs-built_in">Array</span>&lt;RouteConfig&gt; = [
+  {
+    path: <span class="hljs-string">&quot;/&quot;</span>,
+    name: <span class="hljs-string">&quot;Home&quot;</span>,
+    component: Home
+  },
+  {
+    path: <span class="hljs-string">&quot;/about/:id&quot;</span>,
+    name: <span class="hljs-string">&quot;About&quot;</span>,
+    component: () =&gt;
+      <span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackChunkName: &quot;about&quot; */</span> <span class="hljs-string">&quot;../views/About.vue&quot;</span>)
+  }
+];
+
+&lt;router-link :to=&quot;{ name: &apos;Home&apos;}&quot;&gt;Home&lt;/router-link&gt; |
+&lt;router-link :to=&quot;{ name: &apos;About&apos;}&quot; &gt;About&lt;/router-link&gt;
+</code></pre>
+<h2 id="dynamic-routes">Dynamic routes</h2>
+<pre><code class="lang-javascript">const router = new VueRouter({
+  routes: [
+    // dynamic segments start with a colon
+    { path: &apos;/user/:id&apos;, component: User }
+  ]
+})
+
+&lt;router-link :to=&quot;{ name: &apos;About&apos;, params: { id: 4 }}&quot; &gt;About&lt;/router-link&gt;
+
+// comp.vue
+const id = this.$route.params.id
+</code></pre>
+<h3 id="re-render-when-router-params-change">Re-render when router params change</h3>
+<pre><code class="lang-vue">&lt;router-view :key=&quot;$route.path&quot; /&gt;
+</code></pre>
+<h3 id="params-as-props">Params as props</h3>
+<p>Definir props: true en la ruta</p>
+<pre><code class="lang-vue">const routes: Array&lt;RouteConfig&gt; = [
+  {
+    path: &quot;/about/:id&quot;,
+    name: &quot;About&quot;,
+    props: true,
+    component: () =&gt;
+      import(/* webpackChunkName: &quot;about&quot; */ &quot;../views/About.vue&quot;)
+  }
+];
+</code></pre>
+<p>Definir la prop en el comp:</p>
+<pre><code class="lang-vue">@Prop() private id!: number;
+</code></pre>
+<h2 id="active-link">Active link</h2>
+<p>Definido por defecto como</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.router-link-exact-active</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+<p>Se puede modificar en el router</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> Router({
+  linkExactActiveClass: <span class="hljs-string">&apos;link-active&apos;</span>
+})
+</code></pre>
+<h2 id="mode-history-remove--from-route">Mode history, remove # from route</h2>
+<p>Por defecto la ruta tiene el # asi: <a href="http://localhost:8080/#/" target="_blank">http://localhost:8080/#/</a></p>
+<p>Para solucionarlo:</p>
+<pre><code class="lang-vue">const router = new VueRouter({
+  mode: &quot;history&quot;,
+  routes
+});
+</code></pre>
+<h2 id="nested-routes">Nested routes:</h2>
+<p>Incluir en las rutas el children</p>
+<pre><code class="lang-vue">{
+      path: &quot;/destination/:slug&quot;,
+      name: &quot;DestinationDetails&quot;,
+      props: true,
+      component: () =&gt;
+        import(/* webpackChunkName: &quot;DestinationDetails&quot;*/ &quot;./views/DestinationDetails&quot;),
+      children: [
+        {
+          path: &quot;:experienceSlug&quot;,
+          name: &quot;experienceDetails&quot;,
+          props: true,
+          component: () =&gt;
+            import(/*webpackChunkName: &quot;ExperienceDetails&quot;*/ &quot;./views/ExperienceDetails&quot;)
+        }
+      ]
+    },
+</code></pre>
+<p>Y donde tiene que mostrarse la ruta nested</p>
+<pre><code class="lang-vue">&lt;router-view :key=&quot;$route.path&quot; /&gt;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../typeorm/" class="navigation navigation-prev " aria-label="Previous page: TypeOrm">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../webpack/" class="navigation navigation-next " aria-label="Next page: Webpack">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.6","depth":1,"next":{"title":"Webpack","level":"1.7","depth":1,"path":"webpack/index.md","ref":"webpack/index.md","articles":[]},"previous":{"title":"TypeOrm","level":"1.5","depth":1,"path":"typeorm/index.md","ref":"typeorm/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/index.md","mtime":"2020-10-19T02:57:27.667Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-22T04:53:21.463Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
