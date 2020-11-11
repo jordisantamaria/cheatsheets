@@ -1,4 +1,4 @@
-#Vue basics
+# Vue basics
 
 https://www.newline.co/books/fullstack-vue/how_to_get_the_most_book
 
@@ -9,7 +9,9 @@ https://www.newline.co/books/fullstack-vue/how_to_get_the_most_book
  div {{ message }}
 ``` 
 
-## bind variables in tag properties
+## Props
+
+### Parent to children
 
 v-bind:title |  :title
 
@@ -19,6 +21,52 @@ v-bind:title |  :title
     to see my dynamically bound title!
 </span>
 ```
+
+### Children to parent
+
+Para que el padre se entere de los cambios del hijo, se emiten
+eventos a los cual el padre puede escuchar.
+
+```
+children:  $emit(nameOfEvent)
+
+parent: $on(nameOfEvent)
+```
+
+### Sharing props between any component
+
+Amb eventBus podem tenir un estat global compartit.
+Aunque com es dificil de gestionar estats complexos,
+es recomanat no ferlo servir i fer servir vuex.
+
+```
+export const EventBus = new Vue();
+
+monitorEnterKey() {
+  EventBus.$emit('add-note', {
+    note: this.input,
+    timestamp: new Date().toLocaleString()
+  });
+  this.input = '';
+}
+
+created() {
+    EventBus.$on('add-note', event => this.noteCount++);
+}
+```
+
+### VUEX
+
+Structure:
+
+- Action: Post data -> Mutation
+
+- Mutation: Update state
+
+- Getter: Return part of state
+
+- Use state in components
+
 
 ## Conditionals directives
 ```
@@ -71,6 +119,8 @@ mantener el estado correctamente, es necesario darle una key unica a cada elemen
 <button v-on:click="reverseMessage">Reverse Message</button>
 ```
 
+Other events: click, dblclick, drag, drop, mousedown, mouseenter, mouseleave, mousemove, mouseout, mouseover, mouseup
+
 ### Conditional class css
 
 ```vue
@@ -112,21 +162,14 @@ onChange() {
 
 # Life cycle
 
-- beforeCreate
-
-- created
-
-- beforeMount
+- created: Inicialitzacio de variables
 
 - mounted
 
-- beforeUpdate
+- updated: Quan s'ha actualitzat alguna prop i es 
+fa rerender.
 
-- updated
-
-- beforeDestroy
-
--destroyed
+-destroy
 
 # Directives
 
@@ -134,17 +177,166 @@ onChange() {
 
 - v-bind:href -> href is an argument
 
-# Props
-
 # Design patterns
 
 # Tests
+
+https://testing-library.com/docs/vue-testing-library/intro
 
 # Formularies
 
 - two-way binding:
 ```
 v-model
+```
+
+- value / @input
+
+## Fields
+
+```
+private fields = {
+    newItem: '',
+    email: '',
+    urgency: '',
+    termsAndConditions: false
+}
+
+<div class="field">
+          <label>New Item</label>
+          <input v-model="fields.newItem" type="text"
+            placeholder="Add an item!" />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input v-model="fields.email" type="text"
+            placeholder="What's your email?" />
+        </div>
+```
+
+## Form Validation
+
+```
+private fieldErrors = {
+    newItem: undefined,
+    email: undefined,
+    urgency: undefined,
+    termsAndConditions: undefined
+}
+private loading =  false
+private saveStatus = 'READY' // 'SAVING', 'ERROR', 'SUCCESS'
+
+validateForm(fields) {
+  const errors = {};
+  if (!this.$store.state.fields.newItem) {
+    errors.newItem = "New Item Required";
+  }
+  if (!this.$store.state.fields.email) {
+    errors.email = "Email Required";
+  }
+  if (!this.$store.state.fields.urgency) {
+    errors.urgency = "Urgency Required";
+  }
+  if (!this.$store.state.fields.termsAndConditions) {
+    errors.termsAndConditions = "Terms and conditions have to be approved";
+  }
+
+  if (this.$store.state.fields.email &&
+    !this.isEmail(this.$store.state.fields.email)) {
+    errors.email = "Invalid Email";
+  }
+
+  return errors;
+},
+```
+
+## Field validation
+
+With computed variables.
+
+```
+computed: {
+    isNewItemInputLimitExceeded() {
+      return this.fields.newItem.length >= 20;
+    },
+    isNotUrgent() {
+      return this.fields.urgency === 'Nonessential';
+    }
+}
+```
+
+## Submit form:
+
+```
+<form @submit="submitForm" class="ui form">
+
+submitForm(evt) {
+  evt.preventDefault();
+
+  this.fieldErrors = this.validateForm(this.$store.state.fields);
+  if (Object.keys(this.fieldErrors).length) return;
+
+  const items = [
+    ...this.$store.state.items,
+    this.$store.state.fields.newItem
+  ];
+
+  this.saveStatus = 'SAVING';
+
+  this.$store.dispatch('saveItems', items)
+    .then(() => {
+      this.saveStatus = 'SUCCESS';
+    })
+    .catch((err) => {
+      console.log(err);
+      this.saveStatus = 'ERROR';
+    });
+}
+```
+## Submit button state
+
+```
+<button v-if="saveStatus === 'SAVING'"
+  disabled class="ui button">
+  Saving...
+</button>
+<button v-if="saveStatus === 'SUCCESS'"
+  :disabled="isNewItemInputLimitExceeded || isNotUrgent"
+  class="ui button">
+  Saved! Submit another
+</button>
+<button v-if="saveStatus === 'ERROR'"
+  :disabled="isNewItemInputLimitExceeded || isNotUrgent"
+  class="ui button">
+  Save Failed - Retry?
+</button>
+<button v-if="saveStatus === 'READY'"
+  :disabled="isNewItemInputLimitExceeded || isNotUrgent"
+  class="ui button">
+  Submit
+</button>
+```
+
+## Form state with Vuex
+
+Use value / @input instead of v-model
+
+When input is updated, commit MUTATION to store.
+
+```
+<input :value="newItem" @input="onInputChange"
+    name="NEW_ITEM" type="text" placeholder="Add an item!" />
+
+newItem = this.$store.state.fields.newItem
+
+onInputChange(evt) {
+  const element = evt.target;
+  const value =
+    element.name === "TERMS_AND_CONDITIONS"
+      ? element.checked
+      : element.value;
+  this.$store.commit(`UPDATE_${element.name}`, value);
+}
 ```
 
 #vue-router
