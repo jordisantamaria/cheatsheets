@@ -251,3 +251,184 @@ function clean() {
     })
 }
 ```
+
+# Api
+
+res.json() will both automatically set the appropriate content-type header and format the response for us.
+
+if some error: res.status(500).json({ error: err.message })
+
+## curl y jq
+
+Curl es para llamar un api facil desde consola
+
+jq es para que te devuelva en formato json, lo que
+ademas es mas facil de leer desde consola
+
+```
+curl -sG http://localhost:1337/products \
+  -d limit=25 \
+  -d offset=50 \
+| jq
+```
+
+## next()
+
+Para que vaya al siguiente middleware, si no hay siguiente
+va al default de express que es "notFound"
+
+```
+async function getProduct (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  const { id } = req.params
+
+  try {
+    const product = await Products.get(id)
+    if (!product) return next()
+
+    res.json(product)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+}
+```
+
+## Cors middleware
+
+```
+app.use(middleware.cors)
+
+function cors (req, res, next) {
+  const origin = req.headers.origin
+
+  res.setHeader('Access-Control-Allow-Origin', origin || '*')
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'POST, GET, PUT, DELETE, OPTIONS, XMODIFY'
+  )
+  res.setHeader('Access-Control-Allow-Credentials', 'true')
+  res.setHeader('Access-Control-Max-Age', '86400')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
+  )
+
+  next()
+}
+```
+
+# Node validations
+
+Proporciona validaciones para email, url, etc..
+
+```
+npm install validator
+```
+
+# Authentication middleware
+
+Passport soporta authenticacion con fb, twitter, et.c.
+```
+npm install passport
+```
+
+## passport-local
+
+For user / password strategy
+
+Return user object if found or false if not found
+
+## passport
+
+Store user in session
+
+passport.serializeUser((user, cb) => cb(null, user))
+passport.deserializeUser((user, cb) => cb(null, user))
+
+## Configure express to use as middleware
+
+```
+app.use(cookieParser())
+app.use(
+  expressSession({
+    secret: sessionSecret,
+    resave: false,
+    saveUninitialized: false
+  })
+)
+app.use(passport.initialize())
+app.use(passport.session())
+```
+
+## Auth api route
+
+Pasamos el middleware autenticate con mode = local para que use
+passport-local, si pasa el middleware devolvera success = true
+
+```
+app.post('/login', passport.authenticate('local'), (req, res) =>
+  res.json({ success: true })
+)
+```
+
+## Guard routes for auth users
+
+```
+app.post('/products', ensureAdmin, api.createProduct)
+app.put('/products/:id', ensureAdmin, api.editProduct)
+app.delete('/products/:id', ensureAdmin, api.deleteProduct)
+
+function ensureAdmin (req, res, next) {
+  const isAdmin = req.user && req.user.username === 'admin'
+  if (isAdmin) return next()
+
+  res.status(401).json({ error: 'Unauthorized' })
+}
+```
+
+## JWT
+
+## Authentication with roles
+
+# Deployment
+
+## In VPS
+
+Platform like AWS EC
+
+Podem tenir control sobre el sistema operatiu i
+entorn on funciona el codi.
+
+Necessitarem SSH per a conectarnos i instalar tot el ambient
+
+Es on entra el rol del administrador de DevOps
+
+### Temas a considerar
+
+- Tenim que tenir control de la seguretat: security updates, user logins, permissions, and firewall, etc..
+- Monitoritzar que el sistema operatiu estigui funcionant
+- Controlar la encriptacio via HTTPS
+- Controlar el scaling vertical via afegint clusters o
+horizontal afegint load balancer
+- Controlar el access de multiple apps amb diferents ports
+- Controlar el monitoring 
+- Controlar per a que no es pari el servei mentres fem un deploy
+
+## Using a PaaS (Platform as a Service)
+
+Por ejemplo heroku
+
+Es una opcion muy barata y aunque la plataforma nos restringe
+muchas cosas, no tenemos que controlar nosotros apenas nada y
+el deploy es muy facil.
+
+## Serverless Host
+
+Ejemplo AWS lambda serverless
+
+Ya no subimos una app entera, simplemente un endpoint.
+
+# HTTPS
+
+Per a fer que el trafic sigui encriptant, de forma
+que un user no pugui robarnos el authentication token.
