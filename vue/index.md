@@ -169,7 +169,7 @@ onChange() {
 - updated: Quan s'ha actualitzat alguna prop i es 
 fa rerender.
 
--destroy
+- destroy
 
 # Directives
 
