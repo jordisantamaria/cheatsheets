@@ -145,7 +145,7 @@ devtool: 'inline-source-map',
 Para que se abra un servidor local con hot reloading
 
 ```
-npm install --save-dev webpack-dev-server
+yarn add -D webpack-dev-server
 
 devServer: {
  contentBase: './dist',
