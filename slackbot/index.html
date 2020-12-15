@@ -297,7 +297,49 @@ Por defecto slack envia los eventos al endpoint: <strong>/slack/events</strong><
 <p>Amb aixo donem permis a poder escoltar als events que seleccionem.</p>
 <h1 id="escoltar-events-en-el-endpoint">Escoltar events en el endpoint</h1>
 <pre><code>app.event(&apos;app_home_opened&apos;, async ({ event, client, context }) =&gt; {}
-</code></pre>
+</code></pre><h1 id="authentication">Authentication</h1>
+<p>Sidebar: Features/Oauth &amp; Permissions</p>
+<h2 id="scopes">Scopes</h2>
+<p>Els scopes serveixen per donar permisos a la aplicaci&#xF3; per poder cridar a funcions de la api de slack.</p>
+<p>Els scopes disponibles son: <a href="https://api.slack.com/scopes" target="_blank">https://api.slack.com/scopes</a></p>
+<h3 id="bot-token-scope">Bot token Scope</h3>
+<p>En general els permisos es solen posar aqui.</p>
+<h3 id="user-token-scope">User token Scope</h3>
+<p>Es la excepci&#xF3;, casos dus:</p>
+<ol>
+<li>Si necessites actuar com un usuari especific: Enviar un missatge com a un usuari especific.</li>
+<li>Si necessits access a RTM <a href="https://api.slack.com/rtm" target="_blank">https://api.slack.com/rtm</a></li>
+</ol>
+<h1 id="install-app">Install App</h1>
+<p>Un cop hem definit algun scope, la app es instalable en:</p>
+<p>Sidebar: Settings/Install App</p>
+<p>Al instalar la app, et genera un acces token que et permet accedir els api methods definits en
+els scopes.</p>
+<h1 id="distribuir-app-a-multiples-workspaces">Distribuir app a multiples workspaces</h1>
+<p>Per a poder instalar la app en multiples workspaces, es te que
+activar el mode Public Distribution.</p>
+<h2 id="redirect-url">Redirect Url</h2>
+<p>Per a activar el mode, es necessari authoritzacio via auth0.
+Un cop authoritzat, redirigira el usuari al redirect url on
+s&apos;obtindra el codi com a querystring parameter per a poder
+cridar el api per tenir access a instalar la aplicacio.</p>
+<pre><code>const code = event.queryStringParameters.code;
+const oauthURL = &quot;https://slack.com/api/oauth.v2.access?&quot; +
+        &apos;client_id=&apos; + clientId + &apos;&amp;&apos; +
+        &apos;client_secret=&apos; + clientSecret + &apos;&amp;&apos; +
+        &apos;code=&apos; + code;
+await fetch(oauthURL, {
+    method: &apos;POST&apos;,
+    headers: {
+        &apos;Content-Type&apos;: &apos;application/json&apos;,
+    },
+})
+</code></pre><h2 id="add-to-slack-button">Add to Slack button</h2>
+<p>Un cop tenim el redirect URL configurat, podem activar el
+Public Distribution, lo que s&apos;ens habilitara un
+butto &quot;Add to slack&quot;, el qual ens permetra instalar la app
+en un altre workspace.</p>
+
                                 
                                 </section>
                             
@@ -336,7 +378,7 @@ Por defecto slack envia los eventos al endpoint: <strong>/slack/events</strong><
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Slackbot","level":"1.11","depth":1,"previous":{"title":"Python","level":"1.10","depth":1,"path":"python/index.md","ref":"python/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"slackbot/index.md","mtime":"2020-12-15T02:27:27.553Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T05:40:06.242Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Slackbot","level":"1.11","depth":1,"previous":{"title":"Python","level":"1.10","depth":1,"path":"python/index.md","ref":"python/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"slackbot/index.md","mtime":"2020-12-15T10:02:52.395Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
