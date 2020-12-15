@@ -414,6 +414,11 @@ horizontal afegint load balancer
 - Controlar el monitoring 
 - Controlar per a que no es pari el servei mentres fem un deploy
 
+### HTTPS
+
+Per a fer que el trafic sigui encriptant, de forma
+que un user no pugui robarnos el authentication token.
+
 ## Using a PaaS (Platform as a Service)
 
 Por ejemplo heroku
@@ -428,7 +433,94 @@ Ejemplo AWS lambda serverless
 
 Ya no subimos una app entera, simplemente un endpoint.
 
-# HTTPS
 
-Per a fer que el trafic sigui encriptant, de forma
-que un user no pugui robarnos el authentication token.
+
+## Deployment considerations
+
+1. Env variables
+2. Health check: Para comprobar que el api esta funcionando
+
+Se necessita checkear  la insercion y la busqueda en database para comprobar que realmente
+funciona
+```
+async function checkHealth (req, res, next) {
+  await db.checkHealth()
+  res.json({ status: 'OK' })
+}
+
+```
+
+## Logging
+
+Podemos usar la libreria de pino para que nos devuelva informacion sobre las peticiones
+a la api.
+
+```
+const pinoLogger = require('express-pino-logger')
+
+app.use(pinoLogger())
+```
+
+Para que se vea formateado en terminal
+
+```
+node server.js | pino-pretty
+```
+
+Queremos evitar que el logger muestre informacion sensible, se puede evitar con pino-noir:
+
+```
+function logger () {
+  return pinoLogger({
+    serializers: pinoNoir([
+      'res.headers.set-cookie',
+      'req.headers.cookie',
+      'req.headers.authorization'
+    ])
+  })
+}
+
+app.use(logger)
+```
+
+Podemos añadir informacion al logger en los request con req.log.info
+
+```
+async function createUser (req, res, next) {
+  const user = await Users.create(req.body)
+  const { username, email } = user
+  req.log.info({ username, email }, 'user created')
+  res.json({ username, email })
+}
+```
+
+## Compression
+
+Deberiamos enviar los datos json de forma comprimida para acelerar la velocidad del api,
+ya que comprimido pesan 90% menos los datos.
+
+Podemos usar el middleware compression de express
+
+```
+var compression = require('compression')
+var express = require('express')
+
+var app = express()
+app.use(compression({ filter: shouldCompress }))
+```
+
+## Cache
+
+Para optimizacion
+
+## Seguridad
+
+Express envia por defecto el header de x-powered-by, queremos evitar que sepan
+que tipo de servidor estamos usando, por si aparece una inseguridad en express no seamos
+objetivo.
+
+```
+const app = express()
+
+app.disable('x-powered-by')
+```
