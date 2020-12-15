@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>TypeOrm · GitBook</title>
+        <title>Slackbot · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../vue/" />
     
-    
-    <link rel="prev" href="../typescript/" />
+    <link rel="prev" href="../python/" />
     
 
     </head>
@@ -169,9 +167,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="./">
+        <li class="chapter " data-level="1.7" data-path="../typeorm/">
             
-                <a href="./">
+                <a href="../typeorm/">
             
                     
                     TypeOrm
@@ -221,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../slackbot/">
+        <li class="chapter active" data-level="1.11" data-path="./">
             
-                <a href="../slackbot/">
+                <a href="./">
             
                     
                     Slackbot
@@ -264,7 +262,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >TypeOrm</a>
+        <a href=".." >Slackbot</a>
     </h1>
 </div>
 
@@ -279,95 +277,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="query-builder">Query builder</h1>
-<p>To create costum querys</p>
-<h2 id="how-to-create">How to create</h2>
-<p>With manager</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> getManager()
-    .createQueryBuilder(User, <span class="hljs-string">&quot;user&quot;</span>)
-    .where(<span class="hljs-string">&quot;user.id = :id&quot;</span>, { id: <span class="hljs-number">1</span> })
-    .getOne();
-</code></pre>
-<p>With repository</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> getRepository(User)
-    .createQueryBuilder(<span class="hljs-string">&quot;user&quot;</span>)
-    .where(<span class="hljs-string">&quot;user.id = :id&quot;</span>, { id: <span class="hljs-number">1</span> })
-    .getOne();
-</code></pre>
-<p>4 different types, default select:</p>
+                                <h1 id="mostrar-la-app-en-el-workspace">Mostrar la app en el workspace</h1>
+<p>Sidebar: Features -&gt; App Home</p>
 <ol>
-<li>createQueryBuilder().select(&quot;user&quot;)</li>
-<li>createQueryBuilder().insert(&quot;user&quot;)</li>
-<li>createQueryBuilder().update(&quot;user&quot;)</li>
-<li>createQueryBuilder().delete(&quot;user&quot;)</li>
+<li>Home tab</li>
+<li>Messages tab</li>
 </ol>
-<h2 id="getting-values">Getting values</h2>
-<ol>
-<li>getOne()</li>
-<li>getMany()</li>
-<li>getRawOne()</li>
-<li>getRawMany()
-.getSql()</li>
-</ol>
-<h2 id="select-custom-fields">Select custom fields</h2>
-<pre><code class="lang-javascript">.select([
-        <span class="hljs-string">&quot;user.id&quot;</span>,
-        <span class="hljs-string">&quot;user.name&quot;</span>
-    ])
+<h1 id="subscriures-a-events-de-slack">Subscriures a events de slack</h1>
+<p>Interactuar a events de slack com channel_created, channel_join, etc...
+<a href="https://api.slack.com/events" target="_blank">https://api.slack.com/events</a></p>
+<p>Sidebar: Event Subscription -&gt; Enable events</p>
+<h2 id="request-url">Request url</h2>
+<p>Endpoint donde la api de slack te envia los eventos a los que te subscribes.
+Por defecto slack envia los eventos al endpoint: <strong>/slack/events</strong></p>
+<p>Ejemplo, request url =</p>
+<pre><code>https://bolt-app-template.glitch.me/slack/events
+</code></pre><h2 id="subscriures-el-event">Subscriures el event</h2>
+<p>Seleccionar els events en les seccions de Subscribe to bot events o Subscribe to events on behald of users</p>
+<p>Amb aixo donem permis a poder escoltar als events que seleccionem.</p>
+<h1 id="escoltar-events-en-el-endpoint">Escoltar events en el endpoint</h1>
+<pre><code>app.event(&apos;app_home_opened&apos;, async ({ event, client, context }) =&gt; {}
 </code></pre>
-<h2 id="from-table-as-alias">From table as alias</h2>
-<p>Abreviado: .createQueryBuilder(User, &quot;user&quot;)</p>
-<p>= createQueryBuilder()
-      .select(&quot;user&quot;)
-      .from(User, &quot;user&quot;)</p>
-<h2 id="where">where:</h2>
-<h3 id="usamos-parametros-para-evitar-sql-injection">Usamos parametros para evitar sql injection.</h3>
-<p>.where(&quot;user.name = :name&quot;, { name: &quot;Timber&quot; })</p>
-<h3 id="con-parametro-array">Con parametro array</h3>
-<p>.where(&quot;user.name IN (:...names)&quot;, { names: [ &quot;Timber&quot;, &quot;Cristal&quot;, &quot;Lina&quot; ] })</p>
-<h3 id="and--or">And / Or</h3>
-<p>.andWhere(&quot;user.lastName = :lastName&quot;, { lastName: &quot;Saw&quot; });</p>
-<p>.orWhere(&quot;user.lastName = :lastName&quot;, { lastName: &quot;Saw&quot; });</p>
-<h3 id="complex-wheres">Complex wheres</h3>
-<pre><code class="lang-javascript">createQueryBuilder(<span class="hljs-string">&quot;user&quot;</span>)
-    .where(<span class="hljs-string">&quot;user.registered = :registered&quot;</span>, { registered: <span class="hljs-literal">true</span> })
-    .andWhere(<span class="hljs-keyword">new</span> Brackets(qb =&gt; {
-        qb.where(<span class="hljs-string">&quot;user.firstName = :firstName&quot;</span>, { firstName: <span class="hljs-string">&quot;Timber&quot;</span> })
-          .orWhere(<span class="hljs-string">&quot;user.lastName = :lastName&quot;</span>, { lastName: <span class="hljs-string">&quot;Saw&quot;</span> })
-    }))
-</code></pre>
-<p>Result:  </p>
-<pre><code>SELECT ... FROM users user WHERE user.registered = true AND (user.firstName = &apos;Timber&apos; OR user.lastName = &apos;Saw&apos;)
-</code></pre><h2 id="having">Having</h2>
-<p>TODO what is having</p>
-<h2 id="order-by-with-multiple-criteria">Order by with multiple criteria</h2>
-<pre><code class="lang-javascript">.orderBy(<span class="hljs-string">&quot;user.name&quot;</span>, <span class="hljs-string">&quot;ASC&quot;</span>)
-.addOrderBy(<span class="hljs-string">&quot;user.id&quot;</span>, <span class="hljs-string">&quot;DESC&quot;</span>);
-</code></pre>
-<h2 id="distinct-on-expression-postgres-only">DISTINCT ON expression (Postgres only)</h2>
-<p>TODO que es distinct</p>
-<h2 id="group-by">GROUP BY</h2>
-<p>TODO</p>
-<h2 id="limit">LIMIT</h2>
-<p>.limit(10)</p>
-<h2 id="joins">Joins</h2>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> createQueryBuilder(<span class="hljs-string">&quot;user&quot;</span>)
-    .leftJoinAndSelect(<span class="hljs-string">&quot;user.photos&quot;</span>, <span class="hljs-string">&quot;photo&quot;</span>, <span class="hljs-string">&quot;photo.isRemoved = :isRemoved&quot;</span>, { isRemoved: <span class="hljs-literal">false</span> })
-    .where(<span class="hljs-string">&quot;user.name = :name&quot;</span>, { name: <span class="hljs-string">&quot;Timber&quot;</span> })
-    .getOne();
-</code></pre>
-<p>Output:</p>
-<pre><code>SELECT user.*, photo.* FROM users user
-    LEFT JOIN photos photo ON photo.user = user.id AND photo.isRemoved = FALSE
-    WHERE user.name = &apos;Timber&apos;
-</code></pre><h3 id="joins-functions">Joins functions</h3>
-<ol>
-<li>leftJoinAndSelect</li>
-<li>innerJoinAndSelect</li>
-<li>innerJoin</li>
-<li>leftJoin</li>
-</ol>
-
                                 
                                 </section>
                             
@@ -394,14 +324,10 @@
 
             
                 
-                <a href="../typescript/" class="navigation navigation-prev " aria-label="Previous page: Typescript">
+                <a href="../python/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Python">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../vue/" class="navigation navigation-next " aria-label="Next page: Vue">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -410,7 +336,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TypeOrm","level":"1.7","depth":1,"next":{"title":"Vue","level":"1.8","depth":1,"path":"vue/index.md","ref":"vue/index.md","articles":[]},"previous":{"title":"Typescript","level":"1.6","depth":1,"path":"typescript/index.md","ref":"typescript/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"typeorm/index.md","mtime":"2020-11-11T08:00:12.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T05:40:06.242Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Slackbot","level":"1.11","depth":1,"previous":{"title":"Python","level":"1.10","depth":1,"path":"python/index.md","ref":"python/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"slackbot/index.md","mtime":"2020-12-15T02:27:27.553Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T05:40:06.242Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
