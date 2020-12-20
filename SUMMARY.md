@@ -10,3 +10,4 @@
 * [Webpack](webpack/index.md)
 * [Python](python/index.md)
 * [Slackbot](slackbot/index.md)
+* [D3](d3/index.md)
