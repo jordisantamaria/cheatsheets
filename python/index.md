@@ -69,3 +69,9 @@ print("""\
         -H hostname               Hostname to connect to\
 """)
 ```
+
+# Conversiones de tipo
+
+Cast to string: str(text)
+Cast to int: int(text)
+to json: json.dumps([1, 'simple', 'list'])
