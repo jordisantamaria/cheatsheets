@@ -200,3 +200,26 @@ const yAxisGenerator = d3.axisLeft()
   .scale(yScale)
   .ticks(4)
 ```
+
+## Incluir una tercera metrica segun el color
+
+En vez de poner en range, el tamaño en pixeles donde mostrar el contenido,
+podemos poner el intervalo de color.
+
+```vue
+const colorScale = d3.scaleLinear()
+    .domain(d3.extent(dataset, colorAccessor))
+    .range(["skyblue", "darkslategrey"])
+```
+
+Entonces en vez de poner un color fijo a las bolas, le incluimos el colorScale
+
+```vue
+const dots = bounds.selectAll("circle")
+    .data(dataset)
+    .enter().append("circle")
+      .attr("cx", d => xScale(xAccessor(d)))
+      .attr("cy", d => yScale(yAccessor(d)))
+      .attr("r", 4)
+      .attr("fill", d => colorScale(colorAccessor(d)))
+```
