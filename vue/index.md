@@ -177,12 +177,6 @@ fa rerender.
 
 - v-bind:href -> href is an argument
 
-# Design patterns
-
-# Tests
-
-https://testing-library.com/docs/vue-testing-library/intro
-
 # Formularies
 
 - two-way binding:
@@ -476,3 +470,170 @@ Y donde tiene que mostrarse la ruta nested
 ```vue
 <router-view :key="$route.path" />
 ```
+
+# Unit testing
+
+## Setup
+
+### Install librarys
+
+```
+yarn add -D @testing-library/vue
+yarn add -D @testing-library/jest-dom
+```
+
+### Jest config options
+
+Vue cli fa servir el seu propi jest.config.js amb tota la
+configuracio necessaria per poder testear.
+
+Si volem configuracio extra, tenim que posarla en el package.json,
+enlloc de crear un jest.config.js per a no perdre la config.
+
+https://jestjs.io/docs/en/webpack
+
+#### moduleNameMapper:
+
+Jest no pot llegir imports de fitxers que no siguin .ts o .js
+Si es un altre tipus com .css o .yaml, fer que en el seu lloc importi un fitxer de mock
+
+#### setupFiles
+
+Abans de tirar els testos, configurar el entorn important dependencies pels testos.
+
+Exemple: "jest-init.ts"
+
+```
+import { ValidationObserver, ValidationProvider } from 'vee-validate';
+import Vue from 'vue';
+import '../../src/plugins/vee-validate';
+
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
+```
+
+
+```
+"jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "moduleNameMapper": {
+      "\\.yaml$": "<rootDir>/tests/setup/empty-mock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/tests/setup/jest-init.ts"
+    ],
+},
+  ```
+
+### Ve-validate
+
+Ve-validate necessita fer cambis en el jest config del package.
+https://vee-validate.logaretm.com/v3/advanced/testing.html#asynchronous-testing
+
+```
+"transform": {
+    "vee-validate/dist/rules": "babel-jest"
+},
+"transformIgnorePatterns": [
+  "<rootDir>/node_modules/(?!vee-validate/dist/rules)"
+]
+```
+
+### Custom render method
+
+Al renderitzar el component, necessitem configurar les dependencies com i18n, vuex, routes, etc..
+Per a aixo creem un custom render del que fem servir enlloc del render generic.
+
+```
+export const renderComponent = (Component: any, options?: any) => {
+    return render(
+        Component,
+        {
+            routes: [],
+            ...vuetifyOptions,
+            ...options,
+        },
+        (vue) => {
+            // Let's register and configure Vuei18n normally
+            vue.use(VueI18n);
+            return {
+                i18n,
+            };
+        },
+    );
+};
+```
+
+## Example Testing component:
+
+```ts
+import { render } from '@testing-library/vue';
+import BtnSubmit from '@/components/Ui/Input/BtnSubmit.vue';
+
+describe('Btn Submit', () => {
+    it('Is saved', async () => {
+        const { getByText, updateProps } = render(BtnSubmit, {
+            props: {
+                isSaved: false,
+                label: "Save",
+                labelSaved: "Saved"
+            }
+        })
+        getByText("Save")
+        await updateProps({isSaved: true})
+        getByText('Saved')
+    });
+});
+```
+
+## API
+
+### Render
+
+Al hacer render(), nos devuelve un objeto con funciones utils
+para testear.
+
+```
+const {debug, getByText, getByLabelTest, etc...} = render(Component)
+```
+
+html() => Devuelve el html del render
+
+```
+expect(html()).toBe('<div><p>Foo</p></div>')
+```
+
+emitted() => Comprobar que se ha emitido un evento
+
+```
+await fireEvent.click(btn)
+expect(emitted().click).toBeTruthy()
+```
+
+### Fire event
+
+Para lanzar eventos de dom
+
+```
+await fireEvent.click(getByText('Click me'))
+await fireEvent.touch(getByLabelText('username'))
+await fireEvent.focus(getByLabelText('username'))
+await fireEvent.blur(getByLabelText('username'))
+```
+
+#### Validando input change con fireEvent.update()
+
+Update input text:
+
+Necessitamos flushPromises para esperar a que el dom se actualice y
+el componente tambien se actualice para validar el input
+
+```
+import flushPromises from 'flush-promises';
+
+const usernameInput = getByLabelText(/username/i);
+await fireEvent.update(usernameInput, 'hello');
+await flushPromises();
+getByText('validation.username');
+```
+
