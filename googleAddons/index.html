@@ -1,0 +1,552 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GAS · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../node-backend/" />
+    
+    
+    <link rel="prev" href="../codigo limpio/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../markdown/">
+            
+                <a href="../markdown/">
+            
+                    
+                    MARKDOWN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../codigo limpio/">
+            
+                <a href="../codigo limpio/">
+            
+                    
+                    Clean code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    GAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../node-backend/">
+            
+                <a href="../node-backend/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../typescript/">
+            
+                <a href="../typescript/">
+            
+                    
+                    Typescript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../typeorm/">
+            
+                <a href="../typeorm/">
+            
+                    
+                    TypeOrm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vue/">
+            
+                <a href="../vue/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../webpack/">
+            
+                <a href="../webpack/">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../slackbot/">
+            
+                <a href="../slackbot/">
+            
+                    
+                    Slackbot
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GAS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="google-slides">Google Slides</h1>
+<p>Los scripts pueden crearse en <a href="https://script.google.com/home" target="_blank">https://script.google.com/home</a> y ser ejecutados
+o incluirse en el propio fichero de drive &quot;ej google docs&quot;,iendo a</p>
+<pre><code>herramientas -&gt; editor de secuencia de comandos
+</code></pre><h2 id="api">Api</h2>
+<ul>
+<li><p>SlidesApp</p>
+</li>
+<li><p>Presentation</p>
+</li>
+<li><p>Page</p>
+<ul>
+<li>Page types:<ul>
+<li>Slide: Es una diapositiva de la presentacion</li>
+<li>Master</li>
+<li>Layout</li>
+<li>NotesPage</li>
+<li>NotesMasters</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PageElement</p>
+<ul>
+<li>PageElement types:<ul>
+<li>Shape: Cuadros de formas que pueden contener texto</li>
+<li>Line</li>
+<li>Image</li>
+<li>SheetsChart</li>
+<li>etc..</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="seleccionando-elementos">Seleccionando elementos</h2>
+<p>Devuelve un elemento de tipo selectionType, segun el elemento que has 
+seleccionado</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> selection = SlidesApp.getActivePresentation().getSelection();
+<span class="hljs-keyword">var</span> selectionType = selection.getSelectionType();
+</code></pre>
+<ul>
+<li>Nada seleccionado: Devuelve una Page</li>
+<li>Elemento seleccionado: Devuelve un PageElement</li>
+<li>Texto seleccionado: Devuelve un TextRange</li>
+</ul>
+<h2 id="insertando-elementos">Insertando elementos</h2>
+<ul>
+<li><p>Insertar una forma: </p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> slide = SlidesApp.getActivePresentation().getSlides()[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">var</span> shape = slide.insertShape(SlidesApp.ShapeType.TEXT_BOX, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">300</span>, <span class="hljs-number">60</span>);
+</code></pre>
+</li>
+<li><p>Insertar texto:</p>
+</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> textRange = shape.getText();
+textRange.setText(<span class="hljs-string">&apos;Hello world!&apos;</span>);
+textRange.clear(<span class="hljs-number">6</span>, <span class="hljs-number">11</span>);
+textRange.insertText(<span class="hljs-number">6</span>, <span class="hljs-string">&apos;galaxy&apos;</span>);
+</code></pre>
+<ul>
+<li>Dando estilos al texto</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> insertedText = textRange.appendText(<span class="hljs-string">&apos;world!&apos;</span>);
+insertedText.getTextStyle()
+    .setBold(<span class="hljs-literal">true</span>)
+    .setLinkUrl(<span class="hljs-string">&apos;www.example.com&apos;</span>)
+    .setForegroundColor(<span class="hljs-string">&apos;#ff0000&apos;</span>);
+</code></pre>
+<ul>
+<li>Dando estilos al paragrafo (text-alignment, line-spacing, etc...)<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> textRange = shape.getText();
+textRange.setText(<span class="hljs-string">&apos;Paragraph 1\nParagraph2\nParagraph 3\nParagraph 4&apos;</span>);
+<span class="hljs-keyword">var</span> paragraphs = textRange.getParagraphs();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+<span class="hljs-keyword">var</span> paragraphStyle = paragraphs[i].getRange().getParagraphStyle();
+paragraphStyle.setParagraphAlignment(SlidesApp.ParagraphAlignment.CENTER);
+}
+</code></pre>
+</li>
+</ul>
+<h1 id="macro">Macro</h1>
+<p>Para grabar un conjunto de acciones en un boton, que al ejecutarlo se realicen todas.</p>
+<h2 id="manual">Manual</h2>
+<p>Ir a <strong>Herramientas -&gt; Macros -&gt; registrar macro</strong></p>
+<p>Haz las acciones y darle a guardar</p>
+<p>La macro sera accessible en <strong>Herramientas -&gt; Macros</strong></p>
+<h2 id="codigo">Codigo</h2>
+<p>Ir a <strong>Herramientas -&gt; Editor de scripts</strong></p>
+<p>Se ha autogenerado el codigo para la macro creada.</p>
+<h1 id="custom-functions">Custom functions</h1>
+<p>Para usar en excel tipo =USDTOCHF(H8)</p>
+<p>Generar docs con hints al usarla, con @customfunction facilitamos autocomplete</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * Converts US dollars to Swiss francs.
+ * 
+ * @param {number} dollars The total number of dollars.
+ * @return {number} swissFrancs The converted total of Swiss francs.
+ * @customfunction
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">USDTOCHF</span>(<span class="hljs-params">dollars</span>)</span>{
+  <span class="hljs-keyword">var</span> swissFrancs = dollars * <span class="hljs-number">.99</span>; 
+  <span class="hljs-keyword">return</span> swissFrancs;
+}
+</code></pre>
+<h2 id="con-datos-dinamicos-by-api">Con datos dinamicos by api</h2>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">USDTOCHF</span>(<span class="hljs-params">dollars</span>)</span>{
+  <span class="hljs-comment">// Gets a cache that is common to all users of the script.</span>
+  <span class="hljs-keyword">var</span> cache = CacheService.getScriptCache();
+
+  <span class="hljs-comment">// Accesses the memory location (rates.CHF) of the script cache. </span>
+  <span class="hljs-keyword">var</span> rate = cache.get(<span class="hljs-string">&apos;rates.CHF&apos;</span>);
+
+  <span class="hljs-comment">// If a cache miss occurs, the program fetches the current</span>
+  <span class="hljs-comment">// CHF rate from an API and stores that rate in the cache</span>
+  <span class="hljs-comment">// for later convenience. </span>
+  <span class="hljs-keyword">if</span> (!rate) {
+    <span class="hljs-keyword">var</span> response =
+UrlFetchApp.fetch(<span class="hljs-string">&apos;https://api.exchangeratesapi.io/latest?base=USD&apos;</span>);
+    <span class="hljs-keyword">var</span> result = <span class="hljs-built_in">JSON</span>.parse(response.getContentText());
+    rate = result.rates.CHF;
+    cache.put(<span class="hljs-string">&apos;rates.CHF&apos;</span>, rate);
+  }
+  <span class="hljs-comment">// Converts dollars to CHF according to the latest rate. </span>
+  <span class="hljs-keyword">var</span> swissFrancs = dollars * rate;
+  <span class="hljs-comment">// Returns the CHF value. </span>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;CHF&apos;</span> + swissFrancs;
+}
+</code></pre>
+<h1 id="google-sheets">Google Sheets</h1>
+<h2 id="spreadsheet-service">Spreadsheet service</h2>
+<ol>
+<li>SpreadsheetApp: Main service, da info general de las hojas de calculo</li>
+<li>Spreadsheet: Para modificar los datos de la hoja de calculo
+ Por ejemplo cambiar el nombre de la hoja de calculo</li>
+<li><p>Sheet: Una pagina individual &quot;tabs&quot;
+ Acceder a los datos y manipularlos</p>
+</li>
+<li><p>Range: El grupo de casillas a las que aplicar una funcion
+ Hacer operaciones con grupos de datos</p>
+</li>
+</ol>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renameSpreadsheet</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> mySS = SpreadsheetApp.getActiveSpreadsheet();
+  mySS.rename(<span class="hljs-string">&quot;2017 Avocado Prices in Portland, Seattle&quot;</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">duplicateAndOrganizeActiveSheet</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> mySS = SpreadsheetApp.getActiveSpreadsheet();
+  <span class="hljs-keyword">var</span> duplicateSheet = mySS.duplicateActiveSheet();
+
+  <span class="hljs-comment">// Change the name of the new sheet.</span>
+  duplicateSheet.setName(<span class="hljs-string">&quot;Sheet_&quot;</span> + duplicateSheet.getSheetId());
+
+  <span class="hljs-comment">// Format the new sheet.</span>
+  duplicateSheet.autoResizeColumns(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>);
+  duplicateSheet.setFrozenRows(<span class="hljs-number">2</span>);
+
+  <span class="hljs-comment">// Move column F to column C.</span>
+  <span class="hljs-keyword">var</span> myRange = duplicateSheet.getRange(<span class="hljs-string">&quot;F2:F&quot;</span>);
+  myRange.moveTo(duplicateSheet.getRange(<span class="hljs-string">&quot;C2&quot;</span>));
+
+  <span class="hljs-comment">// Sort all the data using column C (Price information).</span>
+  myRange = duplicateSheet.getRange(<span class="hljs-string">&quot;A3:D55&quot;</span>);
+  myRange.sort(<span class="hljs-number">3</span>);
+}
+</code></pre>
+<h2 id="menus">Menus</h2>
+<p>Crear un menu con un item que al hacer click se ejecuta
+la funcion loadBookList</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * A special function that runs when the spreadsheet is first
+ * opened or reloaded. onOpen() is used to add custom menu
+ * items to the spreadsheet.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onOpen</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> ui = SpreadsheetApp.getUi();
+  ui.createMenu(<span class="hljs-string">&apos;Book-list&apos;</span>)
+    .addItem(<span class="hljs-string">&apos;Load Book-list&apos;</span>, <span class="hljs-string">&apos;loadBookList&apos;</span>)
+    .addSeparator()
+    .addItem(
+      <span class="hljs-string">&apos;Separate title/author at first comma&apos;</span>, <span class="hljs-string">&apos;splitAtFirstComma&apos;</span>)
+    .addToUi();
+}
+</code></pre>
+<h1 id="clasp-cli">Clasp cli</h1>
+<p>Cli para hacer deploy de proyectos GAS</p>
+<p>Para poder usar la cli es necesario primero hacer login:</p>
+<pre><code>clasp login
+</code></pre><p>create project: clasp create</p>
+<p>push project: clasp push</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../codigo limpio/" class="navigation navigation-prev " aria-label="Previous page: Clean code">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../node-backend/" class="navigation navigation-next " aria-label="Next page: Node">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GAS","level":"1.4","depth":1,"next":{"title":"Node","level":"1.5","depth":1,"path":"node-backend/index.md","ref":"node-backend/index.md","articles":[]},"previous":{"title":"Clean code","level":"1.3","depth":1,"path":"codigo limpio/index.md","ref":"codigo limpio/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"googleAddons/index.md","mtime":"2020-11-11T08:00:12.225Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

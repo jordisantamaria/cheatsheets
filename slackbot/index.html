@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MARKDOWN · GitBook</title>
+        <title>Slackbot · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../codigo limpio/" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../python/" />
     
 
     </head>
@@ -104,9 +102,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../markdown/">
             
-                <a href="./">
+                <a href="../markdown/">
             
                     
                     MARKDOWN
@@ -221,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../slackbot/">
+        <li class="chapter active" data-level="1.11" data-path="./">
             
-                <a href="../slackbot/">
+                <a href="./">
             
                     
                     Slackbot
@@ -264,7 +262,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MARKDOWN</a>
+        <a href=".." >Slackbot</a>
     </h1>
 </div>
 
@@ -279,77 +277,68 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="text-style">Text style:</h1>
-<h2 id="italics">Italics</h2>
-<p>_this_</p>
-<p><em>this</em></p>
-<h2 id="bold">Bold</h2>
-<p>*<em>this*</em> o _<em>this_</em></p>
-<p><strong>really</strong></p>
-<h2 id="codigo">Codigo</h2>
+                                <h1 id="mostrar-la-app-en-el-workspace">Mostrar la app en el workspace</h1>
+<p>Sidebar: Features -&gt; App Home</p>
 <ol>
-<li>&lt; code &gt; python -v &lt;/ code &gt;</li>
+<li>Home tab</li>
+<li>Messages tab</li>
 </ol>
-<p><code> python -v</code></p>
+<h1 id="subscriures-a-events-de-slack">Subscriures a events de slack</h1>
+<p>Interactuar a events de slack com channel_created, channel_join, etc...
+<a href="https://api.slack.com/events" target="_blank">https://api.slack.com/events</a></p>
+<p>Sidebar: Event Subscription -&gt; Enable events</p>
+<h2 id="request-url">Request url</h2>
+<p>Endpoint donde la api de slack te envia los eventos a los que te subscribes.
+Por defecto slack envia los eventos al endpoint: <strong>/slack/events</strong></p>
+<p>Ejemplo, request url =</p>
+<pre><code>https://bolt-app-template.glitch.me/slack/events
+</code></pre><h2 id="subscriures-el-event">Subscriures el event</h2>
+<p>Seleccionar els events en les seccions de Subscribe to bot events o Subscribe to events on behald of users</p>
+<p>Amb aixo donem permis a poder escoltar als events que seleccionem.</p>
+<h1 id="escoltar-events-en-el-endpoint">Escoltar events en el endpoint</h1>
+<pre><code>app.event(&apos;app_home_opened&apos;, async ({ event, client, context }) =&gt; {}
+</code></pre><h1 id="authentication">Authentication</h1>
+<p>Sidebar: Features/Oauth &amp; Permissions</p>
+<h2 id="scopes">Scopes</h2>
+<p>Els scopes serveixen per donar permisos a la aplicaci&#xF3; per poder cridar a funcions de la api de slack.</p>
+<p>Els scopes disponibles son: <a href="https://api.slack.com/scopes" target="_blank">https://api.slack.com/scopes</a></p>
+<h3 id="bot-token-scope">Bot token Scope</h3>
+<p>En general els permisos es solen posar aqui.</p>
+<h3 id="user-token-scope">User token Scope</h3>
+<p>Es la excepci&#xF3;, casos dus:</p>
 <ol>
-<li>&lt; pre &gt; python -v &lt;/ pre &gt;</li>
+<li>Si necessites actuar com un usuari especific: Enviar un missatge com a un usuari especific.</li>
+<li>Si necessits access a RTM <a href="https://api.slack.com/rtm" target="_blank">https://api.slack.com/rtm</a></li>
 </ol>
-<pre>python -v</pre>
-
-<h3 id="codigo-de-bloque">Codigo de bloque</h3>
-<p>~ ~ ~
-python -v
-~ ~ ~</p>
-<pre><code>python -v
-</code></pre><h2 id="citas">Citas</h2>
-<p>Se hacen con el caracter &gt;</p>
-<p>anidar empezando la segunda con &gt;&gt;</p>
-<blockquote>
-<p>Esto es una cita</p>
-<blockquote>
-<p>Cita anidada</p>
-</blockquote>
-</blockquote>
-<h2 id="evitar-formato">Evitar formato</h2>
-<p>Escapar caracteres con \</p>
-<h2 id="headers">Headers</h2>
-<ol>
-<li>#header1</li>
-<li>##header2</li>
-<li>###header3</li>
-<li>####header4</li>
-<li>#####header5</li>
-<li>######header6</li>
-</ol>
-<h1 id="links">Links</h1>
-<p>Structure [text](link)</p>
-<p><a href="www.github.com">Visit GitHub!</a></p>
-<h2 id="links-automaticos">Links automaticos</h2>
-<p>&lt;  link &gt;
-<a href="http://www.limni.net" target="_blank">http://www.limni.net</a></p>
-<h1 id="saltos-de-linia">Saltos de linia</h1>
-<p>Dejar una linia en blanco entre parrafos</p>
-<p>Primera linia</p>
-<p>Segunda linia</p>
-<h1 id="listas">Listas</h1>
-<p>Empezar frase con *, + o - y espacio, anidar dejando 4 espacios</p>
-<ul>
-<li>Lista<ul>
-<li>Sublista</li>
-</ul>
-</li>
-</ul>
-<h2 id="listas-ordenadas">Listas ordenadas</h2>
-<p>Empezarla con un numero + punto + espacio (1. )</p>
-<ol>
-<li>Primero de la Lista</li>
-<li>Segundo de la lista</li>
-</ol>
-<h1 id="divisores-linias-horizontales">Divisores, linias horizontales</h1>
-<p>Usar <em>*</em>, --- o <em>_</em> entre espacios en blanco</p>
-<hr>
-<h1 id="imagenes">Imagenes:</h1>
-<p>![Texto alternativo](/ruta/a/la/imagen.jpg &quot;T&#xED;tulo alternativo&quot;)</p>
+<h1 id="install-app">Install App</h1>
+<p>Un cop hem definit algun scope, la app es instalable en:</p>
+<p>Sidebar: Settings/Install App</p>
+<p>Al instalar la app, et genera un acces token que et permet accedir els api methods definits en
+els scopes.</p>
+<h1 id="distribuir-app-a-multiples-workspaces">Distribuir app a multiples workspaces</h1>
+<p>Per a poder instalar la app en multiples workspaces, es te que
+activar el mode Public Distribution.</p>
+<h2 id="redirect-url">Redirect Url</h2>
+<p>Per a activar el mode, es necessari authoritzacio via auth0.
+Un cop authoritzat, redirigira el usuari al redirect url on
+s&apos;obtindra el codi com a querystring parameter per a poder
+cridar el api per tenir access a instalar la aplicacio.</p>
+<pre><code>const code = event.queryStringParameters.code;
+const oauthURL = &quot;https://slack.com/api/oauth.v2.access?&quot; +
+        &apos;client_id=&apos; + clientId + &apos;&amp;&apos; +
+        &apos;client_secret=&apos; + clientSecret + &apos;&amp;&apos; +
+        &apos;code=&apos; + code;
+await fetch(oauthURL, {
+    method: &apos;POST&apos;,
+    headers: {
+        &apos;Content-Type&apos;: &apos;application/json&apos;,
+    },
+})
+</code></pre><h2 id="add-to-slack-button">Add to Slack button</h2>
+<p>Un cop tenim el redirect URL configurat, podem activar el
+Public Distribution, lo que s&apos;ens habilitara un
+butto &quot;Add to slack&quot;, el qual ens permetra instalar la app
+en un altre workspace.</p>
 
                                 
                                 </section>
@@ -377,14 +366,10 @@ python -v
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../python/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Python">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../codigo limpio/" class="navigation navigation-next " aria-label="Next page: Clean code">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -393,7 +378,7 @@ python -v
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MARKDOWN","level":"1.2","depth":1,"next":{"title":"Clean code","level":"1.3","depth":1,"path":"codigo limpio/index.md","ref":"codigo limpio/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"markdown/README.md","mtime":"2020-09-14T14:32:29.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Slackbot","level":"1.11","depth":1,"previous":{"title":"Python","level":"1.10","depth":1,"path":"python/index.md","ref":"python/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"slackbot/index.md","mtime":"2020-12-15T10:02:52.395Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

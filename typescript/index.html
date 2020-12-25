@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MARKDOWN · GitBook</title>
+        <title>Typescript · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../codigo limpio/" />
+    <link rel="next" href="../typeorm/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../node-backend/" />
     
 
     </head>
@@ -104,9 +104,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../markdown/">
             
-                <a href="./">
+                <a href="../markdown/">
             
                     
                     MARKDOWN
@@ -156,9 +156,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../typescript/">
+        <li class="chapter active" data-level="1.6" data-path="./">
             
-                <a href="../typescript/">
+                <a href="./">
             
                     
                     Typescript
@@ -264,7 +264,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MARKDOWN</a>
+        <a href=".." >Typescript</a>
     </h1>
 </div>
 
@@ -279,78 +279,73 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="text-style">Text style:</h1>
-<h2 id="italics">Italics</h2>
-<p>_this_</p>
-<p><em>this</em></p>
-<h2 id="bold">Bold</h2>
-<p>*<em>this*</em> o _<em>this_</em></p>
-<p><strong>really</strong></p>
-<h2 id="codigo">Codigo</h2>
-<ol>
-<li>&lt; code &gt; python -v &lt;/ code &gt;</li>
-</ol>
-<p><code> python -v</code></p>
-<ol>
-<li>&lt; pre &gt; python -v &lt;/ pre &gt;</li>
-</ol>
-<pre>python -v</pre>
+                                <h1 id="ts-node">ts-node</h1>
+<p>Per a executar ts files sense fer build</p>
+<h1 id="type-aliases">type aliases</h1>
+<p>Per a crear un nou tipus de variable simple.
+Ex:</p>
+<pre><code>type Week = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
-<h3 id="codigo-de-bloque">Codigo de bloque</h3>
-<p>~ ~ ~
-python -v
-~ ~ ~</p>
-<pre><code>python -v
-</code></pre><h2 id="citas">Citas</h2>
-<p>Se hacen con el caracter &gt;</p>
-<p>anidar empezando la segunda con &gt;&gt;</p>
-<blockquote>
-<p>Esto es una cita</p>
-<blockquote>
-<p>Cita anidada</p>
-</blockquote>
-</blockquote>
-<h2 id="evitar-formato">Evitar formato</h2>
-<p>Escapar caracteres con \</p>
-<h2 id="headers">Headers</h2>
-<ol>
-<li>#header1</li>
-<li>##header2</li>
-<li>###header3</li>
-<li>####header4</li>
-<li>#####header5</li>
-<li>######header6</li>
-</ol>
-<h1 id="links">Links</h1>
-<p>Structure [text](link)</p>
-<p><a href="www.github.com">Visit GitHub!</a></p>
-<h2 id="links-automaticos">Links automaticos</h2>
-<p>&lt;  link &gt;
-<a href="http://www.limni.net" target="_blank">http://www.limni.net</a></p>
-<h1 id="saltos-de-linia">Saltos de linia</h1>
-<p>Dejar una linia en blanco entre parrafos</p>
-<p>Primera linia</p>
-<p>Segunda linia</p>
-<h1 id="listas">Listas</h1>
-<p>Empezar frase con *, + o - y espacio, anidar dejando 4 espacios</p>
-<ul>
-<li>Lista<ul>
-<li>Sublista</li>
-</ul>
-</li>
-</ul>
-<h2 id="listas-ordenadas">Listas ordenadas</h2>
-<p>Empezarla con un numero + punto + espacio (1. )</p>
-<ol>
-<li>Primero de la Lista</li>
-<li>Segundo de la lista</li>
-</ol>
-<h1 id="divisores-linias-horizontales">Divisores, linias horizontales</h1>
-<p>Usar <em>*</em>, --- o <em>_</em> entre espacios en blanco</p>
-<hr>
-<h1 id="imagenes">Imagenes:</h1>
-<p>![Texto alternativo](/ruta/a/la/imagen.jpg &quot;T&#xED;tulo alternativo&quot;)</p>
+const w: Week = 5
 
+type Callback = (err: Error, data: any) =&gt; void;
+</code></pre><p>Si te un valor diferenet dona error.
+if you can&#x2019;t express some shape with an interface and you need to use a union or tuple type,
+type aliases are usually the way to go.</p>
+<h1 id="null-check-with-">Null check with ??</h1>
+<p>Si es null devuelve &quot;default&quot;, sino devuelve el valor.</p>
+<pre><code>stringOrNull ?? &quot;default&quot;
+</code></pre><h1 id="force-not-null-with-">Force not null with !</h1>
+<p>Si sabemos que nunca deberia dar null, podemos forzarlo con !,
+pero si es null dara error.</p>
+<h1 id="map-keys-of-object">Map keys of object</h1>
+<p>Amb &lt;&gt; creem les variables dinamiques que farem servir com a interficie
+en els parametres.</p>
+<pre><code>function pluck&lt;T, K extends keyof T&gt;(o: T, propertyNames: K[], a?: any): T[K][] {
+    return propertyNames.map((n) =&gt; o[n]);
+}
+
+function getProperty&lt;T, K extends keyof T&gt;(o: T, propertyName: K): T[K] {
+  return o[propertyName]; // o[propertyName] is of type T[K]
+}
+</code></pre><p>T = tipus generic
+keyof T = array amb els keys values del objecte t</p>
+<pre><code>let taxi: Car = {
+  manufacturer: &quot;Toyota&quot;,
+  model: &quot;Camry&quot;,
+  year: 2014,
+};
+let carProps: keyof Car;
+// let carProps: &quot;manufacturer&quot; | &quot;model&quot; | &quot;year&quot;
+</code></pre><h1 id="tuples">Tuples</h1>
+<pre><code>type RGB = [number, number, number];
+</code></pre><p>With optional param</p>
+<pre><code>type RGBA = [number, number, number, number?];
+</code></pre><h1 id="ecmascript">Ecmascript</h1>
+<h2 id="shorthand-method-names">Shorthand method names</h2>
+<p>No hace falta hacer ``add: () =&gt;```</p>
+<pre><code>const calculator = {
+  add(num1, num2) {
+    return num1 + num2;
+  },
+
+  multiply(num1, num2) {
+    return num1 * num2;
+  },
+}
+</code></pre><h1 id="destructuring-arrays">Destructuring arrays</h1>
+<pre><code>const yellow = [255, 255, 0];
+const [red, green, blue] = yellow;
+const [,, green] = yellow;
+const [red, ...blueAndGreen] = yellow;
+const [red, blue, gree, alpha = 1] = yellow;
+</code></pre><h1 id="types-from-object">Types from object</h1>
+<pre><code>import numbers from &apos;./numbers.ts&apos;;
+import strings from &apos;./strings.json&apos;;
+
+type Numbers = typeof numbers;
+type StringsJSON = typeof strings;
+</code></pre>
                                 
                                 </section>
                             
@@ -377,12 +372,12 @@ python -v
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../node-backend/" class="navigation navigation-prev " aria-label="Previous page: Node">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../codigo limpio/" class="navigation navigation-next " aria-label="Next page: Clean code">
+                <a href="../typeorm/" class="navigation navigation-next " aria-label="Next page: TypeOrm">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -393,7 +388,7 @@ python -v
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MARKDOWN","level":"1.2","depth":1,"next":{"title":"Clean code","level":"1.3","depth":1,"path":"codigo limpio/index.md","ref":"codigo limpio/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"markdown/README.md","mtime":"2020-09-14T14:32:29.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Typescript","level":"1.6","depth":1,"next":{"title":"TypeOrm","level":"1.7","depth":1,"path":"typeorm/index.md","ref":"typeorm/index.md","articles":[]},"previous":{"title":"Node","level":"1.5","depth":1,"path":"node-backend/index.md","ref":"node-backend/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"typescript/index.md","mtime":"2020-12-15T05:40:10.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

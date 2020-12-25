@@ -1,0 +1,732 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../webpack/" />
+    
+    
+    <link rel="prev" href="../typeorm/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../markdown/">
+            
+                <a href="../markdown/">
+            
+                    
+                    MARKDOWN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../codigo limpio/">
+            
+                <a href="../codigo limpio/">
+            
+                    
+                    Clean code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../googleAddons/">
+            
+                <a href="../googleAddons/">
+            
+                    
+                    GAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../node-backend/">
+            
+                <a href="../node-backend/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../typescript/">
+            
+                <a href="../typescript/">
+            
+                    
+                    Typescript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../typeorm/">
+            
+                <a href="../typeorm/">
+            
+                    
+                    TypeOrm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../webpack/">
+            
+                <a href="../webpack/">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../slackbot/">
+            
+                <a href="../slackbot/">
+            
+                    
+                    Slackbot
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vue-basics">Vue basics</h1>
+<p><a href="https://www.newline.co/books/fullstack-vue/how_to_get_the_most_book" target="_blank">https://www.newline.co/books/fullstack-vue/how_to_get_the_most_book</a></p>
+<h1 id="js-in-html">Js in html</h1>
+<h2 id="use-variables-in-text">Use variables in text</h2>
+<pre><code class="lang-vue"> div {{ message }}
+</code></pre>
+<h2 id="props">Props</h2>
+<h3 id="parent-to-children">Parent to children</h3>
+<p>v-bind:title |  :title</p>
+<pre><code class="lang-vue">&lt;span v-bind:title=&quot;message&quot;&gt;
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+&lt;/span&gt;
+</code></pre>
+<h3 id="children-to-parent">Children to parent</h3>
+<p>Para que el padre se entere de los cambios del hijo, se emiten
+eventos a los cual el padre puede escuchar.</p>
+<pre><code>children:  $emit(nameOfEvent)
+
+parent: $on(nameOfEvent)
+</code></pre><h3 id="sharing-props-between-any-component">Sharing props between any component</h3>
+<p>Amb eventBus podem tenir un estat global compartit.
+Aunque com es dificil de gestionar estats complexos,
+es recomanat no ferlo servir i fer servir vuex.</p>
+<pre><code>export const EventBus = new Vue();
+
+monitorEnterKey() {
+  EventBus.$emit(&apos;add-note&apos;, {
+    note: this.input,
+    timestamp: new Date().toLocaleString()
+  });
+  this.input = &apos;&apos;;
+}
+
+created() {
+    EventBus.$on(&apos;add-note&apos;, event =&gt; this.noteCount++);
+}
+</code></pre><h3 id="vuex">VUEX</h3>
+<p>Structure:</p>
+<ul>
+<li><p>Action: Post data -&gt; Mutation</p>
+</li>
+<li><p>Mutation: Update state</p>
+</li>
+<li><p>Getter: Return part of state</p>
+</li>
+<li><p>Use state in components</p>
+</li>
+</ul>
+<h2 id="conditionals-directives">Conditionals directives</h2>
+<pre><code>&lt;div v-if=&quot;type === &apos;A&apos;&quot;&gt;
+  A
+&lt;/div&gt;
+&lt;div v-else-if=&quot;type === &apos;B&apos;&quot;&gt;
+  B
+&lt;/div&gt;
+&lt;div v-else-if=&quot;type === &apos;C&apos;&quot;&gt;
+  C
+&lt;/div&gt;
+&lt;div v-else&gt;
+  Not A/B/C
+&lt;/div&gt;
+</code></pre><h3 id="v-show">v-show</h3>
+<p>Para hacer toogle de la property display: none</p>
+<h2 id="bucle">Bucle</h2>
+<pre><code>&lt;ul id=&quot;example-1&quot;&gt;
+  &lt;li v-for=&quot;item in items&quot; :key=&quot;item.message&quot;&gt;
+    {{ item.message }}
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h2 id="key">Key</h2>
+<p>Vue intenta reutilizar los componentes cuando se usa v-if o v-for, asi que para
+mantener el estado correctamente, es necesario darle una key unica a cada elemento.</p>
+<pre><code class="lang-vue">&lt;template v-if=&quot;loginType === &apos;username&apos;&quot;&gt;
+  &lt;label&gt;Username&lt;/label&gt;
+  &lt;input placeholder=&quot;Enter your username&quot; key=&quot;username-input&quot;&gt;
+&lt;/template&gt;
+&lt;template v-else&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input placeholder=&quot;Enter your email address&quot; key=&quot;email-input&quot;&gt;
+&lt;/template&gt;
+</code></pre>
+<h2 id="events">Events</h2>
+<ul>
+<li>v-on:click | @click <pre><code class="lang-vue">&lt;button v-on:click=&quot;reverseMessage&quot;&gt;Reverse Message&lt;/button&gt;
+</code></pre>
+</li>
+</ul>
+<p>Other events: click, dblclick, drag, drop, mousedown, mouseenter, mouseleave, mousemove, mouseout, mouseover, mouseup</p>
+<h3 id="conditional-class-css">Conditional class css</h3>
+<pre><code class="lang-vue">private isActive = true
+
+&lt;div v-bind:class=&quot;{ active: isActive }&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>With a list of conditional classes</p>
+<pre><code class="lang-vue">&lt;div v-bind:class=&quot;[isActive ? activeClass : &apos;&apos;, errorClass]&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h1 id="keep-variable-state-updated-to-state">Keep variable state updated to state</h1>
+<h2 id="computed-with-getter">Computed with getter</h2>
+<p>Si se actualiza firstname o lastname, se actualiza automaticamente name</p>
+<pre><code class="lang-vue">private firstName = &quot;Jordi&quot;;
+private lastName = &quot;Santamaria&quot;
+
+get name() {
+  return this.firstName + this.lastName;
+}
+</code></pre>
+<h2 id="watch">Watch</h2>
+<p>Para reaccionar cuando cambia el estado de una variable.</p>
+<pre><code class="lang-vue">@Watch(&apos;tableDate&apos;)
+onChange() {
+    summaryTableModule.fetchSummaryTable(this.tableDate);
+}
+</code></pre>
+<h1 id="life-cycle">Life cycle</h1>
+<ul>
+<li><p>created: Inicialitzacio de variables</p>
+</li>
+<li><p>mounted</p>
+</li>
+<li><p>updated: Quan s&apos;ha actualitzat alguna prop i es 
+fa rerender.</p>
+</li>
+<li><p>destroy</p>
+</li>
+</ul>
+<h1 id="directives">Directives</h1>
+<h2 id="directives-arguments">Directives arguments</h2>
+<ul>
+<li>v-bind:href -&gt; href is an argument</li>
+</ul>
+<h1 id="design-patterns">Design patterns</h1>
+<h1 id="tests">Tests</h1>
+<p><a href="https://testing-library.com/docs/vue-testing-library/intro" target="_blank">https://testing-library.com/docs/vue-testing-library/intro</a></p>
+<h1 id="formularies">Formularies</h1>
+<ul>
+<li><p>two-way binding:</p>
+<pre><code>v-model
+</code></pre></li>
+<li><p>value / @input</p>
+</li>
+</ul>
+<h2 id="fields">Fields</h2>
+<pre><code>private fields = {
+    newItem: &apos;&apos;,
+    email: &apos;&apos;,
+    urgency: &apos;&apos;,
+    termsAndConditions: false
+}
+
+&lt;div class=&quot;field&quot;&gt;
+          &lt;label&gt;New Item&lt;/label&gt;
+          &lt;input v-model=&quot;fields.newItem&quot; type=&quot;text&quot;
+            placeholder=&quot;Add an item!&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;field&quot;&gt;
+          &lt;label&gt;Email&lt;/label&gt;
+          &lt;input v-model=&quot;fields.email&quot; type=&quot;text&quot;
+            placeholder=&quot;What&apos;s your email?&quot; /&gt;
+        &lt;/div&gt;
+</code></pre><h2 id="form-validation">Form Validation</h2>
+<pre><code>private fieldErrors = {
+    newItem: undefined,
+    email: undefined,
+    urgency: undefined,
+    termsAndConditions: undefined
+}
+private loading =  false
+private saveStatus = &apos;READY&apos; // &apos;SAVING&apos;, &apos;ERROR&apos;, &apos;SUCCESS&apos;
+
+validateForm(fields) {
+  const errors = {};
+  if (!this.$store.state.fields.newItem) {
+    errors.newItem = &quot;New Item Required&quot;;
+  }
+  if (!this.$store.state.fields.email) {
+    errors.email = &quot;Email Required&quot;;
+  }
+  if (!this.$store.state.fields.urgency) {
+    errors.urgency = &quot;Urgency Required&quot;;
+  }
+  if (!this.$store.state.fields.termsAndConditions) {
+    errors.termsAndConditions = &quot;Terms and conditions have to be approved&quot;;
+  }
+
+  if (this.$store.state.fields.email &amp;&amp;
+    !this.isEmail(this.$store.state.fields.email)) {
+    errors.email = &quot;Invalid Email&quot;;
+  }
+
+  return errors;
+},
+</code></pre><h2 id="field-validation">Field validation</h2>
+<p>With computed variables.</p>
+<pre><code>computed: {
+    isNewItemInputLimitExceeded() {
+      return this.fields.newItem.length &gt;= 20;
+    },
+    isNotUrgent() {
+      return this.fields.urgency === &apos;Nonessential&apos;;
+    }
+}
+</code></pre><h2 id="submit-form">Submit form:</h2>
+<pre><code>&lt;form @submit=&quot;submitForm&quot; class=&quot;ui form&quot;&gt;
+
+submitForm(evt) {
+  evt.preventDefault();
+
+  this.fieldErrors = this.validateForm(this.$store.state.fields);
+  if (Object.keys(this.fieldErrors).length) return;
+
+  const items = [
+    ...this.$store.state.items,
+    this.$store.state.fields.newItem
+  ];
+
+  this.saveStatus = &apos;SAVING&apos;;
+
+  this.$store.dispatch(&apos;saveItems&apos;, items)
+    .then(() =&gt; {
+      this.saveStatus = &apos;SUCCESS&apos;;
+    })
+    .catch((err) =&gt; {
+      console.log(err);
+      this.saveStatus = &apos;ERROR&apos;;
+    });
+}
+</code></pre><h2 id="submit-button-state">Submit button state</h2>
+<pre><code>&lt;button v-if=&quot;saveStatus === &apos;SAVING&apos;&quot;
+  disabled class=&quot;ui button&quot;&gt;
+  Saving...
+&lt;/button&gt;
+&lt;button v-if=&quot;saveStatus === &apos;SUCCESS&apos;&quot;
+  :disabled=&quot;isNewItemInputLimitExceeded || isNotUrgent&quot;
+  class=&quot;ui button&quot;&gt;
+  Saved! Submit another
+&lt;/button&gt;
+&lt;button v-if=&quot;saveStatus === &apos;ERROR&apos;&quot;
+  :disabled=&quot;isNewItemInputLimitExceeded || isNotUrgent&quot;
+  class=&quot;ui button&quot;&gt;
+  Save Failed - Retry?
+&lt;/button&gt;
+&lt;button v-if=&quot;saveStatus === &apos;READY&apos;&quot;
+  :disabled=&quot;isNewItemInputLimitExceeded || isNotUrgent&quot;
+  class=&quot;ui button&quot;&gt;
+  Submit
+&lt;/button&gt;
+</code></pre><h2 id="form-state-with-vuex">Form state with Vuex</h2>
+<p>Use value / @input instead of v-model</p>
+<p>When input is updated, commit MUTATION to store.</p>
+<pre><code>&lt;input :value=&quot;newItem&quot; @input=&quot;onInputChange&quot;
+    name=&quot;NEW_ITEM&quot; type=&quot;text&quot; placeholder=&quot;Add an item!&quot; /&gt;
+
+newItem = this.$store.state.fields.newItem
+
+onInputChange(evt) {
+  const element = evt.target;
+  const value =
+    element.name === &quot;TERMS_AND_CONDITIONS&quot;
+      ? element.checked
+      : element.value;
+  this.$store.commit(`UPDATE_${element.name}`, value);
+}
+</code></pre><h1 id="vue-router">vue-router</h1>
+<h2 id="basic">Basic</h2>
+<p>Con el setup, nos da acceso a <strong>this.$router</strong> y <strong>this.$route</strong> en los componentes.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> routes = [
+  { path: <span class="hljs-string">&apos;/foo&apos;</span>, component: Foo },
+  { path: <span class="hljs-string">&apos;/bar&apos;</span>, component: Bar }
+]
+
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes <span class="hljs-comment">// short for `routes: routes`</span>
+})
+
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  routes <span class="hljs-comment">// short for `routes: routes`</span>
+})
+</code></pre>
+<h2 id="named-routes">Named routes</h2>
+<p>En vez de hacer el routing por el slug, se puede hacer por name,
+es lo recomendado.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> routes: <span class="hljs-built_in">Array</span>&lt;RouteConfig&gt; = [
+  {
+    path: <span class="hljs-string">&quot;/&quot;</span>,
+    name: <span class="hljs-string">&quot;Home&quot;</span>,
+    component: Home
+  },
+  {
+    path: <span class="hljs-string">&quot;/about/:id&quot;</span>,
+    name: <span class="hljs-string">&quot;About&quot;</span>,
+    component: () =&gt;
+      <span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackChunkName: &quot;about&quot; */</span> <span class="hljs-string">&quot;../views/About.vue&quot;</span>)
+  }
+];
+
+&lt;router-link :to=&quot;{ name: &apos;Home&apos;}&quot;&gt;Home&lt;/router-link&gt; |
+&lt;router-link :to=&quot;{ name: &apos;About&apos;}&quot; &gt;About&lt;/router-link&gt;
+</code></pre>
+<h2 id="dynamic-routes">Dynamic routes</h2>
+<pre><code class="lang-javascript">const router = new VueRouter({
+  routes: [
+    // dynamic segments start with a colon
+    { path: &apos;/user/:id&apos;, component: User }
+  ]
+})
+
+&lt;router-link :to=&quot;{ name: &apos;About&apos;, params: { id: 4 }}&quot; &gt;About&lt;/router-link&gt;
+
+// comp.vue
+const id = this.$route.params.id
+</code></pre>
+<h3 id="re-render-when-router-params-change">Re-render when router params change</h3>
+<pre><code class="lang-vue">&lt;router-view :key=&quot;$route.path&quot; /&gt;
+</code></pre>
+<h3 id="params-as-props">Params as props</h3>
+<p>Definir props: true en la ruta</p>
+<pre><code class="lang-vue">const routes: Array&lt;RouteConfig&gt; = [
+  {
+    path: &quot;/about/:id&quot;,
+    name: &quot;About&quot;,
+    props: true,
+    component: () =&gt;
+      import(/* webpackChunkName: &quot;about&quot; */ &quot;../views/About.vue&quot;)
+  }
+];
+</code></pre>
+<p>Definir la prop en el comp:</p>
+<pre><code class="lang-vue">@Prop() private id!: number;
+</code></pre>
+<h2 id="active-link">Active link</h2>
+<p>Definido por defecto como</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.router-link-exact-active</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+<p>Se puede modificar en el router</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> Router({
+  linkExactActiveClass: <span class="hljs-string">&apos;link-active&apos;</span>
+})
+</code></pre>
+<h2 id="mode-history-remove--from-route">Mode history, remove # from route</h2>
+<p>Por defecto la ruta tiene el # asi: <a href="http://localhost:8080/#/" target="_blank">http://localhost:8080/#/</a></p>
+<p>Para solucionarlo:</p>
+<pre><code class="lang-vue">const router = new VueRouter({
+  mode: &quot;history&quot;,
+  routes
+});
+</code></pre>
+<h2 id="nested-routes">Nested routes:</h2>
+<p>Incluir en las rutas el children</p>
+<pre><code class="lang-vue">{
+      path: &quot;/destination/:slug&quot;,
+      name: &quot;DestinationDetails&quot;,
+      props: true,
+      component: () =&gt;
+        import(/* webpackChunkName: &quot;DestinationDetails&quot;*/ &quot;./views/DestinationDetails&quot;),
+      children: [
+        {
+          path: &quot;:experienceSlug&quot;,
+          name: &quot;experienceDetails&quot;,
+          props: true,
+          component: () =&gt;
+            import(/*webpackChunkName: &quot;ExperienceDetails&quot;*/ &quot;./views/ExperienceDetails&quot;)
+        }
+      ]
+    },
+</code></pre>
+<p>Y donde tiene que mostrarse la ruta nested</p>
+<pre><code class="lang-vue">&lt;router-view :key=&quot;$route.path&quot; /&gt;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../typeorm/" class="navigation navigation-prev " aria-label="Previous page: TypeOrm">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../webpack/" class="navigation navigation-next " aria-label="Next page: Webpack">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.8","depth":1,"next":{"title":"Webpack","level":"1.9","depth":1,"path":"webpack/index.md","ref":"webpack/index.md","articles":[]},"previous":{"title":"TypeOrm","level":"1.7","depth":1,"path":"typeorm/index.md","ref":"typeorm/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/index.md","mtime":"2020-12-15T05:40:10.973Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
