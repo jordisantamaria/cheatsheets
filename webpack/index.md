@@ -8,6 +8,12 @@ Run by package.json: webpack --config webpack.config.js
 
 By default, webpack include Ecmascript import modules.
 
+path: __dirname = nuestro directorio donde esta webpack
+
+Loaders … intérpretes, parsers y pre-procesadores
+
+Plugins … librerías, métodos que aportan funcionalidades particulares en JS al entorno de webpack
+
 # Basics
 
 ```javascript
