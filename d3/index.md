@@ -223,3 +223,54 @@ const dots = bounds.selectAll("circle")
       .attr("r", 4)
       .attr("fill", d => colorScale(colorAccessor(d)))
 ```
+
+# Bar chart
+
+A histogram is a bar chart that shows the distribution of one metric, with the metric values on the x axis and the frequency of values on the y axis.
+
+Los histogramas son más fáciles de leer cuando son más anchos que altos.
+
+## Create bins "barras"
+
+Con treshold decidimos el numero de barras que se crearan, es un numero aproximado y
+puede variar para adaptarse a intervalos mas facil de interpretar.
+
+```vue
+const binsGenerator = d3.histogram()
+  .domain(xScale.domain())
+  .value(metricAccessor)
+  .thresholds(12)
+
+  const bins = binsGenerator(dataset)
+```
+
+Tambien podemos marcar los intervalos literalmente:
+```vue
+.thresholds([0, 0.2, 0.4, 0.6, 0.8, 1])
+```
+
+## Calcular el yScale
+
+Queremos que el escalado sea de 0 al maximo de dias en un bin.
+Con nice le damos un valor redondo al max.
+
+```vue
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(bins, yAccessor)])
+  .range([dimensions.boundedHeight, 0])
+  .nice()
+```
+
+# Mediana
+
+```vue
+const mean = d3.mean(dataset, metricAccessor)
+
+const meanLine = bounds.append("line")
+    .attr("x1", xScale(mean))
+    .attr("x2", xScale(mean))
+    .attr("y1", -15)
+    .attr("y2", dimensions.boundedHeight)
+  .attr("stroke", "maroon")
+  .attr("stroke-dasharray", "2px 4px")
+```
