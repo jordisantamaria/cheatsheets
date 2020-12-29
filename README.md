@@ -1,6 +1,6 @@
 # Programming Cheat-sheets
 
-website: {{ book.website }}
+website: https://jordisantamaria.github.io/cheatsheets/
 
 Source code: https://github.com/jordisantamaria/cheatsheets
 
