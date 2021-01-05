@@ -12,3 +12,13 @@
 * [Python](python/index.md)
 * [Slackbot](slackbot/index.md)
 * [D3](d3/index.md)
+
+
+llegums
+
+deixar tota la nit a estobar
+en aigua calenta
+
+cigons:
+en aigua freda
+posarli alga kombu
