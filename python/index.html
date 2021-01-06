@@ -342,7 +342,47 @@ word[2:5]
 <p>Cast to string: str(text)
 Cast to int: int(text)
 to json: json.dumps([1, &apos;simple&apos;, &apos;list&apos;])</p>
+<h1 id="pipenv">Pipenv</h1>
+<p>Activar pipenv en el proyecto</p>
+<pre><code>pipenv shell
+</code></pre><h1 id="install-development-librarys">Install development librarys</h1>
+<p>Install both prod and dev librarsy</p>
+<pre><code>pipenv install --dev
+</code></pre><h2 id="install-new-librarys">Install new librarys</h2>
+<p>Incluye la libreria en Pipfile y Pipfile.lock</p>
+<pre><code>pipenv install flask==0.12.1
+</code></pre><h3 id="dev-librarys">Dev librarys</h3>
+<pre><code>pipenv install pytest --dev
+</code></pre><h2 id="generar-el-pipenvlock">Generar el Pipenv.lock</h2>
+<pre><code>pipenv lock
+</code></pre><h3 id="instalar-librerias-desde-pipenvlock">Instalar librerias desde Pipenv.lock</h3>
+<pre><code>pipenv install --ignore-pipfile
+</code></pre><h1 id="chardet">chardet</h1>
+<p>Detectar extension de fichero</p>
+<pre><code>import chardet
+encoding = chardet.detect(file_name_byte).get(&quot;encoding&quot;)
+</code></pre><h1 id="jsonpointer">jsonpointer</h1>
+<p>Para poder acceder a los datos de un json via url path</p>
+<pre><code>&gt;&gt;&gt; obj = {&quot;foo&quot;: {&quot;anArray&quot;: [ {&quot;prop&quot;: 44}], &quot;another prop&quot;: {&quot;baz&quot;: &quot;A string&quot; }}}
 
+&gt;&gt;&gt; resolve_pointer(obj, &apos;&apos;) == obj
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo&apos;) == obj[&apos;foo&apos;]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo/another%20prop&apos;) == obj[&apos;foo&apos;][&apos;another prop&apos;]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo/another%20prop/baz&apos;) == obj[&apos;foo&apos;][&apos;another prop&apos;][&apos;baz&apos;]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo/anArray/0&apos;) == obj[&apos;foo&apos;][&apos;anArray&apos;][0]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/some/path&apos;, None) == None
+True
+</code></pre>
                                 
                                 </section>
                             
@@ -385,7 +425,7 @@ to json: json.dumps([1, &apos;simple&apos;, &apos;list&apos;])</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.11","depth":1,"next":{"title":"Slackbot","level":"1.12","depth":1,"path":"slackbot/index.md","ref":"slackbot/index.md","articles":[]},"previous":{"title":"Webpack","level":"1.10","depth":1,"path":"webpack/index.md","ref":"webpack/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/index.md","mtime":"2020-12-25T08:33:33.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-29T09:17:01.726Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.11","depth":1,"next":{"title":"Slackbot","level":"1.12","depth":1,"path":"slackbot/index.md","ref":"slackbot/index.md","articles":[]},"previous":{"title":"Webpack","level":"1.10","depth":1,"path":"webpack/index.md","ref":"webpack/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/index.md","mtime":"2021-01-04T06:14:54.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-06T13:56:08.251Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

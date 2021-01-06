@@ -307,6 +307,32 @@
                                 
                                 <h1 id="ts-node">ts-node</h1>
 <p>Per a executar ts files sense fer build</p>
+<pre><code class="lang-bash">ts-node nombreFichero.ts
+</code></pre>
+<h1 id="variable-types">Variable types</h1>
+<p>any, undefined, null, number, string, boolean</p>
+<h1 id="interfaces">Interfaces</h1>
+<pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> Position {
+  x: <span class="hljs-built_in">number</span>;
+  y: <span class="hljs-built_in">number</span>;
+  name: <span class="hljs-built_in">string</span>;
+  isActive: <span class="hljs-built_in">boolean</span>;
+}
+
+<span class="hljs-keyword">interface</span> Map {
+  name: <span class="hljs-built_in">string</span>;
+  positions: Position[]
+}
+</code></pre>
+<h1 id="enum">Enum</h1>
+<pre><code class="lang-typescript"><span class="hljs-keyword">enum</span> PosType {
+  top,
+  left,
+  right,
+  bottom
+}
+<span class="hljs-keyword">const</span> top = PosType.top
+</code></pre>
 <h1 id="type-aliases">type aliases</h1>
 <p>Per a crear un nou tipus de variable simple.
 Ex:</p>
@@ -414,7 +440,7 @@ type StringsJSON = typeof strings;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Typescript","level":"1.7","depth":1,"next":{"title":"TypeOrm","level":"1.8","depth":1,"path":"typeorm/index.md","ref":"typeorm/index.md","articles":[]},"previous":{"title":"Node","level":"1.6","depth":1,"path":"node-backend/index.md","ref":"node-backend/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"typescript/index.md","mtime":"2020-12-15T05:40:10.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-29T09:17:01.726Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Typescript","level":"1.7","depth":1,"next":{"title":"TypeOrm","level":"1.8","depth":1,"path":"typeorm/index.md","ref":"typeorm/index.md","articles":[]},"previous":{"title":"Node","level":"1.6","depth":1,"path":"node-backend/index.md","ref":"node-backend/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"typescript/index.md","mtime":"2021-01-04T13:07:14.464Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-06T13:56:08.251Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
