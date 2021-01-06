@@ -2,6 +2,43 @@
 
 Per a executar ts files sense fer build
 
+```bash
+ts-node nombreFichero.ts
+```
+
+# Variable types
+
+any, undefined, null, number, string, boolean
+
+# Interfaces
+
+```typescript
+interface Position {
+  x: number;
+  y: number;
+  name: string;
+  isActive: boolean;
+}
+
+interface Map {
+  name: string;
+  positions: Position[]
+}
+```
+
+# Enum
+
+```typescript
+enum PosType {
+  top,
+  left,
+  right,
+  bottom
+}
+const top = PosType.top
+```
+
+
 # type aliases
 
 Per a crear un nou tipus de variable simple.
