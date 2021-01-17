@@ -78,12 +78,47 @@ to json: json.dumps([1, 'simple', 'list'])
 
 # Pipenv
 
-Activar pipenv en el proyecto
+Activar pipenv en el proyecto.
+
+Ademas incluye las variables de .env como var de entorno.
 ```
 pipenv shell
 ```
+Las variables de entorno se pueden usar en el Pipenv file.
+```
+[[source]]
+url = "https://$USERNAME:${PASSWORD}@mypypi.example.com/simple"
+verify_ssl = true
+name = "pypi"
+```
 
-# Install development librarys
+## Run scripts by pipenv
+
+It's possible to define bash scripts in Pipfile
+
+```
+[scripts]
+printspam = "python -c \"print('I am a silly example, no one would need to do this')\""
+```
+
+Then in terminal use `pipenv run printspam`
+
+It also accepts params, same as npm.
+
+```
+[scripts]
+echospam = "echo I am really a very silly example"
+```
+
+```
+$ pipenv run echospam "indeed"
+I am really a very silly example indeed
+```
+
+Available scripts: `pipenv scripts`
+
+
+## Install development librarys
 
 Install both prod and dev librarsy
 
