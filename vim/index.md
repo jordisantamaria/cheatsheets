@@ -4,11 +4,13 @@ vimrc: /usr/share/vim/
 
 # Saliendo:
 
+```
 :q
 :w
 :q! = salir sin guardar cambios
 :h ayuda
 :s "substitute": reemplaza un texto por otro
+```
 Sustituye foo por bar:
 ```
 s/foo/bar/g
@@ -199,7 +201,96 @@ Objetos de texo mas comunes:
 ```
 ~/.vim/vimrc
 ```
-Para ver la distancia de linias a saltar con **jk**
+
 ```
+# Para ver la distancia de linias a saltar con **jk**
 set relativenumber number
+# Para resaltar las busquedas que coinciden
+set hlsearch
+```
+
+# Haciendo scroll
+
+```
+Ctrl-e    Desplaza el texto hacia arriba una línea
+Ctrl-d    Desplaza media pantalla hacia arriba
+Ctrl-f    Desplaza una pantalla completa hacia arriba el texto
+Ctrl-y    Desplaza el texto hacia abajo una línea
+Ctrl-u    Desplaza media pantalla hacia abajo
+Ctrl-b    Desplaza una pantalla completa hacia abajo el texto
+```
+
+## Scroll hacia donde esta el cursor
+
+```
+zt    LLeva la línea actual donde está el cursor cerca de la parte superior de la pantalla
+zz    LLeva la línea actual donde está el cursor a la parte media de la pantalla
+zb    LLeva la línea actual donde está el cursor cerca de la parte inferior de la pantalla
+```
+
+# Navegación por busqueda
+
+```
+/    Busca hacia adelante una coincidencia
+?    Busca hacia atrás una coincidencia
+n    Repite la última búsqueda en la misma dirección que la búsqueda previa 
+N    Repite la última búsqueda en la dirección opuesta que la búsqueda previa
+```
+
+```
+:set hlsearch => para resaltar busquedas
+:noh or :nohlsearch => para quitar el resaltado
+```
+
+## Busquedas que coincidan con la palabra del cursor
+
+```
+*     Busca la palabra completa bajo el cursor hacia adelante
+#     Busca la palabra completa bajo el cursor hacia atrás
+g*    Busca la palabra bajo el cursor hacia adelante
+g#    Busca la palabra bajo el cursor hacia atrás
+```
+
+# Marcando posicion
+
+```
+ma    Marca una posición local, estableciendo la marca "a" en la posición actual del cursor
+mA    Marca una posición global
+'a    Salta a la línea donde se encuentra "a"
+:marks Lista de marcas creadas
+```
+
+# Modo insertar
+
+Formas de cambiar al modo insertar
+
+```
+i    Insertar texto antes del cursor.
+I    Insertar texto antes del primer carácter imprimible de la linea.
+a    Agregar texto después del cursor.
+A    Agregar texto al final de la linea.
+o    Crea una nueva línea debajo del cursor y cambia al modo insertar.
+O    Crea una nueva línea encima del cursor y cambia al modo insertar.
+s    Borra el carácter debajo del cursor y cambia al modo insertar.
+S    Borra la actual línea  y cambia al modo insertar.
+gi   Insertar texto en la misma posición donde el modo insertar fue detenido por última vez en al actual búfer.
+gI   Insertar texto al principio de una línea (columna 1)
+```
+
+Formas de salir del modo insertar 
+
+```
+<esc>    Salir del modo insertar y volver al modo normal
+Ctrl-[   Salir del modo insertar y volver al modo normal
+Ctrl-c   Similar a Ctrl-[ y <esc>, pero no controla las abreviaciones
+```
+
+## Borrar segmentos en el modo insertar
+
+También sirven para linea de comandos y modo Ex.
+
+```
+Ctrl-h    Borrar un carácter
+Ctrl-w    Borrar una palabra
+Ctrl-u    Borrar una línea entera
 ```
