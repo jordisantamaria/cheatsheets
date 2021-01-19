@@ -70,6 +70,7 @@ Objetos de texo mas comunes:
 
 - `y` copiar un texto "yank"
 - `d` eliminar un texto y guardarlo en registro
+- `D` Eliminar hasta final de linia
 - `c` "cambiar", eliminar un texto y guardarlo en registro y comenzar en modo insertar
 - `gu` cambiar a minusculas
 - `gU` cambiar a majusculas
@@ -142,12 +143,14 @@ Formas de cambiar al modo insertar
 - `gI` Al principio de una línea (columna 1)
 
 
-### Formas de salir del modo insertar 
+## Formas de salir del modo insertar 
 
 ```
 <esc>    Salir del modo insertar y volver al modo normal
 Ctrl-c   Similar a Ctrl-[ y <esc>, pero no controla las abreviaciones
 ```
+
+- Salir por solo 1 comando: `Ctrl-o`
 
 ## Borrar segmentos en el modo insertar
 
@@ -158,3 +161,10 @@ Ctrl-h    Borrar un carácter
 Ctrl-w    Borrar una palabra
 Ctrl-u    Borrar una línea entera
 ```
+
+# Comando del punto
+
+Repite el último comando de cambio
+
+- Borra repetidamente texto hasta **,** : `df,` ...
+- Repite el texto escrito en modo editar en la direccion segun el comando que se uso para entrar en modo editar: `hola mundo` ...
