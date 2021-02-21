@@ -298,7 +298,7 @@ Las reglas se recomienda poner Rule como incrementos de 100.
 Pueden servir por ejemplo para banear ciertas ips para que no puedan acceder a la red.
 Toman preferencia por delante de los grupos de seguridad.
 
-## VPC Flow logs.
+## VPC Flow logs
 
 Solucionar problemas por los que el trafico especifico no llega a la instancia.
 Problemas que los grupos de seguridad las reglas son demasiado resctrictivas.
@@ -309,3 +309,33 @@ Crear alarmas para notioficar si se detecta cierto tipo de trafico.
 Conectar varias vpc entre si. Relacion 1-1 entre 2 vpc.
 No tienen relacion transitivia, si A->B>C, A no puede comunicarse con C a partir de B.
 Se puede hacer VPC peering entre regiones y puede ser con otra VPC tuya o de otra cuenta.
+
+# Route53
+
+Servidor de DNS.
+
+## Tipos de enrutamiento
+
+- Enrutamiento simple: Entorno de servidor unico. Por ejemplo un el ip de un servidor web.
+- Asignar ponderaciones: Por ejemplo para test AB. Para mandar mas trafico en una zona que u otra.
+- Enrutamiento basado en latencia: Redirigiendo al servidor con menos latencia.
+- Comprobacion de estado y failover de DNS: Redirigir el trafico a un sitio de respaldo si falla.
+- Enrutamiento de geolocalizacion: Por ejemplo para poder presentar la web en el idioma del pais del usuario o restringir uso segun pais.
+
+# Code deploy blue/green
+
+LoadBalancer with 2 target groups, blue and green targetgroup.
+Blue targetgroup => Deployed resources
+Green targetgroup => Used to
+
+# Minio
+
+Object storage compatible amb AWS S3
+
+- Start with docker 
+
+```
+docker run -p 9000:9000 minio/minio server /data
+```
+
+- Access in localhost:9000 with default root credentials minioadmin:minioadmin
