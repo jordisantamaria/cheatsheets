@@ -42,3 +42,11 @@ Postgresql: https://roadmap.sh/postgresql-dba
 # Finding Job
 
 - Get your resume read: https://www.joelonsoftware.com/2004/01/26/getting-your-resume-read/
+
+
+
+# Cheatsheet websites
+
+- https://htmlreference.io/
+- cssreference.io
+- https://grid.malven.co/

@@ -1,6 +1,8 @@
 # Summary
 
 * [MARKDOWN](markdown/README.md)
+* [BASH](bash/index.md)
+* [TMUX](bash/tmux.md)
 * [Clean code](codigo limpio/index.md)
 * [GAS](googleAddons/index.md)
 * [Javascript](javascript/index.md)
@@ -13,12 +15,3 @@
 * [Slackbot](slackbot/index.md)
 * [D3](d3/index.md)
 
-
-llegums
-
-deixar tota la nit a estobar
-en aigua calenta
-
-cigons:
-en aigua freda
-posarli alga kombu

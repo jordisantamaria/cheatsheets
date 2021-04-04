@@ -1,52 +1,50 @@
-# Basics
+# Basic
 
-`man comando`: documentacion comando
-`~`: Alt+ñ root dir
-`pwd` print working directory   /Users/kuroneko/Desktop/
+```
+man [command]        # command documentation
+~                    # Home dir, Alt ñ
+pwd                  # Print working directory
+tree                 # Print folders structure as tree
+ls                   # List current directory content
+cd [path]            # Move to new path
+```
 
+# Move, copy, rename
 
-# Mover/copiar/renombrar
+```
+mv [filePath] [newFilePath]      # Move to new path, rename file if path dir is same
+cp [filePath] [newFilePath]      # Remove from origin and move to new file path
+cp -r [filePath] [newFilePath]   # Copy directory
+rm [filePath]                    # Remove a file
+rm -rd [filePath]                # Remove a directory
+mkdir [file]                     # Create directory
+mkdir -p [file]                  # Create directory and It's parents
+touch [file]                     # Create file
+```
 
+# Read | open file
 
-`mv fichero carpetaDestino` mover a mi ruta: mv fichero .
-`cp fichero carpetaDestino`
-`mv nombreFichero nombreFicheroNuevo`: renombrar
-copiar directorios incluidos: cp -r
+```
+open [fileName]                # Open file with default OS program
+open -a [program] [fileName]   # Open file with specific program
+more [fileName]                # Open file like man, showing start and scrolling It
+head {-n}                      # Open first n lines, 10 as default
+tail {-n}                      # Open last n lines, 10 as default
+cat [fileName]                 # Show file content
+```
 
-Borrar ficheros
+# Standard Input | Output
 
-rm NombreDelArchivo: Elimina el archivo indicado después de rm
-rm NombreDelDirectorio/* : Elimina todos los archivos que se encuentren dentro del directorio mencionado.
-rm -r NombreDelDirectorio: Elimina el directorio mencionado, junto todos los archivos y más directorios que se encontrarán dentro de él.
-Abrir / verContenido fichero   
-open nombreFichero
-open -a NombreDelPrograma NombreDelArchivo
-more NombreDelArchivo muestra el contenido del principio del fichero, con intro sigue hasta el final, en terminal
-tail “ultimas 10 linias”  tail -20 fichero
-head 20 fichero
-cat nombreArchivo   -> ver todo el contenido en terminal
-wc nombreArchivo	-> contador de líneas | palabras | caracteres en ese archivo
-wc -l nombreArchivo    -> contador de líneas de un archivo
-wc -c nombreArchivo   -> contador de caracteres de un archivo
- 
-Standard input / standard output
-STDIN = 0 <  “para pedir una tecla del usuario”
-STDOUT = 1 >
-STDERR = 2
-echo hola > hola.txt   “enviar el output al fichero”
-echo mundo >> hola.txt  “añadir contenido nuevo sin borrar el contenido actual”
-“| pipe” = Manda el STDOUT o el resultado a otro comando 
-Enviar resultado de STDOUT y Errores en ficheros distintos: echo 4 | php script.php 2> errores 1> resultado
-Filtrar texto grep
+```
+[input] > [output]       # Move input to output
+[input] >> [output]      # Append input at end of Output file
+[output] | [command]     # Move output as a input for a command, example to grep
+```
 
-cat * | grep hola     -> devuelve las linias que tienen el contenido hola
+## Example pipes usage
 
-Cambiar todas las ocurrencias de un caracter por otro tr
-
-cat emails.txt | tr ‘\n’ ‘,’
-
-Formatear texto con separadores awk
-
-Eliminar linias repetidos de un fichero uniq
-
-cat anki.txt | sort | uniq > import.txt
+```
+cat [fileName] | grep [text]   # Return lines having [text] of file
+cat [fileName] | sort [text]   # Return lines sorted
+cat [fileName] | uniq [text]   # Return unique lines
+```

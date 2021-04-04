@@ -35,9 +35,10 @@ word[-1] # n
 
 ```
 # characters from position 2 (included) to 5 (excluded)
-word[2:5]  
+word[2:5]
 # 'tho'
 ```
+
 Slicing indexs tienen defaults, delante a 0 y detras a la ultima pos
 
 ```
@@ -81,10 +82,13 @@ to json: json.dumps([1, 'simple', 'list'])
 Activar pipenv en el proyecto.
 
 Ademas incluye las variables de .env como var de entorno.
+
 ```
 pipenv shell
 ```
+
 Las variables de entorno se pueden usar en el Pipenv file.
+
 ```
 [[source]]
 url = "https://$USERNAME:${PASSWORD}@mypypi.example.com/simple"
@@ -117,7 +121,6 @@ I am really a very silly example indeed
 
 Available scripts: `pipenv scripts`
 
-
 ## Install development librarys
 
 Install both prod and dev librarsy
@@ -129,6 +132,7 @@ pipenv install --dev
 ## Install new librarys
 
 Incluye la libreria en Pipfile y Pipfile.lock
+
 ```
 pipenv install flask==0.12.1
 ```
@@ -187,3 +191,13 @@ True
 >>> resolve_pointer(obj, '/some/path', None) == None
 True
 ```
+
+# Regexp
+
+## search
+
+Returns true/false
+
+## sub
+
+Replace string

@@ -1,6 +1,6 @@
-# Vue basics
+# Best practices
 
-https://www.newline.co/books/fullstack-vue/how_to_get_the_most_book
+TODO
 
 # Js in html
 
