@@ -1,88 +1,135 @@
-# Text style:
+Basic
+===============================================================================
+
+- Scape formatting with `\`
+
+- Next line, leaving empty line
+
+
+Text style:
+===============================================================================
 
 ## Italics
-\_this_
 
-_this_
+`_italic_`
+
+_italic_
 
 ## Bold
-\**this\** o \__this\__
 
-**really**
+`**bold**`
 
-## Codigo
-1. < code > python -v </ code \>
+**bold**
 
-<code> python -v</code>
+## Code
 
-2. < pre > python -v </ pre \>
+- \`Single row code\`
 
-<pre>python -v</pre>
+`Single row code`
 
-### Codigo de bloque
-~ ~ ~
-python -v
-~ ~ ~
+- \`\`\`
 
-~~~
-python -v
-~~~
+    Multi
+    row
+    code
 
-## Citas
+   \`\`\`
 
-Se hacen con el caracter >
+```
+Multi
+row
+code
+```
 
-anidar empezando la segunda con >>
+## Quote
 
->Esto es una cita
->> Cita anidada
+```
+>A quote
+>>A nested code
+```
 
-## Evitar formato
-Escapar caracteres con \
-
-##Headers
-1. \#header1
-2. \##header2
-3. \###header3
-4. \####header4
-5. \#####header5
-6. \######header6
-
-#Links
-Structure \[text](link)
-
-[Visit GitHub!](www.github.com)
-
-##Links automaticos
-<  link >
-<http://www.limni.net>
-
-#Saltos de linia
-Dejar una linia en blanco entre parrafos
-
-Primera linia
-
-Segunda linia
-
-# Listas
-
-Empezar frase con *, + o - y espacio, anidar dejando 4 espacios
-
-* Lista
-    - Sublista
-
-## Listas ordenadas
-
-Empezarla con un numero + punto + espacio (1. )
-1. Primero de la Lista
-2. Segundo de la lista
+>A quote
+>>A nested code
 
 
+## Headers
 
-# Divisores, linias horizontales
-Usar ***, --- o ___ entre espacios en blanco
+1. \# header1
+```
+header1
+=======
+```
+2. \## header2
+3. \### header3
+4. \#### header4
+5. \##### header5
+6. \###### header6
+
+
+Links
+===============================================================================
+
+`[Text](link.com)`
+
+[Text](link.com)
+
+
+List
+===============================================================================
+
+```
+* Element
+- Element
++ Element
+    - Sub element
+```
+
+* Element
+- Element
++ Element
+    - Sub element
+
+## Ordered List
+
+```
+1. First element
+2. Second element
+3. Third element
+```
+
+1. First element
+2. Second element
+3. Third element
+
+
+Divider - horizontal line
+===============================================================================
+
+Use at least 3 of *, - or _ between empty lines
+
+```
 
 ***
 
-# Imagenes:
-\![Texto alternativo]\(/ruta/a/la/imagen.jpg "Título alternativo")
+---
+
+___
+
+```
+
+***
+
+---
+
+___
+
+
+Images
+===============================================================================
+
+```
+![Alternative text](path/image.jpg "ImageTitle")
+```
+
+![Alternative text](./image.jpg "ImageTitle")
+

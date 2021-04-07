@@ -2,7 +2,8 @@ S3
 ===============================================================================
 
 ```bash
-aws s3 ls  # list folders
+aws s3 ls                                             # list folders
+aws s3 cp s3://path_origin s3://path --recursive      # copy folder to new s3 bucket
 ```
 
 ECS

@@ -69,6 +69,14 @@ En el constructor incluimos las variables extras que necessitamos, que no cumple
 
 Nuestro punto de entrada. Casos de uso son nuestros features, servicios, acciones.
 
+### Servicio de aplicacion
+
+Un servicio solo se deberia comunicar idealmente con un solo repositorio, si un repositorio se tiene que acceder entre
+multiples servicios, es mejor crear un servicio de dominio de ese repositorio y usar ese servicio de dominio.
+
+El servicio solo se encarga de coger datos o insertar en bd y ya, si hay que hacer mas cosas, se puede hacer una
+cola de eventos, de forma que se hagan de forma asyncrona.
+
 ## Domain
 
 - Value objects
@@ -83,6 +91,7 @@ poder hacer un update, podemos comprobarlo con un servicio de dominio.
 
 Los servicios de aplicacion no se hablan entre si.
 No hace falta usar interfaces para extraer el servicio de dominio, porque es nuestro.
+
 
 
 ## Repository
@@ -106,6 +115,8 @@ Los value objects se crean en el controller, desde el Request object.
 
 Basicamente, para evitar hacer joins en base de datos y dar mucha responsabilidad a una clase, separamos
 cada join por una clase separada y nos quedamos solo con las foreign keys.
+
+Desde el agregate root, podemos gestionar para enviar eventos en cada accion del agragado.
 
 Por tanto pasamos de 
 ```

@@ -4,6 +4,13 @@ website: https://jordisantamaria.github.io/cheatsheets/
 
 Source code: https://github.com/jordisantamaria/cheatsheets
 
+# Nomenclature
+
+```
+[variable]     # Obligatory variable
+{variable}     # Optional variable
+```
+
 # How to collaborate
 
 1. Create a folder with a topic, and a .md file
