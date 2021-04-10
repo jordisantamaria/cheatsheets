@@ -1,5 +1,7 @@
 # Saliendo:
 
+
+
 ```javascript
 :q
 :w
@@ -133,3 +135,19 @@ set relativenumber number
 # Para resaltar las busquedas que coinciden
 set hlsearch
 ```
+
+# Install plugins
+
+Poner los plugins entre plug#begin y plug#end. Ejemplo:
+```
+call plug#begin('~/.vim/plugged')
+  Plug 'mattn/emmet-vim'
+  Plug 'preservim/nerdtree'
+call plug#end()
+```
+
+## Ejecutar cambios en plugins
+
+- Install: `:source %` `:PlugInstall`
+- Cleanup if remove plugins: `:PlugClean`
+

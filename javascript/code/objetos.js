@@ -1,36 +1,20 @@
-var Dice = function(){
-  this.sides = 6;
-  this.roll = function() {
-    return Math.floor(this.sides * Math.random() + 1)
-  }
+const timesFrames = {
+  'tf.ティータイム': 0,
+  'tf.ディナー': 23695,
+  'tf.ランチ': 39180,
+  'tf.貸切': 0,
+  'tf.部門外': -132,
+  'tf.ﾃｲｸｱｳﾄ/ﾃﾞﾘﾊﾞﾘｰ': 14150,
 }
-const a = new Dice()
-console.log("a = ", a);
 
-const obj = {
-  x: 5,
-  y: 10,
-  setCoord(x,y) {
-    this.x = x;
-    this.y = y;
+const timeFramesArray = Object.keys(timesFrames)
+.map((key, index) => {
+  console.log(key);
+  console.log(timesFrames[key]);
+  return {
+    name: key.replace('tf.', ''),
+    value: timesFrames[key]
   }
-}
-obj.x
-obj.y
-obj.setCoord(0,0)
-console.log('obj = ', obj);
+})
 
-const Coord = function(x,y) {
-  this.x = x;
-  this.y = y;
-  this.setCoord = function (x,y) {
-    this.x = x;
-    this.y = y;
-  }
-}
-const coord = new Coord(4,5);
-console.log('coord = ', coord);
-coord.setCoord(0,0)
-console.log('coord = ', coord);
-
-new Promise()
+console.log(timeFramesArray)

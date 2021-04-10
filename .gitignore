@@ -15,3 +15,5 @@ _book
 *.epub
 *.mobi
 .idea
+.undodir
+.DS_STORE

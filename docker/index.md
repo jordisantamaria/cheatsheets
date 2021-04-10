@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 Docker sirve para ejecutar aplicaciones en un sistema operativo personalizado, ese sistema se configura en una docker image con el DockerFile.
 En los docker containers, corrremos esa imagen dentro de docker.
 
