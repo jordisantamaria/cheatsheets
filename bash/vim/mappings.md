@@ -124,17 +124,21 @@ Editing Text
 # Operators
 
 ```
-d                    # Delete text and yank to noname register
-dd                   # Delete line
-D                    # Delete line
-c                    # Change, same as delete but change to insert mode
-cc                   # Change line
-C                    # Change line
-{"[register]}y       # Yank (copy text)
-gu                   # To lowercase
-gU                   # To Uppercase
-=                    # Fix identation
-R                    # Replace with yank text*
+d                             # Delete text and yank to noname register
+dd                            # Delete line
+D                             # Delete line
+c                             # Change, same as delete but change to insert mode
+cc                            # Change line
+C                             # Change line
+{"[register]}y                # Yank (copy text)
+gu                            # To lowercase
+gU                            # To Uppercase
+=                             # Fix identation
+
+R                             # Replace with yank text*
+cs[curent][new]               # Change surround*
+ys[motion][surround]          # Include surround*
+ds[surround]                  # Remove surround*
 ```
 
 # Objects
@@ -172,11 +176,11 @@ Edit
 ===============================================================================
 
 ```
-leader-/           # Comment line
-crs                # Word to snake_case
-crc                # Word to camelCase
-crm                # Word to capitalize
-cr<space>          # Separate word parts with space
+leader-/           # Comment line*
+crs                # Word to snake_case*
+crc                # Word to camelCase*
+crm                # Word to capitalize*
+cr<space>          # Separate word parts with space*
 <                  # Tabulate left*
 >                  # Tabulate right*
 ```
@@ -230,4 +234,14 @@ C-y         # Top 1 line
 zz          # Center to cursor
 zt          # Cursor in top
 zb          # Cursor in bottom
+```
+
+Quicklist
+===============================================================================
+
+-R means read only, to prevent changes
+
+```
+:vimgrep -R [regex] [glob file]  # Find regex in files and put in quicklist
+:grep -R [regex] [glob file]     # Same but with OS grep instead of vim grep
 ```
