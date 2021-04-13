@@ -11,8 +11,10 @@ f'Results of the {year} {event}'
 ## Multiline string
 
 ```
-text = ('Put several strings within parentheses '
-       'to have them joined together.')
+text = (
+	'Put several strings within parentheses '
+  'to have them joined together.'
+)
 ```
 
 ## Operaciones aritmeticas con strings
@@ -26,7 +28,7 @@ text = ('Put several strings within parentheses '
 
 ```
 word = 'Python'
-word[1] #y
+word[1] # y
 word[-1] # n
 
 ```
@@ -193,6 +195,8 @@ True
 ```
 
 # Regexp
+
+import re
 
 ## search
 

@@ -121,7 +121,7 @@ Editing Text
 
 [operator][motion | object]
 
-# Operators
+## Operators
 
 ```
 d                             # Delete text and yank to noname register
@@ -141,7 +141,7 @@ ys[motion][surround]          # Include surround*
 ds[surround]                  # Remove surround*
 ```
 
-# Objects
+## Objects
 
 ```
 iw          # Word
