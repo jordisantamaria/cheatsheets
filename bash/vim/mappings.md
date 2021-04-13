@@ -268,3 +268,8 @@ leader-sc        # Search and jump to commit by telescope
 leader-sC        # Search and jump to current branch commits by telescope
 leader-ss        # Search and jump to changed files by telescope
 ```
+
+```
+random
+change
+```
