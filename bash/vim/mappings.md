@@ -245,3 +245,26 @@ Quicklist
 :vimgrep -R [regex] [glob file]  # Find regex in files and put in quicklist
 :grep -R [regex] [glob file]     # Same but with OS grep instead of vim grep
 ```
+
+Git
+===============================================================================
+
+```
+:G               # Git status
+leader-gb        # Git blame
+leader-gB        # Open file in remote repo
+leader-gd        # File diff
+leader-gR        # Revert buffer changes
+leader-go        # Open remote repo
+
+leader-g1        # DiffGet left in merge
+leader-g3        # DiffGet right in merge
+
+
+leader-qg        # Quickfix git commits changes
+
+leader-sb        # Search and jump to branch by telescope
+leader-sc        # Search and jump to commit by telescope
+leader-sC        # Search and jump to current branch commits by telescope
+leader-ss        # Search and jump to changed files by telescope
+```
