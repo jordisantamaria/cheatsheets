@@ -1,6 +1,10 @@
-# Strings
+Strings
+===============================================================================
 
-## Formated strings
+
+## Writing strings
+
+- Formated with variables
 
 ```
 year = 2016
@@ -8,7 +12,7 @@ event = 'Referendum'
 f'Results of the {year} {event}'
 ```
 
-## Multiline string
+- Multi line string
 
 ```
 text = (
@@ -17,69 +21,136 @@ text = (
 )
 ```
 
-## Operaciones aritmeticas con strings
+- Raw string, (without formating especial characters)
 
 ```
-3 * 'un' + 'ium'
-# 'unununium'
+text = r'C:\some\name'     # 'C:\some\name'
 ```
 
-## Indexando
+
+## Operations with strings
+
+```
+3 * 'un' + 'ium'                     # 'unununium'
+str.split(sep, maxsplit)             # Split by sep in max indexes of maxsplit
+str.capitalize()                     # First letter uppercase
+str.lower()
+str.upper()
+str.find(x)                          # Find x value in string and return It's index
+str.format()                         # "user={} password={}".format(user, pwd)
+str.strip()                          # Return a string with leading characters removed
+str.replace(old, new)
+str.splitlines()                     # Split \n or \r into array
+'MiscTests'.removesuffix('Tests')    # 'Misc'
+'TestHook'.removeprefix('Test')      # 'Hook'
+```
+
+Type casting
+===============================================================================
+
+```
+str(variable)      # Cast anything to string
+int(variable)      # Cast anything to int, If not possible, ValueError
+```
+
+Conditionals
+===============================================================================
+
+```
+if
+elif
+else
+
+<
+>
+==
+is              # variable is True  (use is to check True/False instead of ==)
+in              # 1 in [1,2,3] => True
+not
+
+and
+or
+```
+
+Arrays
+===============================================================================
+
+## Indexing
 
 ```
 word = 'Python'
-word[1] # y
-word[-1] # n
+word[1]              # 'y'
+word[-1]             # 'n'
+word[:3]             # 'Pyt'
+word[3:]             # 'hon'
+word[3:3]            # ''
+word[::2]            # Pto, step = 2
+```
+
+## Iterables
+
+
+```
+range(0,4)                         # inmutable array [0,1,2,3]
+[1,2,3,4]                          # List
+"strings"                          # String
+{'jack': 4098, 'sape': 4139}       # Dict
+(1,2,3)                            # Tuple
+{1,2,3}                            # Set
+
+list([Iterable])                   # Syntax [1,2,3]
+set([Iterable])                    # Unique values, Syntax {1,2,3}
+tuple([Iterable])                  # Syntax (1,)
+dict([Iterable])                   # Syntax {'jack': 4098, 'sape': 4139}
+map([function],[Iterable])         # It's like js arr.map, but returns Iterable instead of list
 
 ```
 
-## Slicing
+
+
+## Common operations
 
 ```
-# characters from position 2 (included) to 5 (excluded)
-word[2:5]
-# 'tho'
+x in array                        # True If found x
+x not in array                    # True If NOT found x
+                               
+array[i:j] = []                   # Remove indices from array
+del array[i]                      # Remove index from array
+                               
+array1 + array2                   # Concatenate arrays
+[*array1, *array2]                # Concatenate arrays
+                               
+array2 = array[:]                 # Copy array to array2
+                               
+array.append(x)                   # Add x to end of array
+array.insert(i,x)                 # Add x to i index
+array.pop(i)                      # Return and remove index i from array
+array.remove(x)                   # Remove first value x of array
+                               
+len(array)                        # Length | size of array
+min(array)                        # Minium value of array
+max(array)                        # Maximum value of array
+                               
+array.index(x)                    # Index of first ocurrence of x
+array.count(x)                    # Total number of ocurrences of x
 ```
 
-Slicing indexs tienen defaults, delante a 0 y detras a la ultima pos
+## List
 
 ```
-word[:2] + word[2:]
+list.sort()           # Sort list, void method
 ```
 
-## Tamaño
+### List comprensions
 
 ```
-len(word)
+[x*2 for x in [1,2,3]]
 ```
 
-# Print strings
 
-## Raw string, sin formatear characteres especiales
+Pipenv
+===============================================================================
 
-```
->>> print(r'C:\some\name')
-```
-
-## Multiple linia, manteniendo formato
-
-Para que no genere el salto de linia extra, se usa \
-
-```
-print("""\
-   Usage: thingy [OPTIONS]
-        -h                        Display this usage message
-        -H hostname               Hostname to connect to\
-""")
-```
-
-# Conversiones de tipo
-
-Cast to string: str(text)
-Cast to int: int(text)
-to json: json.dumps([1, 'simple', 'list'])
-
-# Pipenv
 
 Activar pipenv en el proyecto.
 
@@ -94,8 +165,6 @@ Las variables de entorno se pueden usar en el Pipenv file.
 ```
 [[source]]
 url = "https://$USERNAME:${PASSWORD}@mypypi.example.com/simple"
-verify_ssl = true
-name = "pypi"
 ```
 
 ## Run scripts by pipenv
@@ -147,13 +216,13 @@ pipenv install flask==0.12.1
 pipenv install pytest --dev
 ```
 
-## Generar el Pipenv.lock
+## Generate Pipenv.lock
 
 ```
 pipenv lock
 ```
 
-### Instalar librerias desde Pipenv.lock
+### Install libraries from Pipenv.loc
 
 ```
 pipenv install --ignore-pipfile
