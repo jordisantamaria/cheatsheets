@@ -57,6 +57,14 @@ V               # Visual line mode
 C-v             # Visual block mode
 ```
 
+# To command line
+
+```
+:               # Command line
+q:              # Buffer with commands history for edit them.
+c-f             # From command line to command line buffer
+```
+
 Move with Motions
 ===============================================================================
 
@@ -110,7 +118,7 @@ T [letter]          # Find and go to letter -1 in left direction
 )                   # Go to next paragraph border (line before empty line or empty line)
 M                   # Middle of screen
 
-[n]g                # Go to line n
+[n]G                # Go to line n
 gg                  # Go to start file
 G                   # Go to end file
 [n]%                # Go to n % of file
@@ -209,12 +217,13 @@ Command Line
 ===============================================================================
 
 ```
-C-b          # Start of line
-C-e          # End of line
-C-u          # Remove until line start
-C-w          # Remove last word
-C-r          # Paste register
-!            # Run external program
+C-b               # Start of line
+C-e               # End of line
+C-u               # Remove until line start
+C-w               # Remove last word
+C-r               # Paste register
+!                 # Run external program
+:read ![cmd]      # Copy output of command to vim buffer
 ```
 
 
@@ -253,8 +262,8 @@ Git
 :G               # Git status
 leader-gb        # Git blame
 leader-gB        # Open file in remote repo
-leader-gd        # File diff
-leader-gR        # Revert buffer changes
+leader-gd        # File git diff
+leader-gR        # Revert buffer changes, rollback current file
 leader-go        # Open remote repo
 
 leader-g1        # DiffGet left in merge
@@ -269,7 +278,96 @@ leader-sC        # Search and jump to current branch commits by telescope
 leader-ss        # Search and jump to changed files by telescope
 ```
 
+## Git status
+
 ```
-random
-change
+c-n         # Next
+c-p         # Prev
+
+-           # toogle stage/unstage
+s           # stage
+x           # Rollback changes
+
+dv          # Git diff
 ```
+
+## Git blame
+
+```
+-          # Open file version on that commit
+q          # Close git blame
+```
+
+
+Jumps
+===============================================================================
+
+```
+/                      # Find down
+?                      # Find up
+s                      # Write 3 letters to find word, then press It's highlight letter to jump
+
+c-o                    # Go to Last Jump
+c-i                    # Revert c-o
+```
+
+
+
+Marks
+===============================================================================
+
+
+
+Registers
+===============================================================================
+
+
+Windows
+===============================================================================
+
+```
+c-wr               # Rotate, swap windows
+c-wt               # Top, go to left top window
+c-wK               # Window full width
+c-wH               # Window full height
+c-wo               # Close other windows
+
+c-h                # Go to left window
+c-j                # Go to bottom window
+c-k                # Go to top window
+c-l                # Go to right window
+
+alt-l              # Increase window size horizontal
+alt-h              # Decrease window size horizontal
+alt-j              # Increase window size vertically
+alt-k              # Decrease window size vertically
+
+c-w=               # = size all windows
+```
+
+Visual Model
+===============================================================================
+
+## Visual Block mode
+
+```
+x             # Remove char in all lines selected
+r             # Change Character in all lines
+c             # Remove selected text, written text will appear in all lines
+A             # Append text after cursor to all lines
+LA            # Append text on end line to all lines
+I             # Append text before cursor to all lines
+Llj           # Append text on end line alineate to longer line
+```
+
+
+
+TODO replace in project 'literals', without depend of lsp sagas
+
+TODO C-v change all lines at same time
+
+
+var foo = 1
+var bar = 'a'
+var foobar = foo + bar
+

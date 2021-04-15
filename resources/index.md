@@ -50,3 +50,10 @@ Postgresql: https://roadmap.sh/postgresql-dba
 - https://htmlreference.io/
 - cssreference.io
 - https://grid.malven.co/
+
+
+# Vue | Front end
+
+- Component driven development: https://www.componentdriven.org/
+	
+- To find libraries: https://awesomejs.dev/
