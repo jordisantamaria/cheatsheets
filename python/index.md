@@ -32,17 +32,22 @@ text = r'C:\some\name'     # 'C:\some\name'
 
 ```
 3 * 'un' + 'ium'                     # 'unununium'
-str.split(sep, maxsplit)             # Split by sep in max indexes of maxsplit
+str.format()                         # "user={} password={}".format(user, pwd)
+str.strip()                          # Return a string with leading characters removed
+
 str.capitalize()                     # First letter uppercase
 str.lower()
 str.upper()
+
 str.find(x)                          # Find x value in string and return It's index
-str.format()                         # "user={} password={}".format(user, pwd)
-str.strip()                          # Return a string with leading characters removed
 str.replace(old, new)
 str.splitlines()                     # Split \n or \r into array
 'MiscTests'.removesuffix('Tests')    # 'Misc'
 'TestHook'.removeprefix('Test')      # 'Hook'
+
+list = str.split(sep, maxsplit)      # Split by sep in max indexes of maxsplit
+",".join(list)
+
 ```
 
 Type casting
@@ -61,11 +66,13 @@ if
 elif
 else
 
+"true" if val == True else "false"        # Ternary operator
+
 <
 >
 ==
-is              # variable is True  (use is to check True/False instead of ==)
-in              # 1 in [1,2,3] => True
+is                                        # variable is True  (use is to check True/False instead of ==)
+in                                        # 1 in [1,2,3] => True
 not
 
 and
@@ -87,16 +94,26 @@ word[3:3]            # ''
 word[::2]            # Pto, step = 2
 ```
 
-## Iterables
-
+## Iteration
 
 ```
-range(0,4)                         # inmutable array [0,1,2,3]
+for item in ["a", "b", "c"]:
+for i in range(4):                       # 0 to 3
+for i in range(4, 8):                    # 4 to 7
+for i in range(1, 9, 2):                 # 1, 3, 5, 7
+for key, val in dict.items():
+for index, item in enumerate(list):
+```
+
+## Iterables
+
+```
+range(0,4)                         # iterable to use in loops => [0,1,2,3]
 [1,2,3,4]                          # List
 "strings"                          # String
 {'jack': 4098, 'sape': 4139}       # Dict
-(1,2,3)                            # Tuple
-{1,2,3}                            # Set
+(1,2,3)                            # Tuple: Inmutable array
+{1,2,3}                            # Set: Unique values
 
 list([Iterable])                   # Syntax [1,2,3]
 set([Iterable])                    # Unique values, Syntax {1,2,3}
@@ -105,8 +122,6 @@ dict([Iterable])                   # Syntax {'jack': 4098, 'sape': 4139}
 map([function],[Iterable])         # It's like js arr.map, but returns Iterable instead of list
 
 ```
-
-
 
 ## Common operations
 
@@ -119,14 +134,14 @@ del array[i]                      # Remove index from array
                                
 array1 + array2                   # Concatenate arrays
 [*array1, *array2]                # Concatenate arrays
-                               
+
 array2 = array[:]                 # Copy array to array2
                                
 array.append(x)                   # Add x to end of array
 array.insert(i,x)                 # Add x to i index
 array.pop(i)                      # Return and remove index i from array
 array.remove(x)                   # Remove first value x of array
-                               
+
 len(array)                        # Length | size of array
 min(array)                        # Minium value of array
 max(array)                        # Maximum value of array
@@ -137,15 +152,128 @@ array.count(x)                    # Total number of ocurrences of x
 
 ## List
 
+- Operations
+
 ```
 list.sort()           # Sort list, void method
 ```
 
-### List comprensions
+- List comprehensions
 
 ```
-[x*2 for x in [1,2,3]]
+[fn(i) for i in list]                  # .map
+map(fn, list)                          # .map, returns iterator
+                                       
+filter(fn, list)                       # .filter, returns iterator
+[fn(i) for i in list if i > 0]         # .filter.map
 ```
+
+- Lambda expressions
+
+```
+TODO
+```
+
+## Dict
+
+```
+dict.keys()
+dict.values()
+"key" in dict                 # let's say this returns False, then...
+dict["key"]                   # ...this raises KeyError
+dict.get("key")               # ...this returns None
+```
+
+Open files
+===============================================================================
+
+- Open with `with` to auto close file and avoid need to use try catch
+
+```
+with open('filename') as file:
+  data = file.read()
+```
+
+
+POO
+===============================================================================
+
+- Class
+
+```
+class ClassName:
+  def __init__()
+```
+
+- Private variables starts with `__` or `_` for convention.
+
+```
+def __update(self):
+```
+
+- Inheritance
+
+```
+class MyClass(BaseClass):
+  def __init__():
+    super().__init__()
+```
+
+- Abstract class
+
+```
+from abc import ABC, abstractmethod
+
+class MyClass(ABC):
+  @abstractmethod
+  def method_name(self):
+      pass
+```
+
+Standard Library
+===============================================================================
+
+Check Documentation of library
+
+```
+import os
+help(os)
+```
+
+## OS
+
+```
+import os
+
+os.getcwd()                # Get current working directory
+os.chdir()                 # Change current working directory
+os.system('mkdir foo')     # Execute system commands
+os.getenv('ENV')           # Get environment variable
+os.makedirs('path')        # Generate all not existing dirs of given path
+```
+
+## Shutil
+
+```
+import shutil
+
+shutil.move(old_dir, new_dir)     # Move dir/file to new dir/file
+shutil.rmtree(dir)                # Remove directory
+```
+
+## Sys
+
+For run python with arguments
+
+```
+python demo.py one two three
+
+import sys
+print(sys.argv)        # ['demo.py', 'one', 'two', 'three']
+```
+
+## Re (regular expressions)
+
 
 
 Pipenv
