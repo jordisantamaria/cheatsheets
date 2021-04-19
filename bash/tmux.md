@@ -21,23 +21,24 @@ Paste text `prefix-]`
 # WINDOWS AND PANES
 
 ```
-prefix-!                 # convert pane to new window
-prefix-:join-pane -s 1   # convert window to pane in format [session_name]:[window].[pane]
+prefix-!                             # convert pane to new window
+prefix-.                             # Join to this window, pane number*
 
-prefix-c                 # Create window
-prefix-,                 # Rename window
-prefix-&                 # Close current window
-prefix-x                 # Close pane
-prefix-p                 # Previous window
-prefix-n                 # Next window
+prefix-c                             # Create window
+prefix-,                             # Rename window
+prefix-&                             # Close current window
+prefix-x                             # Close pane
+prefix-p                             # Previous window
+prefix-n                             # Next window
 
-prefix-v                 # vertical pane
-prefix-h                 # horizontal pane
-prefix-|                 # vertical pane same dir, from outside nvim
-prefix--                 # horizontal pane same dir, from outside nvim
-prefix-z                 # Zoom pane
-prefix-space             # Rotate pane
-prefix-{                 # Switch pane
+prefix-v                             # vertical pane
+prefix-h                             # horizontal pane
+prefix-|                             # vertical pane same dir, from outside nvim
+prefix--                             # horizontal pane same dir, from outside nvim
+
+prefix-z                             # Zoom pane
+prefix-space                         # Rotate pane
+prefix-{                             # Switch pane
 ```
 
 # SESSIONS

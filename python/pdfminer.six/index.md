@@ -1,4 +1,4 @@
-pdfminer esta deprecated, asi que se usa el .six
+pdfminer is deprecated, so .six is the one used.
 https://pdfminersix.readthedocs.io/en/latest/index.html
 
 # Install
@@ -10,6 +10,7 @@ pip install pdfminer.six
 # From console
 
 ## pdf2txt.py
+
 Read all pdf file text
 ```
 pdf2txt.py example.pdf
@@ -31,7 +32,7 @@ Can be used to extract the internal structure from a PDF
 
 # From python
 
-Para mostrar el texto
+To show pdf file text
 
 ```
 from pdfminer.high_level import extract_text

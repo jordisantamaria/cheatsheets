@@ -8,7 +8,7 @@ pipenv install pytest
 
 # Run test
 
-pytest ejecuta ficheros del formato `test_*.py` o `*_test.py`
+pytest execute files of format `test_*.py` or `*_test.py`
 
 -q (quiet) mode
 
@@ -16,27 +16,10 @@ pytest ejecuta ficheros del formato `test_*.py` o `*_test.py`
 pytest -q
 ```
 
-# Assert exceptions
-
-Con **raises**
-
-```
-# content of test_sysexit.py
-import pytest
-
-
-def f():
-    raise SystemExit(1)
-
-
-def test_mytest():
-    with pytest.raises(SystemExit):
-        f()
-```
 
 # Group multiple tests in a class
 
-Las funciones tienen que tener el formato **test_something** o seran ignoradas.
+Functions have to follow naming convention for run the test as **test_function_name** or will be ignored.
 
 ```
 class TestClass:
