@@ -207,6 +207,7 @@ x                  # Remove character
 ```
 
 ## Insert mode
+
 ```
 C-u          # Remove until line start
 C-w          # Remove last word
@@ -222,6 +223,7 @@ C-e               # End of line
 C-u               # Remove until line start
 C-w               # Remove last word
 C-r               # Paste register
+C-r C-w           # Paste cursor word
 !                 # Run external program
 :read ![cmd]      # Copy output of command to vim buffer
 ```

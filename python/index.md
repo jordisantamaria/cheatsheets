@@ -1,7 +1,6 @@
 Strings
 ===============================================================================
 
-
 ## Writing strings
 
 - Formated with variables
@@ -50,13 +49,16 @@ list = str.split(sep, maxsplit)      # Split by sep in max indexes of maxsplit
 
 ```
 
+
 Type casting
 ===============================================================================
 
 ```
 str(variable)      # Cast anything to string
 int(variable)      # Cast anything to int, If not possible, ValueError
+float(variable)    # Cast anything to float, If not possible, ValueError
 ```
+
 
 Conditionals
 ===============================================================================
@@ -78,6 +80,7 @@ not
 and
 or
 ```
+
 
 Arrays
 ===============================================================================
@@ -131,12 +134,12 @@ x not in array                    # True If NOT found x
                                
 array[i:j] = []                   # Remove indices from array
 del array[i]                      # Remove index from array
-                               
+
 array1 + array2                   # Concatenate arrays
 [*array1, *array2]                # Concatenate arrays
 
 array2 = array[:]                 # Copy array to array2
-                               
+
 array.append(x)                   # Add x to end of array
 array.insert(i,x)                 # Add x to i index
 array.pop(i)                      # Return and remove index i from array
@@ -148,6 +151,10 @@ max(array)                        # Maximum value of array
                                
 array.index(x)                    # Index of first ocurrence of x
 array.count(x)                    # Total number of ocurrences of x
+
+[x, y] = [10, 20]                 # Destructuring
+[x, *rest] = [1,2,3,4]            # x = 1, rest = [2,3,4]
+[x, *_, last] = [1,2,3,4]         # with *_ we ignore values, x = 1, last = 4
 ```
 
 ## List
@@ -171,7 +178,11 @@ filter(fn, list)                       # .filter, returns iterator
 - Lambda expressions
 
 ```
-TODO
+func = lambda [args] : [return value]
+
+function = lambda x: x.split()
+function('  hello   ')               # 'hello'
+
 ```
 
 ## Dict
@@ -184,34 +195,68 @@ dict["key"]                   # ...this raises KeyError
 dict.get("key")               # ...this returns None
 ```
 
-Open files
+- Destructuring
+
+```
+numbers = {"one": 1, "two": 2, "three": 3}
+letters = {"a": "A", "b": "B", "c": "C"}
+combination = {**numbers, **letters}
+# {'one': 1, 'two': 2, 'three': 3, 'a': 'A', 'b': 'B', 'c': 'C'}
+```
+
+
+File manipulation
 ===============================================================================
+
+## Read
 
 - Open with `with` to auto close file and avoid need to use try catch
 
 ```
 with open('filename') as file:
-  data = file.read()
+  data = file.read()                  # Return string with all text
+  data = file.readLine()              # Read one line
+  data = file.readlines()             # Return array of lines
 ```
 
+## Write
+
+- Overwrite
+
+```
+with open("hello.txt", "w") as file:
+file.write("Hello World") 
+
+text_lines = ["First line", "Second line", "Last line"]
+file.writelines(text_lines)
+```
+
+- Append
+
+```
+with open("Hello.txt", "a")               # open in append mode
+  file.write("Hello World again")
+```
 
 POO
 ===============================================================================
 
-- Class
+## Class
 
 ```
 class ClassName:
   def __init__()
 ```
 
-- Private variables starts with `__` or `_` for convention.
+## Private variables
+
+Starts with `__` or `_` for convention.
 
 ```
 def __update(self):
 ```
 
-- Inheritance
+## Inheritance
 
 ```
 class MyClass(BaseClass):
@@ -219,7 +264,7 @@ class MyClass(BaseClass):
     super().__init__()
 ```
 
-- Abstract class
+## Abstract class
 
 ```
 from abc import ABC, abstractmethod
@@ -272,23 +317,207 @@ import sys
 print(sys.argv)        # ['demo.py', 'one', 'two', 'three']
 ```
 
-## Re (regular expressions)
+## Chardet
 
+Detects file encoding, It requires bytes array, so open file in read bytes mode `rb`.
+
+```
+import chardet
+
+with open(utf8_path, "rb") as f:
+    byte_array = f.read()
+    encoding = chardet.detect(byte_array)["encoding"]
+    assert encoding == "UTF-8-SIG"
+```
+
+## Jsonpointer
+
+Access json data in url path format.
+
+```
+from jsonpointer import resolve_pointer
+
+obj = {
+    "foo": {
+        "anArray": [
+            {"prop": 44}
+        ],
+        "another prop": {
+            "baz": "A string"
+        }
+    }
+}
+
+resolve_pointer(obj, '') == obj
+
+resolve_pointer(obj, '/foo') == obj['foo']
+
+resolve_pointer(obj, '/foo/another%20prop') == obj['foo']['another prop']
+
+resolve_pointer(obj, '/foo/another%20prop/baz') == obj['foo']['another prop']['baz']
+
+resolve_pointer(obj, '/foo/anArray/0') == obj['foo']['anArray'][0]
+
+resolve_pointer(obj, '/some/path', None) == None
+```
+
+## Re (Regular expressions)
+
+- Find all
+```
+import re
+str = '[ 1/130 ]'
+re.findall(r"\d+", str)              # ['1', '130']
+```
+
+- Search for check If find regex, get value with group.
+
+```
+import re
+str = '[ 1/130 ]'
+bool(re.search(r"\d+", str))                 # True
+
+re.search(r"(\/)(\d+)", str).group(2)        # 130
+
+```
+
+- Match is same as search, but have to find regex from start of string.
+
+```
+import re
+bool(re.match(r".*.csv$", file)):
+
+str = '[ 1/130 ]'
+int(re.match(r"(\[\s\d+/)(\d+)", str).group(2))          # 130
+
+```
+
+
+
+
+Types
+===============================================================================
+
+```
+int
+str
+float
+Any
+
+list[str]
+tuple[int, str]
+dict[str, str]
+
+Union[int, str]       # int or str, multiple types
+Optional[str]         # str or None
+Iterable[str]
+
+Callable[[int, str], int]         # Function type
+```
+
+## Variable
+
+Declare type like this `x: int`
+
+## Function
+
+Declare return value with `->`
+
+```
+def funct() -> int:
+```
+
+## Class
+
+```
+ClassVar[str]                   # Variable value can't be set in instance of the class
+
+@abstractmethod
+def eat(self) -> None: pass
+
+@dataclass                      # To automatically create constructor with class variables
+```
+
+
+DataClass
+===============================================================================
+
+Automatically pass class variables to the constructor.
+
+```
+from dataclasses import dataclass
+
+@dataclass
+class InventoryItem:
+    """Class for keeping track of an item in inventory."""
+    name: str
+    unit_price: float
+    quantity_on_hand: int = 0
+
+    def total_cost(self) -> float:
+        return self.unit_price * self.quantity_on_hand
+```
+
+In this sample, dataclass adds this automatically.
+
+```
+def __init__(self, name: str, unit_price: float, quantity_on_hand: int=0):
+    self.name = name
+    self.unit_price = unit_price
+    self.quantity_on_hand = quantity_on_hand
+```
+
+## Casting dataclass
+
+- dataclass to tuple
+
+```
+p = Point(10, 20)
+assert astuple(p) == (10, 20)
+```
+- dataclass to dict
+
+```
+p = Point(10, 20)
+assert asdict(p) == {'x': 10, 'y': 20}
+```
+
+- dict to dataclass
+
+```
+dict = {'x': 10, 'y': 20}
+p = Point(**dict)
+```
+
+## Constructor, post_init
+
+To do initialization after dataclass constructor, so variables are already defined.
+
+```
+@dataclass
+class C:
+    a: float
+    b: float
+    c: float = field(init=False)
+
+    def __post_init__(self):
+        self.c = self.a + self.b
+```
 
 
 Pipenv
 ===============================================================================
 
-
-Activar pipenv en el proyecto.
-
-Ademas incluye las variables de .env como var de entorno.
-
 ```
-pipenv shell
+pipenv shell                  # Activate python env with .env variables
+exit                          # Exit pipenv
+pipenv install                # Install library in pipenv
+pipenv install --dev          # Install as dev dependency
+pipenv lock                   # Create pipenv lock file
+pipenv run [script]           # Run scripts defined in pipenv file
 ```
 
-Las variables de entorno se pueden usar en el Pipenv file.
+## Env variables can be used in Pipenv file
 
 ```
 [[source]]
@@ -320,85 +549,48 @@ I am really a very silly example indeed
 
 Available scripts: `pipenv scripts`
 
-## Install development librarys
 
-Install both prod and dev librarsy
+Testing with pytest
+===============================================================================
 
-```
-pipenv install --dev
-```
+https://docs.pytest.org/en/stable/getting-started.html#getstarted
 
-## Install new librarys
-
-Incluye la libreria en Pipfile y Pipfile.lock
+## Install
 
 ```
-pipenv install flask==0.12.1
+pipenv install pytest
 ```
 
-### Dev librarys
+## Run test
 
-[dev-packages]: --dev
-
-```
-pipenv install pytest --dev
-```
-
-## Generate Pipenv.lock
+pytest execute files of format `test_*.py` or `*_test.py`
 
 ```
-pipenv lock
+pytest -q            # Test in quiet mode, so less output
+pytest -s            # Test with logging
 ```
 
-### Install libraries from Pipenv.loc
+## Modules tests
+
+pytest don't recognize root paths for modules, so have to run It different:
 
 ```
-pipenv install --ignore-pipfile
+cd src/module
+python -m pytest
 ```
 
-# chardet
+## Group multiple tests in a class
 
-Detectar extension de fichero
-
-```
-import chardet
-encoding = chardet.detect(file_name_byte).get("encoding")
-```
-
-# jsonpointer
-
-Para poder acceder a los datos de un json via url path
+Functions have to follow naming convention for run the test as **test_function_name** or will be ignored.
 
 ```
->>> obj = {"foo": {"anArray": [ {"prop": 44}], "another prop": {"baz": "A string" }}}
+class TestClass:
+    def test_one(self):
+        x = "this"
+        assert "h" in x
 
->>> resolve_pointer(obj, '') == obj
-True
-
->>> resolve_pointer(obj, '/foo') == obj['foo']
-True
-
->>> resolve_pointer(obj, '/foo/another%20prop') == obj['foo']['another prop']
-True
-
->>> resolve_pointer(obj, '/foo/another%20prop/baz') == obj['foo']['another prop']['baz']
-True
-
->>> resolve_pointer(obj, '/foo/anArray/0') == obj['foo']['anArray'][0]
-True
-
->>> resolve_pointer(obj, '/some/path', None) == None
-True
+    def test_two(self):
+        x = "hello"
+        assert hasattr(x, "check")
 ```
 
-# Regexp
-
-import re
-
-## search
-
-Returns true/false
-
-## sub
-
-Replace string

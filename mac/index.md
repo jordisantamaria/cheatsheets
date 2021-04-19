@@ -11,6 +11,8 @@ alias | grep 'regex'   # Filter alias
 alt-c                  # Fuzy find directorys
 C-t                    # Fuzy find file & directorys
 C-r                    # Fuzy find command history
+cmd-shift-h            # Copy history
+
 Esc Esc                # Sudo command, or last command If empty command.
 
 d                      # Last used directorys list
