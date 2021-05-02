@@ -57,3 +57,12 @@ Postgresql: https://roadmap.sh/postgresql-dba
 - Component driven development: https://www.componentdriven.org/
 	
 - To find libraries: https://awesomejs.dev/
+
+# Vim
+
+- Book: https://github.com/eposts/Rich/blob/master/blog/Linux/Practical%20Vim%20Edit%20Text%20at%20the%20Speed%20of%20Thought.pdf
+- Learn Vimscript: https://learnvimscriptthehardway.stevelosh.com/
+
+# Tmux
+
+- Book: https://github.com/ole3021/Resources/blob/master/Ebooks/Tools/tmux%20-%20Productive%20Mouse-Free%20Development.pdf

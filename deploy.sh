@@ -1,5 +1,5 @@
 # install the plugins and build the static site
-gitbook install && gitbook build
+yarn install && yarn build
 
 git checkout master
 git pull

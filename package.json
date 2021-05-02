@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "gitbook serve"
+    "install": "$(npm bin)/gitbook install",
+    "serve": "$(npm bin)/gitbook serve",
+    "build": "$(npm bin)/gitbook build"
   },
   "author": "",
   "license": "ISC",

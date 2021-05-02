@@ -11,7 +11,6 @@ alias | grep 'regex'   # Filter alias
 alt-c                  # Fuzy find directorys
 C-t                    # Fuzy find file & directorys
 C-r                    # Fuzy find command history
-cmd-shift-h            # Copy history
 
 Esc Esc                # Sudo command, or last command If empty command.
 
@@ -22,6 +21,8 @@ C-a                    # Move to start of line
 C-e                    # Move to end of line
 C-u                    # Remove line
 C-w                    # Remove word
+
+neofetch               # OS Info
 ```
 
 ## Jira
@@ -74,6 +75,15 @@ cmd-,              # Open preferences of app
 space              # Open in quick-look
 cmd-tab            # Open last used app
 cmd-p              # Print document
+```
+
+Kitty
+===============================================================================
+
+Kitty_mod = `shift+ctrl`
+```
+kitty_mod-e              # Open url
+kitty icat image.jpg     # Open image
 ```
 
 Qutebrowser

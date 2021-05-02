@@ -25,7 +25,6 @@ interface Map {
   positions: Position[]
 }
 ```
-
 # Enum
 
 ```typescript

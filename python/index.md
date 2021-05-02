@@ -295,6 +295,7 @@ os.chdir()                 # Change current working directory
 os.system('mkdir foo')     # Execute system commands
 os.getenv('ENV')           # Get environment variable
 os.makedirs('path')        # Generate all not existing dirs of given path
+os.path.isdir('path')      # Check if path is a directory
 ```
 
 ## Shutil
@@ -561,6 +562,12 @@ https://docs.pytest.org/en/stable/getting-started.html#getstarted
 pipenv install pytest
 ```
 
+## Setup src directory to resolve imports
+
+```
+PYTHONPATH=./src
+```
+
 ## Run test
 
 pytest execute files of format `test_*.py` or `*_test.py`
@@ -568,6 +575,8 @@ pytest execute files of format `test_*.py` or `*_test.py`
 ```
 pytest -q            # Test in quiet mode, so less output
 pytest -s            # Test with logging
+pytest -x            # Stop after first failure
+pytest --lf          # Rerun only failure tests
 ```
 
 ## Modules tests
@@ -578,6 +587,8 @@ pytest don't recognize root paths for modules, so have to run It different:
 cd src/module
 python -m pytest
 ```
+
+It puts current directory to `sys.path`
 
 ## Group multiple tests in a class
 
@@ -594,3 +605,124 @@ class TestClass:
         assert hasattr(x, "check")
 ```
 
+
+## Test exceptions
+
+```
+def test_mytest():
+    with pytest.raises(SystemExit):
+        f()
+```
+
+## Temporary directories (tmp_path fixture)
+
+Directories created with `tmp_path` is removed after finish tests, so can be used to test input/output.
+
+```
+def test_create_file(tmp_path):
+    d = tmp_path / "sub"
+    d.mkdir()
+    p = d / "hello.txt"
+    p.write_text(CONTENT)
+    assert p.read_text() == CONTENT
+    assert len(list(tmp_path.iterdir())) == 1
+    assert 0
+```
+
+## Fixtures
+
+Functions to use in tests, defined as arguments of testing function.
+
+```
+# Arrange
+@pytest.fixture
+def fruit_bowl():
+    return [Fruit("apple"), Fruit("banana")]
+
+
+def test_fruit_salad(fruit_bowl):
+    # Act
+    fruit_salad = FruitSalad(*fruit_bowl)
+
+    # Assert
+    assert all(fruit.cubed for fruit in fruit_salad.fruit)
+```
+
+## Skip test
+
+```
+@pytest.mark.skip(reason="no way of currently testing this")
+def test_the_unknown():
+```
+
+## Define arguments with call tests
+
+Test will be call once for every tuple of parameters.
+
+```
+@pytest.mark.parametrize("test_input,expected", [("3+5", 8), ("2+4", 6), ("6*9", 42)])
+def test_eval(test_input, expected):
+    assert eval(test_input) == expected
+```
+
+
+Pandas
+===============================================================================
+
+```
+df.head(n)                                 # Return first n rows, default 5
+df.tail(n)                                 # Return last n rows, default 5
+df.info()                                  # To see type of column values and missing values
+df.describe()                              # Get info about min, max, mean.... values
+df.mean()                                  # Mean for axis 0 (columns)
+df.mean(1)                                 # Mean for axis 1 (rows)
+
+df[0:3]                                    # Get all data from first 3 rows
+df.iloc[::3, -1] = np.nan                  # Change values of filtered data
+df.iloc[:5,:]                              # Get all data from first 5 columns
+df.loc[:, ["name", "pwd"]]                 # Get all data from column labels
+df[df["date"] > '202103']                  # Return filtered data
+df[df["date"].isin(["202103", "202104"])]  # Filtering for values in column
+
+```
+
+## Series
+
+Serie is a dataframe column
+
+```
+serie = df['column_name']
+serie.values                              # Array with values of the serie
+s = pd.Series([1, 3, 5, np.nan, 6, 8])    # Create serie
+s.str.lower()                             # Series values to lowercase
+```
+
+## Dataframe
+
+```
+df = pd.DataFrame(dict)
+df.dtypes                                  # Types of columns
+df.index                                   # Index of each row
+df.columns.values                          # Column names array
+df.to_numpy()                              # Convert df to numpy array
+df.T                                       # Transpose data
+df.sort_index(axis=1, ascending=False)     # Sort by column names
+df.sort_values(by="date")                  # Sort by values of a column
+df.apply(function)                         # Apply a function to data
+```
+
+- Create Dataframe with dates index
+
+```
+dates = pd.date_range("20130101", periods=6)
+pd.DataFrame(dict, index=dates)
+```
+
+## Missing data
+
+Missing data have value `np.nan`
+
+```
+df1.dropna(how="any")                # Remove any row with some missing data
+df1.fillna(value=5)                  # Filling missing data
+```

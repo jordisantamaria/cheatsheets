@@ -85,6 +85,7 @@ w                   # Next word (word like  It_s-a_word1 )
 W                   # Next WORD (WORD ends in white space)
 e                   # End of word
 b                   # Back to last word
+ge                  # Back to end of last word
 \w                  # Next part of a word when camelCase or snake-case or like-that
 \e
 \b

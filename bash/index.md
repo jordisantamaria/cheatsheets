@@ -48,3 +48,10 @@ cat [fileName] | grep [text]   # Return lines having [text] of file
 cat [fileName] | sort [text]   # Return lines sorted
 cat [fileName] | uniq [text]   # Return unique lines
 ```
+
+JSON output with jq
+===============================================================================
+
+```
+aws secretsmanager get-secret-value --secret-id [secret-name] | jq '. | .SecretString' | jq . -r | jq . --tab
+```

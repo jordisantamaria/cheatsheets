@@ -52,3 +52,13 @@ ServiceScaleOutPolicy:
 									MetricIntervalLowerBound: 7  # from 10 to infinite
 		DependsOn: 'ServiceScalingTarget'
 ```
+
+Logging
+===============================================================================
+
+For get logs from cloudwatch
+
+```
+awslogs groups | grep [filter]
+awslogs get [group_name]
+```
