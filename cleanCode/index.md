@@ -339,7 +339,7 @@ of use class as variables of a class, we use interfaces.
 EMERGENCE
 ========================================================================================
 
-# Getting clean via emergent design
+## Getting clean via emergent design
 
 A design is "simple" if It follows these rules in order of importance:
 - Runs all the tests
@@ -347,7 +347,7 @@ A design is "simple" if It follows these rules in order of importance:
 - Expresses the intent of the programmer
 - Minimizes the number of classes and methods
 
-# Avoid duplication with Template Method pattern
+## Avoid duplication with Template Method pattern
 
 When code is almost the same, but partial of code changes, we can create an
 abstract "BASE" class with the common functionality, then classes inherit of It.

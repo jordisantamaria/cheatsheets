@@ -1,4 +1,4 @@
-# TMUX
+# Basic
 
 ```
 tmux attach -t [session_name]   # to start in existing season
@@ -64,7 +64,7 @@ t [session_name]         # open session
 ```
 
 
-## Status line
+# Status line
 
 **{name} {window index:window name}- {window index:window name}*    {pane time} {time and date}**
 
