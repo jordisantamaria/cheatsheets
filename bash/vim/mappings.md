@@ -262,23 +262,23 @@ Git
 ===============================================================================
 
 ```
-:G               # Git status
-leader-gb        # Git blame
-leader-gB        # Open file in remote repo
-leader-gd        # File git diff
-leader-gR        # Revert buffer changes, rollback current file
-leader-go        # Open remote repo
+:G               # Git status*
+leader-gb        # Git blame*
+leader-gB        # Open file in remote repo*
+leader-gd        # File git diff*
+leader-gR        # Revert buffer changes, rollback current file*
+leader-go        # Open remote repo*
 
-leader-g1        # DiffGet left in merge
-leader-g3        # DiffGet right in merge
+leader-g1        # DiffGet left in merge*
+leader-g3        # DiffGet right in merge*
 
 
-leader-qg        # Quickfix git commits changes
+leader-qg        # Quickfix git commits changes*
 
-leader-sb        # Search and jump to branch by telescope
-leader-sc        # Search and jump to commit by telescope
-leader-sC        # Search and jump to current branch commits by telescope
-leader-ss        # Search and jump to changed files by telescope
+leader-sb        # Search and jump to branch by telescope*
+leader-sc        # Search and jump to commit by telescope*
+leader-sC        # Search and jump to current branch commits by telescope*
+leader-ss        # Search and jump to changed files by telescope*
 ```
 
 ## Git status
@@ -308,7 +308,8 @@ Jumps
 ```
 /                      # Find down
 ?                      # Find up
-s                      # Write 3 letters to find word, then press It's highlight letter to jump
+s                      # Jump in a word of visible text*
+S                      # Write 1 letter, then jump*
 
 c-o                    # Go to Last Jump
 c-i                    # Revert c-o
@@ -318,11 +319,28 @@ c-i                    # Revert c-o
 
 Marks
 ===============================================================================
+```
+g.             # Last insertion*
+'.             # Last change
+'[
+'>             # Last visual mode ubication.
 
+m[letter]      # Create mark with letter register
+`[letter]      # Go to existing mark with that letter
+'[letter]      # Go to line of the existing mark  with that letter
+```
 
 
 Registers
 ===============================================================================
+```
+"-             # Deleted text smaller than a line
+"#             # Name of last used buffer
+"%             # Name of curent file"
+":             # Last command used
+".             # Last inserted text
+"/             # Last finded text
+```
 
 
 Windows
@@ -362,15 +380,3 @@ LA            # Append text on end line to all lines
 I             # Append text before cursor to all lines
 Llj           # Append text on end line alineate to longer line
 ```
-
-
-
-TODO replace in project 'literals', without depend of lsp sagas
-
-TODO C-v change all lines at same time
-
-
-var foo = 1
-var bar = 'a'
-var foobar = foo + bar
-
