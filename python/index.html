@@ -143,7 +143,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../node-backend/">
+        <li class="chapter " data-level="1.5" data-path="../javascript/">
+            
+                <a href="../javascript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../node-backend/">
             
                 <a href="../node-backend/">
             
@@ -156,7 +169,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../typescript/">
+        <li class="chapter " data-level="1.7" data-path="../typescript/">
             
                 <a href="../typescript/">
             
@@ -169,7 +182,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../typeorm/">
+        <li class="chapter " data-level="1.8" data-path="../typeorm/">
             
                 <a href="../typeorm/">
             
@@ -182,7 +195,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../vue/">
+        <li class="chapter " data-level="1.9" data-path="../vue/">
             
                 <a href="../vue/">
             
@@ -195,7 +208,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../webpack/">
+        <li class="chapter " data-level="1.10" data-path="../webpack/">
             
                 <a href="../webpack/">
             
@@ -208,7 +221,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.10" data-path="./">
+        <li class="chapter active" data-level="1.11" data-path="./">
             
                 <a href="./">
             
@@ -221,12 +234,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../slackbot/">
+        <li class="chapter " data-level="1.12" data-path="../slackbot/">
             
                 <a href="../slackbot/">
             
                     
                     Slackbot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../d3/">
+            
+                <a href="../d3/">
+            
+                    
+                    D3
             
                 </a>
             
@@ -312,6 +338,67 @@ word[2:5]
         -h                        Display this usage message
         -H hostname               Hostname to connect to\
 &quot;&quot;&quot;)
+</code></pre><h1 id="conversiones-de-tipo">Conversiones de tipo</h1>
+<p>Cast to string: str(text)
+Cast to int: int(text)
+to json: json.dumps([1, &apos;simple&apos;, &apos;list&apos;])</p>
+<h1 id="pipenv">Pipenv</h1>
+<p>Activar pipenv en el proyecto.</p>
+<p>Ademas incluye las variables de .env como var de entorno.</p>
+<pre><code>pipenv shell
+</code></pre><p>Las variables de entorno se pueden usar en el Pipenv file.</p>
+<pre><code>[[source]]
+url = &quot;https://$USERNAME:${PASSWORD}@mypypi.example.com/simple&quot;
+verify_ssl = true
+name = &quot;pypi&quot;
+</code></pre><h2 id="run-scripts-by-pipenv">Run scripts by pipenv</h2>
+<p>It&apos;s possible to define bash scripts in Pipfile</p>
+<pre><code>[scripts]
+printspam = &quot;python -c \&quot;print(&apos;I am a silly example, no one would need to do this&apos;)\&quot;&quot;
+</code></pre><p>Then in terminal use <code>pipenv run printspam</code></p>
+<p>It also accepts params, same as npm.</p>
+<pre><code>[scripts]
+echospam = &quot;echo I am really a very silly example&quot;
+</code></pre><pre><code>$ pipenv run echospam &quot;indeed&quot;
+I am really a very silly example indeed
+</code></pre><p>Available scripts: <code>pipenv scripts</code></p>
+<h2 id="install-development-librarys">Install development librarys</h2>
+<p>Install both prod and dev librarsy</p>
+<pre><code>pipenv install --dev
+</code></pre><h2 id="install-new-librarys">Install new librarys</h2>
+<p>Incluye la libreria en Pipfile y Pipfile.lock</p>
+<pre><code>pipenv install flask==0.12.1
+</code></pre><h3 id="dev-librarys">Dev librarys</h3>
+<pre><code>pipenv install pytest --dev
+</code></pre><h2 id="generar-el-pipenvlock">Generar el Pipenv.lock</h2>
+<pre><code>pipenv lock
+</code></pre><h3 id="instalar-librerias-desde-pipenvlock">Instalar librerias desde Pipenv.lock</h3>
+<pre><code>pipenv install --ignore-pipfile
+</code></pre><h1 id="chardet">chardet</h1>
+<p>Detectar extension de fichero</p>
+<pre><code>import chardet
+encoding = chardet.detect(file_name_byte).get(&quot;encoding&quot;)
+</code></pre><h1 id="jsonpointer">jsonpointer</h1>
+<p>Para poder acceder a los datos de un json via url path</p>
+<pre><code>&gt;&gt;&gt; obj = {&quot;foo&quot;: {&quot;anArray&quot;: [ {&quot;prop&quot;: 44}], &quot;another prop&quot;: {&quot;baz&quot;: &quot;A string&quot; }}}
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;&apos;) == obj
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo&apos;) == obj[&apos;foo&apos;]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo/another%20prop&apos;) == obj[&apos;foo&apos;][&apos;another prop&apos;]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo/another%20prop/baz&apos;) == obj[&apos;foo&apos;][&apos;another prop&apos;][&apos;baz&apos;]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/foo/anArray/0&apos;) == obj[&apos;foo&apos;][&apos;anArray&apos;][0]
+True
+
+&gt;&gt;&gt; resolve_pointer(obj, &apos;/some/path&apos;, None) == None
+True
 </code></pre>
                                 
                                 </section>
@@ -355,7 +442,7 @@ word[2:5]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.10","depth":1,"next":{"title":"Slackbot","level":"1.11","depth":1,"path":"slackbot/index.md","ref":"slackbot/index.md","articles":[]},"previous":{"title":"Webpack","level":"1.9","depth":1,"path":"webpack/index.md","ref":"webpack/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordiviva.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/index.md","mtime":"2020-12-15T05:40:10.968Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T10:03:16.763Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.11","depth":1,"next":{"title":"Slackbot","level":"1.12","depth":1,"path":"slackbot/index.md","ref":"slackbot/index.md","articles":[]},"previous":{"title":"Webpack","level":"1.10","depth":1,"path":"webpack/index.md","ref":"webpack/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/index.md","mtime":"2021-01-13T00:43:18.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-19T15:05:13.464Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
