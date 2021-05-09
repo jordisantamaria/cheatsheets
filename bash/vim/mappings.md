@@ -2,7 +2,7 @@
 
 `*` mappings are my custom mappings.
 
-My nvim configuration can be found in https://github.com/jordisantamaria/nvcode
+My nvim configuration can be found in https://github.com/jordisantamaria/LunarVim
 
 
 Basics
