@@ -100,7 +100,7 @@ L              # History forward
 ;d             # Download
              
 space          # Scroll 100% screen
-             
+
 [[             # Next page (pagination)
 ]]             # Last page
 

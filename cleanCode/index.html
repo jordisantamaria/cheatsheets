@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../googleAddons/" />
+    <link rel="next" href="../python/" />
     
     
-    <link rel="prev" href="../markdown/" />
+    <link rel="prev" href="../bash/vim/mappings.html" />
     
 
     </head>
@@ -117,7 +117,46 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../bash/">
+            
+                <a href="../bash/">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../bash/tmux.html">
+            
+                <a href="../bash/tmux.html">
+            
+                    
+                    TMUX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../bash/vim/mappings.html">
+            
+                <a href="../bash/vim/mappings.html">
+            
+                    
+                    NVIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="./">
             
                 <a href="./">
             
@@ -130,98 +169,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../googleAddons/">
-            
-                <a href="../googleAddons/">
-            
-                    
-                    GAS
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="../javascript/">
-            
-                <a href="../javascript/">
-            
-                    
-                    Javascript
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="../node-backend/">
-            
-                <a href="../node-backend/">
-            
-                    
-                    Node
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="../typescript/">
-            
-                <a href="../typescript/">
-            
-                    
-                    Typescript
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="../typeorm/">
-            
-                <a href="../typeorm/">
-            
-                    
-                    TypeOrm
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="../vue/">
-            
-                <a href="../vue/">
-            
-                    
-                    Vue
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="../webpack/">
-            
-                <a href="../webpack/">
-            
-                    
-                    Webpack
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11" data-path="../python/">
+        <li class="chapter " data-level="1.7" data-path="../python/">
             
                 <a href="../python/">
             
@@ -234,25 +182,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="../slackbot/">
+        <li class="chapter " data-level="1.8" data-path="../resources/">
             
-                <a href="../slackbot/">
-            
-                    
-                    Slackbot
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.13" data-path="../d3/">
-            
-                <a href="../d3/">
+                <a href="../resources/">
             
                     
-                    D3
+                    Resources
             
                 </a>
             
@@ -305,84 +240,290 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="la-regla-del-boy-scout">La regla del Boy Scout</h1>
-<p>Dejar el codigo mas limpio que como lo encontraste.
-Si el codigo esta sucio y se puede mejorar en cosa de 15 minutos, mejor limpiarlo.</p>
-<h1 id="nombres">Nombres</h1>
-<p>Cambiar los nombres de las variables cuando se encuentren unos mejores</p>
-<p>El nombre de una variable, funci&#xF3;n o clase debe responder una serie de cuestiones
-b&#xE1;sicas.</p>
+                                <h1 id="boy-scout-rule">Boy scout rule</h1>
+<p>If you find a dirty code and It&apos;s possible to fix It in around 15 minutes, do It.</p>
+<h1 id="names">Names</h1>
+<p>Change variable names when found a better one.
+Names have to be clear and respond to the follow questions:</p>
 <ol>
-<li>Debe indicar por qu&#xE9; existe</li>
-<li>qu&#xE9; hace</li>
-<li>c&#xF3;mo se usa</li>
+<li>What is It&apos;s purpose</li>
+<li>What It does</li>
+<li>How is used</li>
 </ol>
-<p>Usar siempre variables constantes para valores constantes que expresen su intencion</p>
-<h2 id="evitar-la-desinformaci&#xF3;n">Evitar la desinformaci&#xF3;n</h2>
-<p>Los programadores deben evitar dejar pistas falsas que dificulten el significado del
-c&#xF3;digo</p>
-<p>No haga referencia a un grupo de cuentas como accountList a menos que realmente
-sea una lista (List).
-Por tanto, resulta m&#xE1;s adecuado usar accountGroup, bunchOfAccounts o simplemente accounts</p>
-<h2 id="usar-nombres-que-se-puedan-pronunciar">Usar nombres que se puedan pronunciar</h2>
-<h2 id="usar-nombres-que-se-puedan-buscar">Usar nombres que se puedan buscar</h2>
-<p> La longitud de un nombre debe corresponderse
-al tama&#xF1;o de su &#xE1;mbito</p>
-<h2 id="interfaces-e-implementaciones">Interfaces e Implementaciones</h2>
-<p>Las interfaces tienen su nombre sin poner prefijos como IUser, sino User.
-Si eso se pone sufijo en la implementacion, como, UserImp.</p>
-<h2 id="nombres-de-clases">Nombres de clases</h2>
-<p>Las clases y los objetos deben tener nombres o frases de nombre como Customer,
-WikiPage, Account y AddressParser. Evite palabras como Manager, Processor, Data, o Info
-en el nombre de una clase. El nombre de una clase no debe ser un verbo.</p>
-<h2 id="nombres-de-m&#xE9;todos">Nombres de m&#xE9;todos</h2>
-<p>Los m&#xE9;todos deben tener nombres de verbo como postPayment, deletePage o save.
-Los m&#xE9;todos de acceso, de modificaci&#xF3;n y los predicados deben tener como nombre su
-valor y usar como prefijo get, set e is de acuerdo al est&#xE1;ndar de javabean[9]</p>
-<h2 id="una-palabra-por-concepto">Una palabra por concepto</h2>
-<p>Elija una palabra por cada concepto abstracto y mant&#xE9;ngala. Por ejemplo, resulta
-confuso usar fetch, retrieve y get como m&#xE9;todos equivalentes de clases distintas. </p>
-<h2 id="no-haga-juegos-de-palabras">No haga juegos de palabras</h2>
-<p>Evite usar la misma palabra con dos fines distintos. </p>
-<p>Por ejemplo, usar add para suma y para inclussion en array.</p>
-<h2 id="usar-nombres-de-dominios-de-soluciones">Usar nombres de dominios de soluciones</h2>
-<p>use t&#xE9;rminos inform&#xE1;ticos, algoritmos, nombres de patrones, t&#xE9;rminos matem&#xE1;ticos y dem&#xE1;s</p>
-<p>El nombre AccountVisitor tiene mucho significado para un programador
-familiarizado con el patr&#xF3;n VISITOR</p>
-<h2 id="a&#xF1;adir-contexto-con-sentido">A&#xF1;adir contexto con sentido</h2>
-<p>Agrupar variables del mismo contexto en una clase como Address o usar prefijos tipo  addrFirstName, addrLastName, addrState</p>
-<h1 id="funciones">Funciones</h1>
-<h2 id="tama&#xF1;o-reducido">Tama&#xF1;o reducido</h2>
-<p>Deberian ser como maximo de unas 20 linias y ser lo maximo reducidas possibles.</p>
-<h2 id="bloques-y-sangrado">Bloques y sangrado</h2>
-<p>Los if else while deberian tener 1 sola linia con llamada a una funcion</p>
-<p>El nivel de sangrado de una funci&#xF3;n no debe ser mayor de uno o dos.</p>
-<h2 id="hacer-una-cosa">Hacer una cosa</h2>
-<p>LAS FUNCIONES S&#xD3;LO DEBEN HACER UNA COSA. DEBEN HACERLO
-BIEN Y DEBE SER LO &#xDA;NICO QUE HAGAN</p>
-<p>Si una funci&#xF3;n s&#xF3;lo realiza los pasos situados un nivel por debajo del nombre de la
-funci&#xF3;n, entonces hace una cosa</p>
-<h2 id="evitar-secciones-en-funciones">Evitar Secciones en funciones</h2>
-<p> Ver&#xE1; que la funci&#xF3;n generatePrimes se divide en secciones
-como declaraciones, inicializaciones y filtros
-Es un s&#xED;ntoma evidente de que hace m&#xE1;s de
-una cosa. Las funciones que hacen una sola cosa no se pueden dividir en secciones</p>
-<h2 id="un-nivel-de-abstracci&#xF3;n-por-funci&#xF3;n">Un nivel de abstracci&#xF3;n por funci&#xF3;n</h2>
-<p>El Listado 3-1 incumple esta regla.
-Incluye conceptos a un elevado nivel de abstracci&#xF3;n, como getHtml(); otros se encuentran
-en un nivel intermedio, como StringpagePathName = PathParser.render(pagePath) y hay
-otros en un nivel especialmente bajo, como .append(&#x201C;\n&#x201D;)</p>
-<h2 id="leer-c&#xF3;digo-de-arriba-a-abajo-la-regla-descendente">Leer c&#xF3;digo de arriba a abajo: la regla descendente</h2>
-<p>El objetivo es que el c&#xF3;digo se lea como un texto de arriba a abajo[14]. Queremos que
-tras todas las funciones aparezcan las del siguiente nivel de abstracci&#xF3;n para poder leer el
-programa, descendiendo un nivel de abstracci&#xF3;n por vez mientras leemos la lista de
-funciones. Es lo que denomino la regla descendente</p>
-<h2 id="instrucciones-switch">Instrucciones Switch</h2>
-<p>Una intruccion switch significa que la funcion hace multiples cosas. Por tanto hay que 
-tratar de evitarlas.</p>
-<p>Mi regla general para las instrucciones switch es que se pueden tolerar si s&#xF3;lo
-aparecen una vez, se usan para crear objetos polim&#xF3;rficos y se ocultan tras una relaci&#xF3;n de
-herencia para que el resto del sistema no las pueda ver [G23].</p>
+<p>Assign always constant values to a variables to indicate It&apos;s purpose.</p>
+<h2 id="avoid-confusing-names">Avoid confusing names</h2>
+<p>For example, don&apos;t use <code>accountList</code> as a name of a variable It&apos;s Its not a list,
+instead use something like <code>accountGroup</code>, <code>bunchOfAccounts</code>, or simply accounts.</p>
+<h2 id="general-rules">General rules</h2>
+<ul>
+<li><p>Use names that can be pronounced and able to search</p>
+</li>
+<li><p>The size of a name have to be related to It&apos;s ambit.</p>
+</li>
+<li><p>Avoid include the type of the variable in It&apos;s name, IDE already gives you this info.</p>
+</li>
+<li><p>Avoid prefixes in variables like <code>m_disc</code></p>
+</li>
+</ul>
+<h2 id="interface-and-implementation">Interface and implementation</h2>
+<p>Don&apos;t use prefix in interfaces, use It in implementation to separate names.
+<code>interface ShapeFactory =&gt; implementation ShapeFactoryImp</code></p>
+<h2 id="class-names">Class names</h2>
+<ul>
+<li>Name of a class must <strong>not be a verb</strong>.</li>
+<li>Names should be very specific, since class should do only 1 thing, so avoid names
+  like Manager, Procesor, Info, etc..</li>
+</ul>
+<h2 id="method-names">Method names</h2>
+<p>Method names <strong>are verbs</strong>, use prefixes like <code>get</code>, <code>set</code> and <code>is</code></p>
+<h2 id="use-1-word-for-every-concept">Use 1 word for every concept.</h2>
+<p>It&apos;s confuse to have names means the same like <code>fetch</code>, <code>retrieve</code>, <code>get</code> in the
+same source code.</p>
+<h2 id="dont-use-the-same-name-for-multiple-concepts">Don&apos;t use the same name for multiple concepts</h2>
+<p>For example, don&apos;t use <code>add</code> for increase a number and <code>add</code> for insert in a list.
+Use different names.</p>
+<h2 id="use-names-related-to-the-domain">Use names related to the domain.</h2>
+<p>Use the concepts programmers are already familiar with It, for example, a variable
+related to a VISITOR pattern, It&apos;s better a name like <code>AccountVisitor</code> than <code>JobQueue</code></p>
+<h2 id="include-context-to-the-names">Include context to the names</h2>
+<p>Instead of use prefixes for the name, try as much as possible wrap It into a class
+representing the value of It&apos;s prefix. Instead of use <code>addrFirstName, addrLastName</code>,
+create an <code>Address</code> class.</p>
+<h2 id="dont-include-context-if-its-not-required">Don&apos;t include context If It&apos;s not required</h2>
+<p>If we use a prefix for the application names for example to start all with <code>App</code>,
+It will be difficult to find the name in the IDE.</p>
+<h1 id="functions">Functions</h1>
+<p>When you write functions, you should write It like you were telling an story.</p>
+<h2 id="reduced-size">Reduced size</h2>
+<ul>
+<li><p>Functions should be max 20 lines length, but as reduced size as possible.</p>
+</li>
+<li><p>Functions should tell a story and be organized, so every function turns
+you to the next step.</p>
+</li>
+</ul>
+<h2 id="blocks-and-indentation">Blocks and indentation</h2>
+<ul>
+<li><p>Every if else while should only have 1 line calling a function.</p>
+</li>
+<li><p>The indentation size of a function shouldn&apos;t be bigger than 2.</p>
+</li>
+</ul>
+<h2 id="do-only-1-thing">Do only 1 thing</h2>
+<p><strong>Functions must only do one thing, do It properly and only do that.</strong></p>
+<ul>
+<li><p>If the function only do 1 step behind the function name, It does 1 thing.</p>
+</li>
+<li><p>If a function have sections, It does more than 1 thing.</p>
+</li>
+<li><p>A function only must have 1 level of abstraction, for example <code>getHtml()</code>,
+returns the  raw html, don&apos;t parse It.</p>
+</li>
+</ul>
+<h2 id="read-code-from-top-to-bottom">Read code from top to bottom</h2>
+<p>After read a function, we want the next function to be the next level of
+abstraction of the parent function, to be able to read the code from top to
+bottom like a book.</p>
+<h2 id="switch-instructions">Switch instructions</h2>
+<p>A switch instruction means It does multiple things so It must be avoid.
+It can be tolerated If there is only 1 switch in all the program.</p>
+<h2 id="function-arguments">Function arguments</h2>
+<p>Ideal is 0 arguments. As possible max 2 arguments, more arguments have to be justified.
+If requires more arguments, probably those arguments can be group into an object.</p>
+<h2 id="avoid-state-arguments">Avoid state arguments</h2>
+<p>If a function receive a boolean argument, It automatically does more than 1 thing.</p>
+<h2 id="naming-a-function-with-arguments">Naming a function with arguments</h2>
+<p>A function with argument should be a tuple of verb and substantive,
+also the name should explain what arguments It receive. Ex: <code>writeField(name)</code>,</p>
+<h2 id="without-secondary-effects">Without secondary effects</h2>
+<ul>
+<li><p>It should only do what function name describes.</p>
+</li>
+<li><p>avoid output arguments, since It&apos;s a secondary effect.</p>
+</li>
+<li><p>A function should do something or respond to something, not both.
+Ex: <code>public boolean set(String attribute, value)</code> check something,
+set a value and return boolean, It should only set a value.</p>
+</li>
+</ul>
+<h2 id="use-try-catch-instead-of-return-error-codes">Use try catch instead of return error codes</h2>
+<ul>
+<li><p>To check an error, a try catch should be used.</p>
+</li>
+<li><p>The body of a try catch should be calls to other functions.</p>
+</li>
+<li><p>Process errors is 1 thing, so the body of a function with try catch, only
+should be the try catch.</p>
+<pre><code>  public void delete(Page page) {
+    try {
+      deletePageAndAllReferences(page);
+    }  catch (Exception e) {
+      logError(e)
+    }
+  }
+</code></pre></li>
+</ul>
+<h2 id="dont-repeat-yourself">Don&apos;t repeat yourself</h2>
+<p>Duplicated code becomes more difficult to maintain, because 1 change means change
+in multiple spaces.</p>
+<h2 id="how-to-write-functions">How to write functions</h2>
+<p>First you write the functionality and the test in a dirty functions, then when
+everything works, It comes the time to refactoring the code.</p>
+<h1 id="comments">Comments</h1>
+<ul>
+<li><p>Don&apos;t comment an incorrect code, rewrite It.</p>
+</li>
+<li><p>We use comments to compensate our incapacity to explain It by the code itself.</p>
+</li>
+<li><p>We should avoid comments as much as possible, because they lie, It happens because
+when the code is updated, a lot of times comment is forgotten to be updated.
+The only source of truth is the code.</p>
+</li>
+</ul>
+<p>Example of a correct informative commentary</p>
+<pre><code>// format should coincide with kk:mm:ss EEE, MMM, dd, yyy
+Pattern timeMatcher = Pattern.compile( &quot;\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*&quot; );
+</code></pre><h1 id="formating">Formating</h1>
+<ul>
+<li><p>The file name should be enough to explain what that file does.</p>
+</li>
+<li><p>Separate sections like imports, to body, between functions, etc.. with empty line</p>
+</li>
+<li><p>Keep related functionality close, same when declaring variables.</p>
+</li>
+<li><p>But a class variable should be in top</p>
+</li>
+<li><p>The call of a function should be used before the declaration of the function,
+so first we read the most important, later we read less important things.</p>
+</li>
+</ul>
+<h1 id="objects-and-data-structuring">Objects and data structuring</h1>
+<h2 id="abstracting-data">Abstracting data</h2>
+<p>To be able to give a flexible solution in the code, we should use interfaces
+instead of the class. So for example, Point can be in Cartesian cords or not,
+depending of the interface used.</p>
+<pre><code>public interface Point {
+  double getX();
+  double getY();
+  void setCartesian(double x, double y);
+  double getR();
+}
+</code></pre><h2 id="avoid-returning-null">Avoid returning null</h2>
+<p>If we don&apos;t have a value, better put some default value, It will save us from checking null everywhere.</p>
+<h2 id="learning-external-library-by-writing-testing-code">Learning external library by writing testing code</h2>
+<ul>
+<li><p>We first define what functionality we want from that library, then create
+test blocks for every functionality, so we just read the documentation to
+write those tests.</p>
+</li>
+<li><p>With that, we can check library is working as expected and anyone can read the
+tests, to understand how is the library working.</p>
+</li>
+</ul>
+<h1 id="unit-testing">Unit testing</h1>
+<ol>
+<li>Write tests.</li>
+<li>Write functionality.</li>
+<li>Refactoring the code.</li>
+</ol>
+<p>Unit testing is what makes the code flexible to changes, so If you do changes in
+the code, you can be sure It still works. So unit testing is the key to keep a
+clean code and a nice architecture.</p>
+<h2 id="clean-test">Clean test</h2>
+<p>A test must be easy to read, same as code.
+<strong>Build-Operate-Check</strong> pattern:</p>
+<ul>
+<li>Build input data</li>
+<li>Do an operation</li>
+<li><p>Check if operation works</p>
+<pre><code>public void testGetDataAsXml() throws Exception {
+makePageWithContent(&quot;TestPageOne&quot;, &quot;test page&quot;);
+
+submitRequest(&quot;TestPageOne&quot;, &quot;type:data&quot;);
+
+assertResponseIsXML();
+assertResponseContains(&quot;test page&quot;, &quot;&lt;Tst&quot;);
+}
+</code></pre></li>
+</ul>
+<p>So we create an API for test the code with utilities.</p>
+<h2 id="one-assert-per-test">One assert per test.</h2>
+<p>Every test should have one assert, or at least as minimal as possible.
+It&apos;s better to repeat the functionality, so every test just check 1 thing.
+Tests should also use the <strong>given-when-then</strong> convention.</p>
+<pre><code>public void testGetPageHierarchyAsXml() throws Exception {
+  givenPages(&quot;PageOne&quot;, &quot;PageOne.ChildOne&quot;, &quot;PageTwo&quot;);
+
+  whenRequestIsIssued(&quot;root&quot;, &quot;type:pages&quot;);
+
+  thenResponseShouldBeXML();
+}
+
+public void testGetPageHierarchyHasRightTags() throws Exception {
+  givenPages(&quot;PageOne&quot;, &quot;PageOne.ChildOne&quot;, &quot;PageTwo&quot;);
+
+  whenRequestIsIssued(&quot;root&quot;, &quot;type:pages&quot;);
+
+  thenResponseShouldContain(
+    &quot;&lt;name&gt;PageOne&lt;/name&gt;&quot;, &quot;&lt;name&gt;PageTwo&lt;/name&gt;&quot;, &quot;&lt;name&gt;ChildOne&lt;/name&gt;&quot;
+  );
+}
+</code></pre><h2 id="first">F.I.R.S.T.</h2>
+<p>Clean tests follow this five rules:</p>
+<ol>
+<li><p><strong>Fast</strong>: Test should run quickly. If test is slow, you will not run them frequently.</p>
+</li>
+<li><p><strong>Independent</strong>: Test should not depend on each other. When test depend on
+each other, then the first one to fail causes a cascade of downstream failures,
+so you don&apos;t know where Is failing.</p>
+</li>
+<li><p><strong>Repeatable</strong>: Test should be repeatable in any environment.</p>
+</li>
+<li><p><strong>Self-validating</strong>: Test should have a boolean output, pass or fail.</p>
+</li>
+<li><p><strong>Timely</strong>: Test should be written before write the production code. If you
+write tests after production code, then you may find the production code to
+be hard to test.</p>
+</li>
+</ol>
+<h1 id="classes">Classes</h1>
+<h2 id="should-be-small">Should be small</h2>
+<p>A class should have only 1 responsibility.</p>
+<h2 id="high-cohesion">High cohesion</h2>
+<ul>
+<li>Class should have small number of class variables.</li>
+<li>class variables should be use as much as possible in It&apos;s own class methods.</li>
+<li>If a class lose cohesion, split that methods which are using those extra class
+  variables into a new class.</li>
+</ul>
+<h2 id="open-closed-principle-ocp">Open-Closed Principle (OCP)</h2>
+<ul>
+<li>A class should be open for extension but closed for modification.</li>
+<li>We get this, not depending of implementation, depending of interfaces instead.</li>
+<li>With this, you avoid using a lot of If checking every use case.</li>
+</ul>
+<h2 id="dependency-inversion-principle-dcp">Dependency Inversion Principle (DCP)</h2>
+<p>Our classes should depend upon abstraction, not on concrete details. So instead
+of use class as variables of a class, we use interfaces.</p>
+<h2 id="separation-of-main">Separation of main</h2>
+<ul>
+<li><strong>Inversion of Control</strong>:  In the initialization process, we should build up all
+  the dependency of the program.</li>
+<li><strong>Dependency Injection</strong>: Class should not take responsibility for instantiating
+  dependencies itself. Inversion of control takes this responsibility.</li>
+</ul>
+<h1 id="emergence">EMERGENCE</h1>
+<h1 id="getting-clean-via-emergent-design">Getting clean via emergent design</h1>
+<p>A design is &quot;simple&quot; if It follows these rules in order of importance:</p>
+<ul>
+<li>Runs all the tests</li>
+<li>Contains no duplication</li>
+<li>Expresses the intent of the programmer</li>
+<li>Minimizes the number of classes and methods</li>
+</ul>
+<h1 id="avoid-duplication-with-template-method-pattern">Avoid duplication with Template Method pattern</h1>
+<p>When code is almost the same, but partial of code changes, we can create an
+abstract &quot;BASE&quot; class with the common functionality, then classes inherit of It.</p>
 
                                 
                                 </section>
@@ -410,12 +551,12 @@ herencia para que el resto del sistema no las pueda ver [G23].</p>
 
             
                 
-                <a href="../markdown/" class="navigation navigation-prev " aria-label="Previous page: MARKDOWN">
+                <a href="../bash/vim/mappings.html" class="navigation navigation-prev " aria-label="Previous page: NVIM">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../googleAddons/" class="navigation navigation-next " aria-label="Next page: GAS">
+                <a href="../python/" class="navigation navigation-next " aria-label="Next page: Python">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -426,7 +567,7 @@ herencia para que el resto del sistema no las pueda ver [G23].</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Clean code","level":"1.3","depth":1,"next":{"title":"GAS","level":"1.4","depth":1,"path":"googleAddons/index.md","ref":"googleAddons/index.md","articles":[]},"previous":{"title":"MARKDOWN","level":"1.2","depth":1,"path":"markdown/README.md","ref":"markdown/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"codigo limpio/index.md","mtime":"2020-12-15T05:40:10.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-19T15:05:13.464Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Clean code","level":"1.6","depth":1,"next":{"title":"Python","level":"1.7","depth":1,"path":"python/index.md","ref":"python/index.md","articles":[]},"previous":{"title":"NVIM","level":"1.5","depth":1,"path":"bash/vim/mappings.md","ref":"bash/vim/mappings.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cleanCode/index.md","mtime":"2021-04-10T15:38:51.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T05:24:47.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

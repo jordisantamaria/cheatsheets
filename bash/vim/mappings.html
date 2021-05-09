@@ -1,0 +1,563 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NVIM · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../cleanCode/" />
+    
+    
+    <link rel="prev" href="../tmux.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../markdown/">
+            
+                <a href="../../markdown/">
+            
+                    
+                    MARKDOWN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../tmux.html">
+            
+                <a href="../tmux.html">
+            
+                    
+                    TMUX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="mappings.html">
+            
+                <a href="mappings.html">
+            
+                    
+                    NVIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../cleanCode/">
+            
+                <a href="../../cleanCode/">
+            
+                    
+                    Clean code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../python/">
+            
+                <a href="../../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../resources/">
+            
+                <a href="../../resources/">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >NVIM</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="about">About</h1>
+<p><code>*</code> mappings are my custom mappings.</p>
+<p>My nvim configuration can be found in <a href="https://github.com/jordisantamaria/nvcode" target="_blank">https://github.com/jordisantamaria/nvcode</a></p>
+<h1 id="basics">Basics</h1>
+<pre><code>nvim {filename}    # Enter nvim
+:e [filename]      # Open or create a file if not exist
+:f [filename]      # Find and open file relative to :set path?
+
+:q                 # Quit window, If last window then quit nvim
+:qa                # Quit all windows
+:q{a}!             # Force quit window/s, even If not saved
+:w                 # Save buffer
+:wq                # Save buffer and quit window
+
+u                  # Undo
+C-r                # Revert Undo
+</code></pre><h1 id="change-vim-modes">Change vim modes</h1>
+<h2 id="to-normal-mode">To normal mode</h2>
+<pre><code>ESC            # Normal mode
+C-c            # Normal mode
+jk or kj       # Normal mode*
+
+C-o            # Normal mode 1 command
+</code></pre><h2 id="to-edit-mode">To Edit mode</h2>
+<pre><code>i              # Before cursor
+I              # Start of line
+a              # After cursor
+A              # End of line
+o              # New line after current
+O              # New line before current
+c              # Delete motion
+C              # Delete until end line
+</code></pre><h2 id="to-visual-mode">To Visual mode</h2>
+<pre><code>v               # Visual mode
+V               # Visual line mode
+C-v             # Visual block mode
+</code></pre><h1 id="to-command-line">To command line</h1>
+<pre><code>:               # Command line
+q:              # Buffer with commands history for edit them.
+c-f             # From command line to command line buffer
+</code></pre><h1 id="move-with-motions">Move with Motions</h1>
+<h2 id="basic">Basic</h2>
+<pre><code>{n} h               # Left n times
+{n} l               # Right n times
+{n} j               # Down n times
+{n} k               # Up n times
+</code></pre><h2 id="word">Word</h2>
+<pre><code>w                   # Next word (word like  It_s-a_word1 )
+W                   # Next WORD (WORD ends in white space)
+e                   # End of word
+b                   # Back to last word
+ge                  # Back to end of last word
+\w                  # Next part of a word when camelCase or snake-case or like-that
+\e
+\b
+</code></pre><h2 id="line">Line</h2>
+<pre><code>0                   # Start of line
+$                   # End of line
+^                   # First letter of line
+
+H                   # Start of line*
+L                   # End of line*
+
+f [letter]          # Find and go to next letter in line
+F [letter]          # Find and go to letter in left direction
+t [letter]          # Find and go to next letter - 1
+T [letter]          # Find and go to letter -1 in left direction
+;                   # Next letter found in line
+,                   # Last letter found in line
+</code></pre><h2 id="jumps">Jumps</h2>
+<pre><code>%                   # Go to pairing of &lt;&gt;{}[]()
+{                   # Go to last empty line
+}                   # Go to next empty line
+(                   # Go to last paragraph border (line before empty line or empty line)
+)                   # Go to next paragraph border (line before empty line or empty line)
+M                   # Middle of screen
+
+[n]G                # Go to line n
+gg                  # Go to start file
+G                   # Go to end file
+[n]%                # Go to n % of file
+</code></pre><h1 id="editing-text">Editing Text</h1>
+<p>[operator][motion | object]</p>
+<h2 id="operators">Operators</h2>
+<pre><code>d                             # Delete text and yank to noname register
+dd                            # Delete line
+D                             # Delete line
+c                             # Change, same as delete but change to insert mode
+cc                            # Change line
+C                             # Change line
+{&quot;[register]}y                # Yank (copy text)
+gu                            # To lowercase
+gU                            # To Uppercase
+=                             # Fix identation
+
+R                             # Replace with yank text*
+cs[curent][new]               # Change surround*
+ys[motion][surround]          # Include surround*
+ds[surround]                  # Remove surround*
+</code></pre><h2 id="objects">Objects</h2>
+<pre><code>iw          # Word
+i(          # Content inside ()
+i)          # Content inside ()
+a(          # Same, including ()
+a)          # Same, including ()
+i{          # Content inside {}
+i}          # Content inside {}
+a{          # Same, including {}
+a}          # Same, including {}
+i[
+i]
+a[
+a]
+i&quot;
+i&apos;
+a&quot;
+a&apos;
+
+i/          # Text founded by / or ?*
+ii          # Identation text*
+il          # Line*
+ie          # All File content*
+iv          # Word part when camelCase, snake_case...*
+av          # Same but remove - or _ also*
+</code></pre><h1 id="edit">Edit</h1>
+<pre><code>leader-/           # Comment line*
+crs                # Word to snake_case*
+crc                # Word to camelCase*
+crm                # Word to capitalize*
+cr&lt;space&gt;          # Separate word parts with space*
+&lt;                  # Tabulate left*
+&gt;                  # Tabulate right*
+</code></pre><h1 id="changes">Changes</h1>
+<pre><code>.                  # Repeat change
+
+[n]C-a             # Increase number n times
+[n]C-x             # Decrease number n times
+
+r                  # Replace character
+x                  # Remove character
+</code></pre><h2 id="insert-mode">Insert mode</h2>
+<pre><code>C-u          # Remove until line start
+C-w          # Remove last word
+C-r          # Paste register
+</code></pre><h1 id="command-line">Command Line</h1>
+<pre><code>C-b               # Start of line
+C-e               # End of line
+C-u               # Remove until line start
+C-w               # Remove last word
+C-r               # Paste register
+C-r C-w           # Paste cursor word
+!                 # Run external program
+:read ![cmd]      # Copy output of command to vim buffer
+</code></pre><h1 id="scrolling">Scrolling</h1>
+<pre><code>C-F         # Bottom 100% screen
+C-B         # Top 100% screen
+
+C-d         # Bottom 50% screen
+C-u         # Top 50% screen
+
+C-e         # Bottom 1 line
+C-y         # Top 1 line
+
+zz          # Center to cursor
+zt          # Cursor in top
+zb          # Cursor in bottom
+</code></pre><h1 id="quicklist">Quicklist</h1>
+<p>-R means read only, to prevent changes</p>
+<pre><code>:vimgrep -R [regex] [glob file]  # Find regex in files and put in quicklist
+:grep -R [regex] [glob file]     # Same but with OS grep instead of vim grep
+</code></pre><h1 id="git">Git</h1>
+<pre><code>:G               # Git status
+leader-gb        # Git blame
+leader-gB        # Open file in remote repo
+leader-gd        # File git diff
+leader-gR        # Revert buffer changes, rollback current file
+leader-go        # Open remote repo
+
+leader-g1        # DiffGet left in merge
+leader-g3        # DiffGet right in merge
+
+
+leader-qg        # Quickfix git commits changes
+
+leader-sb        # Search and jump to branch by telescope
+leader-sc        # Search and jump to commit by telescope
+leader-sC        # Search and jump to current branch commits by telescope
+leader-ss        # Search and jump to changed files by telescope
+</code></pre><h2 id="git-status">Git status</h2>
+<pre><code>c-n         # Next
+c-p         # Prev
+
+-           # toogle stage/unstage
+s           # stage
+x           # Rollback changes
+
+dv          # Git diff
+</code></pre><h2 id="git-blame">Git blame</h2>
+<pre><code>-          # Open file version on that commit
+q          # Close git blame
+</code></pre><h1 id="jumps">Jumps</h1>
+<pre><code>/                      # Find down
+?                      # Find up
+s                      # Write 3 letters to find word, then press It&apos;s highlight letter to jump
+
+c-o                    # Go to Last Jump
+c-i                    # Revert c-o
+</code></pre><h1 id="marks">Marks</h1>
+<h1 id="registers">Registers</h1>
+<h1 id="windows">Windows</h1>
+<pre><code>c-wr               # Rotate, swap windows
+c-wt               # Top, go to left top window
+c-wK               # Window full width
+c-wH               # Window full height
+c-wo               # Close other windows
+
+c-h                # Go to left window
+c-j                # Go to bottom window
+c-k                # Go to top window
+c-l                # Go to right window
+
+alt-l              # Increase window size horizontal
+alt-h              # Decrease window size horizontal
+alt-j              # Increase window size vertically
+alt-k              # Decrease window size vertically
+
+c-w=               # = size all windows
+</code></pre><h1 id="visual-model">Visual Model</h1>
+<h2 id="visual-block-mode">Visual Block mode</h2>
+<pre><code>x             # Remove char in all lines selected
+r             # Change Character in all lines
+c             # Remove selected text, written text will appear in all lines
+A             # Append text after cursor to all lines
+LA            # Append text on end line to all lines
+I             # Append text before cursor to all lines
+Llj           # Append text on end line alineate to longer line
+</code></pre><p>TODO replace in project &apos;literals&apos;, without depend of lsp sagas</p>
+<p>TODO C-v change all lines at same time</p>
+<p>var foo = 1
+var bar = &apos;a&apos;
+var foobar = foo + bar</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../tmux.html" class="navigation navigation-prev " aria-label="Previous page: TMUX">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../cleanCode/" class="navigation navigation-next " aria-label="Next page: Clean code">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NVIM","level":"1.5","depth":1,"next":{"title":"Clean code","level":"1.6","depth":1,"path":"cleanCode/index.md","ref":"cleanCode/index.md","articles":[]},"previous":{"title":"TMUX","level":"1.4","depth":1,"path":"bash/tmux.md","ref":"bash/tmux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bash/vim/mappings.md","mtime":"2021-05-02T03:28:28.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T05:24:47.307Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

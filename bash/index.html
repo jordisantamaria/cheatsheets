@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MARKDOWN · GitBook</title>
+        <title>BASH · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../bash/" />
+    <link rel="next" href="tmux.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../markdown/" />
     
 
     </head>
@@ -104,9 +104,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../markdown/">
             
-                <a href="./">
+                <a href="../markdown/">
             
                     
                     MARKDOWN
@@ -117,9 +117,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../bash/">
+        <li class="chapter active" data-level="1.3" data-path="./">
             
-                <a href="../bash/">
+                <a href="./">
             
                     
                     BASH
@@ -130,9 +130,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../bash/tmux.html">
+        <li class="chapter " data-level="1.4" data-path="tmux.html">
             
-                <a href="../bash/tmux.html">
+                <a href="tmux.html">
             
                     
                     TMUX
@@ -143,9 +143,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../bash/vim/mappings.html">
+        <li class="chapter " data-level="1.5" data-path="vim/mappings.html">
             
-                <a href="../bash/vim/mappings.html">
+                <a href="vim/mappings.html">
             
                     
                     NVIM
@@ -225,7 +225,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MARKDOWN</a>
+        <a href=".." >BASH</a>
     </h1>
 </div>
 
@@ -241,95 +241,39 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="basic">Basic</h1>
-<ul>
-<li><p>Scape formatting with <code>\</code></p>
-</li>
-<li><p>Next line, leaving empty line</p>
-</li>
-</ul>
-<h1 id="text-style">Text style:</h1>
-<h2 id="italics">Italics</h2>
-<p><code>_italic_</code></p>
-<p><em>italic</em></p>
-<h2 id="bold">Bold</h2>
-<p><code>**bold**</code></p>
-<p><strong>bold</strong></p>
-<h2 id="code">Code</h2>
-<ul>
-<li>`Single row code`</li>
-</ul>
-<p><code>Single row code</code></p>
-<ul>
-<li><p>```</p>
-<p>  Multi
-  row
-  code</p>
-<p> ```</p>
-</li>
-</ul>
-<pre><code>Multi
-row
-code
-</code></pre><h2 id="quote">Quote</h2>
-<pre><code>&gt;A quote
-&gt;&gt;A nested code
-</code></pre><blockquote>
-<p>A quote</p>
-<blockquote>
-<p>A nested code</p>
-</blockquote>
-</blockquote>
-<h2 id="headers">Headers</h2>
-<ol>
-<li># header1<pre><code>header1
-=======
-</code></pre></li>
-<li>## header2</li>
-<li>### header3</li>
-<li>#### header4</li>
-<li>##### header5</li>
-<li>###### header6</li>
-</ol>
-<h1 id="links">Links</h1>
-<p><code>[Text](link.com)</code></p>
-<p><a href="link.com">Text</a></p>
-<h1 id="list">List</h1>
-<pre><code>* Element
-- Element
-+ Element
-    - Sub element
-</code></pre><ul>
-<li>Element</li>
-<li>Element</li>
-<li>Element<ul>
-<li>Sub element</li>
-</ul>
-</li>
-</ul>
-<h2 id="ordered-list">Ordered List</h2>
-<pre><code>1. First element
-2. Second element
-3. Third element
-</code></pre><ol>
-<li>First element</li>
-<li>Second element</li>
-<li>Third element</li>
-</ol>
-<h1 id="divider---horizontal-line">Divider - horizontal line</h1>
-<p>Use at least 3 of *, - or _ between empty lines</p>
-<pre><code>
-***
-
----
-
-___
-</code></pre><hr>
-<hr>
-<hr>
-<h1 id="images">Images</h1>
-<pre><code>![Alternative text](path/image.jpg &quot;ImageTitle&quot;)
-</code></pre><p><img src="image.jpg" alt="Alternative text" title="ImageTitle"></p>
-
+<pre><code>man [command]        # command documentation
+~                    # Home dir, Alt &#xF1;
+pwd                  # Print working directory
+tree                 # Print folders structure as tree
+ls                   # List current directory content
+cd [path]            # Move to new path
+</code></pre><h1 id="move-copy-rename">Move, copy, rename</h1>
+<pre><code>mv [filePath] [newFilePath]      # Move to new path, rename file if path dir is same
+cp [filePath] [newFilePath]      # Remove from origin and move to new file path
+cp -r [filePath] [newFilePath]   # Copy directory
+rm [filePath]                    # Remove a file
+rm -rd [filePath]                # Remove a directory
+mkdir [file]                     # Create directory
+mkdir -p [file]                  # Create directory and It&apos;s parents
+touch [file]                     # Create file
+</code></pre><h1 id="read--open-file">Read | open file</h1>
+<pre><code>open [fileName]                # Open file with default OS program
+open -a [program] [fileName]   # Open file with specific program
+more [fileName]                # Open file like man, showing start and scrolling It
+head {-n}                      # Open first n lines, 10 as default
+tail {-n}                      # Open last n lines, 10 as default
+cat [fileName]                 # Show file content
+</code></pre><h1 id="standard-input--output">Standard Input | Output</h1>
+<pre><code>[input] &gt; [output]       # Move input to output
+[input] &gt;&gt; [output]      # Append input at end of Output file
+[output] | [command]     # Move output as a input for a command, example to grep
+</code></pre><h2 id="example-pipes-usage">Example pipes usage</h2>
+<pre><code>cat [fileName] | grep [text]   # Return lines having [text] of file
+cat [fileName] | sort [text]   # Return lines sorted
+cat [fileName] | uniq [text]   # Return unique lines
+</code></pre><h1 id="json-output-with-jq">JSON output with jq</h1>
+<pre><code>aws secretsmanager get-secret-value --secret-id [secret-name] | jq &apos;. | .SecretString&apos; | jq . -r | jq . --tab
+</code></pre>
                                 
                                 </section>
                             
@@ -356,12 +300,12 @@ ___
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../markdown/" class="navigation navigation-prev " aria-label="Previous page: MARKDOWN">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../bash/" class="navigation navigation-next " aria-label="Next page: BASH">
+                <a href="tmux.html" class="navigation navigation-next " aria-label="Next page: TMUX">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -372,7 +316,7 @@ ___
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MARKDOWN","level":"1.2","depth":1,"next":{"title":"BASH","level":"1.3","depth":1,"path":"bash/index.md","ref":"bash/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"markdown/README.md","mtime":"2021-04-10T15:38:51.722Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T05:24:47.307Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BASH","level":"1.3","depth":1,"next":{"title":"TMUX","level":"1.4","depth":1,"path":"bash/tmux.md","ref":"bash/tmux.md","articles":[]},"previous":{"title":"MARKDOWN","level":"1.2","depth":1,"path":"markdown/README.md","ref":"markdown/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bash/index.md","mtime":"2021-04-21T15:16:14.344Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T05:24:47.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
