@@ -411,23 +411,23 @@ zb          # Cursor in bottom
 <pre><code>:vimgrep -R [regex] [glob file]  # Find regex in files and put in quicklist
 :grep -R [regex] [glob file]     # Same but with OS grep instead of vim grep
 </code></pre><h1 id="git">Git</h1>
-<pre><code>:G               # Git status
-leader-gb        # Git blame
-leader-gB        # Open file in remote repo
-leader-gd        # File git diff
-leader-gR        # Revert buffer changes, rollback current file
-leader-go        # Open remote repo
+<pre><code>:G               # Git status*
+leader-gb        # Git blame*
+leader-gB        # Open file in remote repo*
+leader-gd        # File git diff*
+leader-gR        # Revert buffer changes, rollback current file*
+leader-go        # Open remote repo*
 
-leader-g1        # DiffGet left in merge
-leader-g3        # DiffGet right in merge
+leader-g1        # DiffGet left in merge*
+leader-g3        # DiffGet right in merge*
 
 
-leader-qg        # Quickfix git commits changes
+leader-qg        # Quickfix git commits changes*
 
-leader-sb        # Search and jump to branch by telescope
-leader-sc        # Search and jump to commit by telescope
-leader-sC        # Search and jump to current branch commits by telescope
-leader-ss        # Search and jump to changed files by telescope
+leader-sb        # Search and jump to branch by telescope*
+leader-sc        # Search and jump to commit by telescope*
+leader-sC        # Search and jump to current branch commits by telescope*
+leader-ss        # Search and jump to changed files by telescope*
 </code></pre><h2 id="git-status">Git status</h2>
 <pre><code>c-n         # Next
 c-p         # Prev
@@ -443,13 +443,28 @@ q          # Close git blame
 </code></pre><h1 id="jumps">Jumps</h1>
 <pre><code>/                      # Find down
 ?                      # Find up
-s                      # Write 3 letters to find word, then press It&apos;s highlight letter to jump
+s                      # Jump in a word of visible text*
+S                      # Write 1 letter, then jump*
 
 c-o                    # Go to Last Jump
 c-i                    # Revert c-o
 </code></pre><h1 id="marks">Marks</h1>
-<h1 id="registers">Registers</h1>
-<h1 id="windows">Windows</h1>
+<pre><code>g.             # Last insertion*
+&apos;.             # Last change
+&apos;[
+&apos;&gt;             # Last visual mode ubication.
+
+m[letter]      # Create mark with letter register
+`[letter]      # Go to existing mark with that letter
+&apos;[letter]      # Go to line of the existing mark  with that letter
+</code></pre><h1 id="registers">Registers</h1>
+<pre><code>&quot;-             # Deleted text smaller than a line
+&quot;#             # Name of last used buffer
+&quot;%             # Name of curent file&quot;
+&quot;:             # Last command used
+&quot;.             # Last inserted text
+&quot;/             # Last finded text
+</code></pre><h1 id="windows">Windows</h1>
 <pre><code>c-wr               # Rotate, swap windows
 c-wt               # Top, go to left top window
 c-wK               # Window full width
@@ -476,12 +491,7 @@ A             # Append text after cursor to all lines
 LA            # Append text on end line to all lines
 I             # Append text before cursor to all lines
 Llj           # Append text on end line alineate to longer line
-</code></pre><p>TODO replace in project &apos;literals&apos;, without depend of lsp sagas</p>
-<p>TODO C-v change all lines at same time</p>
-<p>var foo = 1
-var bar = &apos;a&apos;
-var foobar = foo + bar</p>
-
+</code></pre>
                                 
                                 </section>
                             
@@ -524,7 +534,7 @@ var foobar = foo + bar</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NVIM","level":"1.5","depth":1,"next":{"title":"Clean code","level":"1.6","depth":1,"path":"cleanCode/index.md","ref":"cleanCode/index.md","articles":[]},"previous":{"title":"TMUX","level":"1.4","depth":1,"path":"bash/tmux.md","ref":"bash/tmux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bash/vim/mappings.md","mtime":"2021-05-09T14:20:43.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T14:21:39.427Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NVIM","level":"1.5","depth":1,"next":{"title":"Clean code","level":"1.6","depth":1,"path":"cleanCode/index.md","ref":"cleanCode/index.md","articles":[]},"previous":{"title":"TMUX","level":"1.4","depth":1,"path":"bash/tmux.md","ref":"bash/tmux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bash/vim/mappings.md","mtime":"2021-05-09T15:17:10.955Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:17:56.474Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
