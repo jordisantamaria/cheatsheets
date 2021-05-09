@@ -348,7 +348,7 @@ alt-k              # Decrease window size vertically
 c-w=               # = size all windows
 ```
 
-Visual Model
+Visual Mode
 ===============================================================================
 
 ## Visual Block mode

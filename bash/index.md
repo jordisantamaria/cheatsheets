@@ -9,7 +9,7 @@ ls                   # List current directory content
 cd [path]            # Move to new path
 ```
 
-# Move, copy, rename
+# Move, copy, rename, create files
 
 ```
 mv [filePath] [newFilePath]      # Move to new path, rename file if path dir is same
@@ -45,12 +45,11 @@ cat [fileName]                 # Show file content
 
 ```
 cat [fileName] | grep [text]   # Return lines having [text] of file
-cat [fileName] | sort [text]   # Return lines sorted
-cat [fileName] | uniq [text]   # Return unique lines
+cat [fileName] | sort          # Return lines sorted
+cat [fileName] | uniq          # Return unique lines
 ```
 
-JSON output with jq
-===============================================================================
+# JSON output with jq
 
 ```
 aws secretsmanager get-secret-value --secret-id [secret-name] | jq '. | .SecretString' | jq . -r | jq . --tab

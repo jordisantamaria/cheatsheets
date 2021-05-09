@@ -247,7 +247,7 @@ pwd                  # Print working directory
 tree                 # Print folders structure as tree
 ls                   # List current directory content
 cd [path]            # Move to new path
-</code></pre><h1 id="move-copy-rename">Move, copy, rename</h1>
+</code></pre><h1 id="move-copy-rename-create-files">Move, copy, rename, create files</h1>
 <pre><code>mv [filePath] [newFilePath]      # Move to new path, rename file if path dir is same
 cp [filePath] [newFilePath]      # Remove from origin and move to new file path
 cp -r [filePath] [newFilePath]   # Copy directory
@@ -269,8 +269,8 @@ cat [fileName]                 # Show file content
 [output] | [command]     # Move output as a input for a command, example to grep
 </code></pre><h2 id="example-pipes-usage">Example pipes usage</h2>
 <pre><code>cat [fileName] | grep [text]   # Return lines having [text] of file
-cat [fileName] | sort [text]   # Return lines sorted
-cat [fileName] | uniq [text]   # Return unique lines
+cat [fileName] | sort          # Return lines sorted
+cat [fileName] | uniq          # Return unique lines
 </code></pre><h1 id="json-output-with-jq">JSON output with jq</h1>
 <pre><code>aws secretsmanager get-secret-value --secret-id [secret-name] | jq &apos;. | .SecretString&apos; | jq . -r | jq . --tab
 </code></pre>
@@ -316,7 +316,11 @@ cat [fileName] | uniq [text]   # Return unique lines
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
+<<<<<<< HEAD
             gitbook.page.hasChanged({"page":{"title":"BASH","level":"1.3","depth":1,"next":{"title":"TMUX","level":"1.4","depth":1,"path":"bash/tmux.md","ref":"bash/tmux.md","articles":[]},"previous":{"title":"MARKDOWN","level":"1.2","depth":1,"path":"markdown/README.md","ref":"markdown/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bash/index.md","mtime":"2021-05-09T05:26:42.452Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T05:27:46.539Z"},"basePath":"..","book":{"language":""}});
+=======
+            gitbook.page.hasChanged({"page":{"title":"BASH","level":"1.3","depth":1,"next":{"title":"TMUX","level":"1.4","depth":1,"path":"bash/tmux.md","ref":"bash/tmux.md","articles":[]},"previous":{"title":"MARKDOWN","level":"1.2","depth":1,"path":"markdown/README.md","ref":"markdown/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bash/index.md","mtime":"2021-05-09T05:35:44.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T05:47:25.354Z"},"basePath":"..","book":{"language":""}});
+>>>>>>> master
         });
     </script>
 </div>
