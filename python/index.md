@@ -669,6 +669,8 @@ def test_eval(test_input, expected):
 Pandas
 ===============================================================================
 
+## Basic operations
+
 ```
 df.head(n)                                 # Return first n rows, default 5
 df.tail(n)                                 # Return last n rows, default 5
@@ -683,7 +685,6 @@ df.iloc[:5,:]                              # Get all data from first 5 columns
 df.loc[:, ["name", "pwd"]]                 # Get all data from column labels
 df[df["date"] > '202103']                  # Return filtered data
 df[df["date"].isin(["202103", "202104"])]  # Filtering for values in column
-
 ```
 
 ## Series
@@ -698,6 +699,15 @@ s.str.lower()                             # Series values to lowercase
 ```
 
 ## Dataframe
+
+- Axis
+```
+axis=1            # Columns
+axis='columns'
+
+axis=0            # First column values "index"
+axis='index'
+```
 
 ```
 df = pd.DataFrame(dict)
@@ -725,4 +735,5 @@ Missing data have value `np.nan`
 ```
 df1.dropna(how="any")                # Remove any row with some missing data
 df1.fillna(value=5)                  # Filling missing data
+df1.combine_first(df2)               # Filling missing data of df1 with df2
 ```

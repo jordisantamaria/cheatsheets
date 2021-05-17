@@ -91,18 +91,17 @@ jugador del mon.
 
 Tierlist:
 
-top: malphite, kayle, urgot, wukong, orn, maokai, wukong
+top: darius, wukong, sylas
 
-mid: fizz, diana, annie, malphite, nocturne
+mid: fizz, ekko, diana, malphite (counterpick)
 
-malphite bad vs fizz, sylas y kassadin
 malphite counters yasuo, zed, akali, katarina
 
-bot: ezreal, missfortune, ashe
+bot: ezreal, jinkx, vayne, ashe
 
-sup: leona, nautilus, morgana, zilean (bard, panteon)
+sup: leona, nautilus, morgana, zilean
 
-jungla: hecarim, vi, fiddle
+jungla: diana, ekko, noct, xin
 
 # Suport
 
@@ -188,7 +187,7 @@ Quan fer recall:
 
 2. Health-mana
 
-3. El estat de l wave, volem backear en canon o rebontant la wave.
+3. El estat de la wave, volem backear en canon o rebotant la wave.
 
 4. Backear segons el estat del rival
 
@@ -233,7 +232,7 @@ After:
 
 - Stacked armor: black cleaver +  last whispers
 
-## Range vs meles: 
+## Range vs meles:
 
 1. Slow push
 2. Harras when last hit
