@@ -10,7 +10,8 @@ ECS
 ===============================================================================
 
 ```
-
+# For change number of services
+aws ecs update-service --service xxxx  --cluster xxxx --desired-count 3
 ```
 
 SAM

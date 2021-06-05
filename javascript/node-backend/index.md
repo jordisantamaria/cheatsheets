@@ -241,7 +241,7 @@ fs.createReadStream('people.csv')
 ```
 
 Pero streams nomes treballa amb buffer i strings, 
-per arreglar aixo fem servir mode = objectMode: 
+per arreglar aixo fem servir mode = objectMode:
 
 ```
 function clean() {
