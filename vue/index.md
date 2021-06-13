@@ -637,3 +637,8 @@ await flushPromises();
 getByText('validation.username');
 ```
 
+
+## Design patterns with vue
+
+
+
