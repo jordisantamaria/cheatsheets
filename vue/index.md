@@ -1,3 +1,11 @@
+# Setup project with vue, vuetify, ts and pug
+
+```
+vue create project-name
+vue add vuetify
+vue add pug
+```
+
 # Best practices
 
 TODO

@@ -380,3 +380,11 @@ LA            # Append text on end line to all lines
 I             # Append text before cursor to all lines
 Llj           # Append text on end line alineate to longer line
 ```
+
+Telescope
+===============================================================================
+
+```
+c-q           # Send search to quicklist
+c-t           # Open with trouble
+```

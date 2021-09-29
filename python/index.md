@@ -45,8 +45,20 @@ str.splitlines()                     # Split \n or \r into array
 'TestHook'.removeprefix('Test')      # 'Hook'
 
 list = str.split(sep, maxsplit)      # Split by sep in max indexes of maxsplit
+first, *others = str.split(sep, maxsplit)      # Split by sep in max indexes of maxsplit
 ",".join(list)
 
+```
+
+## Dates
+
+```
+from datetime import date, timedelta, datetime
+
+date = datetime.strptime('2021/03/02', '%Y/%m/%d')     # string to date
+date.strftime("%Y%m%d")                                # date to string with format
+week_ago = date.today() - timedelta(days=7)
+date > week_ago
 ```
 
 
@@ -170,7 +182,7 @@ list.sort()           # Sort list, void method
 ```
 [fn(i) for i in list]                  # .map
 map(fn, list)                          # .map, returns iterator
-                                       
+
 filter(fn, list)                       # .filter, returns iterator
 [fn(i) for i in list if i > 0]         # .filter.map
 ```
@@ -215,7 +227,6 @@ File manipulation
 ```
 with open('filename') as file:
   data = file.read()                  # Return string with all text
-  data = file.readLine()              # Read one line
   data = file.readlines()             # Return array of lines
 ```
 

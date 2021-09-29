@@ -446,3 +446,14 @@ const fetch = require('node-fetch');
 ```javascript
 node fitxer.js
 ```
+
+
+
+Dates
+===================================================
+
+```
+
+new Date().toLocaleDateString('en-gb')  // 24/09/2021
+
+```
