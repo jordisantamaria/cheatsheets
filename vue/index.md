@@ -646,7 +646,82 @@ getByText('validation.username');
 ```
 
 
-## Design patterns with vue
+# Nuxtjs
 
+```
+yarn create nuxt-app <project-name>
+```
 
+## Routing
 
+Generates automatically routing from /pages files.
+
+```
+pages/
+--| user/
+-----| index.vue
+-----| one.vue
+--| index.vue
+```
+
+Translated to
+
+```
+router: {
+  routes: [
+    {
+      name: 'index',
+      path: '/',
+      component: 'pages/index.vue'
+    },
+    {
+      name: 'user',
+      path: '/user',
+      component: 'pages/user/index.vue'
+    },
+    {
+      name: 'user-one',
+      path: '/user/one',
+      component: 'pages/user/one.vue'
+    }
+  ]
+}
+```
+
+It can be nested, to simulate `:id` route param, create `_id` folder.
+
+### Navigation
+
+```
+<template>
+  <NuxtLink to="/">Home page</NuxtLink>
+</template>
+```
+
+## Layouts
+
+Define layout with structure of website in `layouts/default.vue`
+
+Pages component is renderes where `<Nuxt />`
+
+```
+<template>
+  <Nuxt />
+</template>
+```
+
+### Custom layout
+
+Create new layout in layouts directory and assign it to the view like that.
+
+```
+<template>
+  <!-- Your template -->
+</template>
+<script>
+  export default {
+    layout: 'blog'
+    // page component definitions
+  }
+</script>
+```
