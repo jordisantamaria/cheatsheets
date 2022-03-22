@@ -81,22 +81,21 @@ function FriendStatus(props) {
 ## Custom hooks
 
 ```javascript
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
 
-  useEffect(() => {
-    function handleStatusChange(status) {
-      setIsOnline(status.isOnline);
-    }
+  // some extra logic
 
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
-    return () => {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
-    };
-  });
+  return [isOnline, setOnline];
+}
 
-  return isOnline;
+
+// in page
+function Home() {
+    const [isOnline, setIsOnline] = useFriendStatus(null)
+
+    return <div></div>
 }
 ```
