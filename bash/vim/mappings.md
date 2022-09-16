@@ -379,6 +379,7 @@ A             # Append text after cursor to all lines
 LA            # Append text on end line to all lines
 I             # Append text before cursor to all lines
 Llj           # Append text on end line alineate to longer line
+o             # Go to border of opposite visual selection
 ```
 
 Telescope

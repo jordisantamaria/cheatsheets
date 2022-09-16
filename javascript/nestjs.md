@@ -1,6 +1,6 @@
 Create dto as a class instead of interface, because interfaces in build are lost.
 
-## Providers
+# Providers
 
 - Use to be able to inject dependencies objects.
 - They should use @Injectable()
@@ -139,7 +139,7 @@ export class CatsController {}
 
 ## Interceptors
 
-To do smth before and at the end of a request, for example logging, build response,
+To do something before and at the end of a request, for example logging, build response,
 build error response...
 
 ```

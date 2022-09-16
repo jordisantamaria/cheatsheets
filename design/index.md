@@ -10,16 +10,17 @@ Reduce visual clutter, keeping the number of fonts and colors low, add white spa
 
 - Use mostly neutrals + one brighter color for important bits.
 
-- Find color paletes from setbsites like colourlovers.com
+- Find color paletes from websites like colourlovers.com
 
 ## Fonts
 
 - Low number of fonts, 2 are ideal.
+
 - Use fancy/display fonts sparingly - very cluttery.
+
 - Vary weights (bold), style(italics), and transforms (uppercase, etc.) to differentiate bits.
 
 ## Add White spacing
-
 
 # User experience
 

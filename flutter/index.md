@@ -20,8 +20,8 @@ Variables starting with _ are private.
 
 ```
 var hello = 'helloWord';
-final minAge = 18;               // constante
-const pi = 3.4                   // constante en tiempo de compilacion, nose cuando usarlo
+final minAge = 18;               // constant
+const pi = 3.4                   // constant in compilation time
 ```
 
 
@@ -278,7 +278,10 @@ It autogenerates pubspec.lock
 
 ## Widgets
 
-2 tipos, stateless que no cambia y stateful que cambia.
+2 types:
+
+- Stateless
+- Stateful
 
 To use icons, include in pubscpec.yaml this lines
 
@@ -322,7 +325,7 @@ And wrapped in widget MaterialApp
 ## State
 
 1. Ephemeral state: stateful widget.
-2. App state: state shared between different parts of app and user serssions.
+2. App state: state shared between different parts of app and user sessions.
 
 
 # Dart blocs
@@ -334,6 +337,7 @@ To get access to bloc initialize by bloc provider use context.read
 context.read<LoadingCubit>().hideLoading()
 ```
 
-- BlocBuilder: To give access to a bloc state to Its tree, bloc have to be initialized before with blocprovider.
+- BlocBuilder: To give access to a bloc state to Its tree, bloc have to be initialized before with BlocProvider.
+
 - BlocListener: To listen in changes of bloc state.
 

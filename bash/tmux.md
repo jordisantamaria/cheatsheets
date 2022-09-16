@@ -58,7 +58,7 @@ prefix-d         # Detach from session
 # TMUXINATOR
 
 ```
-t new [session_name]     # to create a new session config
+t new [session_name]     # to create a new session config in ~/.config/tmuxinator
 t open [session_name]    # to open an existing session config
 t [session_name]         # open session
 ```

@@ -25,9 +25,3 @@ const mongojs = require('mongojs')
 const db = mongojs(connectionString, [collections])
 const db = mongojs('mydb', ['mycollection'])
 ```
-
-## Find
-
-```
-
-```

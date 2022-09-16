@@ -117,23 +117,6 @@ dcupb             # docker-compose up --build
 dcupd             # docker-compose up -d
 ```
 
-Keys
-===============================================================================
-
-```
-cmd-Control-F      # Toogle fullscreen
-cmd-up             # Move to top
-cmd-down           # Move to down
-cmd-h              # Hide top window
-cmd-n              # Open new window
-cmd-w              # Close window (browser tab)
-cmd-q              # Close app
-alt-cmd-esc        # Force quit
-cmd-,              # Open preferences of app
-space              # Open in quick-look
-cmd-tab            # Open last used app
-cmd-p              # Print document
-```
 
 Kitty
 ===============================================================================
@@ -156,7 +139,7 @@ H              # History back
 L              # History forward
              
 ;d             # Download
-             
+
 space          # Scroll 100% screen
 
 [[             # Next page (pagination)
