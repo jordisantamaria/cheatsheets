@@ -1,6 +1,11 @@
-# Clean design
+Clean design
+=============================================================
 
-Reduce visual clutter, keeping the number of fonts and colors low, add white space and line things up.
+- Reduce visual clutter
+
+- keeping the number of fonts and colors low
+
+- add white space and line things up.
 
 ## Use grid
 
@@ -20,15 +25,13 @@ Reduce visual clutter, keeping the number of fonts and colors low, add white spa
 
 - Vary weights (bold), style(italics), and transforms (uppercase, etc.) to differentiate bits.
 
-## Add White spacing
-
-# User experience
+## User experience
 
 - What's the most important action on your design? Make It easy to find and use.
 
 - Pay attention to your goals. Make them easy to find and use.
 
-# Content principles
+## Content principles
 
 - Less is more. Big paragraphs are a sign of clutter.
 
