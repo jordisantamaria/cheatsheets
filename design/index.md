@@ -44,3 +44,11 @@ Clean design
 ## Headlines
 
 - Talk benefits, not details. Keep It short. Use natural, friendly language.
+
+## Density
+
+- To reduce margin & padding between elements.
+
+- Useful to be able to scan large lists of data faster, such as tables.
+
+- Components with high density should have a grid with lower density margin & gutters between sections.
