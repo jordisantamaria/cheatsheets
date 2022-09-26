@@ -8,30 +8,30 @@ npx create-remix --template remix-run/indie-stack project-name
 What is remix
 ==============================================================
 
-- *Component full stack*: On same component can access to database for fetch data, this code is only called in server side
+- **Component full stack**: On same component can access to database for fetch data, this code is only called in server side
 
-- *Backend for frontend*: Don't generate API rest, get data from server side.
+- **Backend for frontend**: Don't generate API rest, get data from server side.
 
-- *Get only required data from Network for component like graphql*: Data can be filtered in SSR from a loader().
+- **Get only required data from Network for component like graphql**: Data can be filtered in SSR from a loader().
 
-- *Hide sensible data from HTML*: Manage sensible data in server side from a loader().
+- **Hide sensible data from HTML**: Manage sensible data in server side from a loader().
 
-- *Optimized compiler*: Don't use webpack.
+- **Optimized compiler**: Don't use webpack.
 
-- *Can pre-fetch not only components, also fetch data*: Page transitions are instant.
+- **Can pre-fetch not only components, also fetch data**: Page transitions are instant.
 
-- *Works without enable javascript*: Use SSR and HTML standards like form actions for mutate data.
+- **Works without enable javascript**: Use SSR and HTML standards like form actions for mutate data.
 
 Remix architecture
 ==============================================================
 
 The workflow in remix development consist in 3 main folders:
 
-1. *Routes*: Components with paths accessible in url, same as pages in nextjs.
-2. *Models*: API repositories, get data from database for routes.
-3. *Prisma*: Define database schema and generate seeds.
+1. **Routes**: Components with paths accessible in url, same as pages in nextjs.
+2. **Models**: API repositories, get data from database for routes.
+3. **Prisma**: Define database schema and generate seeds.
 
-In case to use remix only as frontend, only would use *1.Routes* and fetch API rest from action and loader of a component.
+In case to use remix only as frontend, only would use **1.Routes** and fetch API rest from action and loader of a component.
 
 Component structure
 ==============================================================
