@@ -30,6 +30,7 @@ export class CatsModule {}
 ## Dynamic modules
 
 Using method forRoot.
+
 ```typescript
 import { Module, DynamicModule } from '@nestjs/common';
 import { createDatabaseProviders } from './database.providers';
@@ -64,7 +65,7 @@ export class AppModule {}
 
 # Middleware
 
-Midlewares are applied in configure of the module.
+Midlewares are applied in *configure* of the module.
 
 ```typescript
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
@@ -86,6 +87,7 @@ export class AppModule implements NestModule {
 ## Pipes
 
 To check If request params are valid
+
 ```
 @Get(':id')
 async findOne(@Param('id', ParseIntPipe) id: number) {
