@@ -31,7 +31,7 @@ Between there are wifreframes and prototypes
 - Design Handoff
 
 - Colors
-:
+
 - Visual Branding
 
 
@@ -77,3 +77,5 @@ Define what elements are more important.
 Represented by design system. An example of design system:
 
 - Material UI from google
+
+
