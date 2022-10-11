@@ -74,3 +74,13 @@
 # Tmux
 
 - [Book](https://github.com/ole3021/Resources/blob/master/Ebooks/Tools/tmux%20-%20Productive%20Mouse-Free%20Development.pdf)
+
+# Others
+
+- [Front-end Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+- [Resume builder](https://resume.io/app/resumes/24132599/edit)
+- [Code snippets](https://github.com/30-seconds/30-seconds-of-code)
+- [Page analysis](https://web.dev/)
+- [Css tips](https://github.com/AllThingsSmitty/css-protips)
+- [Public apis](https://github.com/public-apis/public-apis)
+- [React hooks collection](https://github.com/streamich/react-use)
