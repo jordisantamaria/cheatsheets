@@ -84,3 +84,5 @@
 - [Css tips](https://github.com/AllThingsSmitty/css-protips)
 - [Public apis](https://github.com/public-apis/public-apis)
 - [React hooks collection](https://github.com/streamich/react-use)
+- [React code snippets](https://github.com/30-seconds/30-seconds-of-react)
+- [Create github profile](https://www.profileme.dev/)
