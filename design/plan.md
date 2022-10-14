@@ -48,15 +48,15 @@ Design principles
 
 Ideal use 2 fonts.
 
-- Sans: Short texts. Samples: mulish, sora, open sans, poppins, inter, cabin
-- Serif: Large texts. Samples: Georgia, merriweather, lora, bitter, noto serif, playfair display
+- Sans: **Short texts.** Samples: mulish, sora, open sans, poppins, inter, cabin
+- Serif: **Large texts.** Samples: Georgia, merriweather, lora, bitter, noto serif, playfair display
 
 **Type system**
 
 For define line-height, font sizes, etc...
 
-- https://material.io/design/typography/the-type-system.html
-- https://type-scale.com/
+- [Material system](https://material.io/design/typography/the-type-system.html)
+- [Font scale](https://type-scale.com/)
 
 ## Colors
 
