@@ -31,6 +31,8 @@ Design phases
 Figma
 ================================================================
 
+- [Figma ui kit](https://www.untitledui.com/)
+
 ## Plugins
 
 - Autoflow
@@ -38,7 +40,20 @@ Figma
 
 ## Icons
 
-- tablericons.com
+- https://tablericons.com
+
+## History
+
+Can see file history changes same as git
+
+## Library
+
+To share styles between Figma files (also components for pro edition)
+
+## Figjam
+
+To create conceptual map and diagrams, take notes.
+
 
 
 Design principles
@@ -163,7 +178,7 @@ Status:
 Design system
 ================================================================
 
-1. Tokens: Colors, font-styles
+1. Tokens: Colors, font-styles, icons
 2. Atoms: UI components like buttons.
 3. Organism: Page sections like form.
 3. Template / page
