@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "$(npm bin)/gitbook install",
-    "serve": "$(npm bin)/gitbook serve",
-    "build": "$(npm bin)/gitbook build"
+    "build": "honkit build",
+    "serve": "honkit serve"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "gitbook-cli": "gengjiawen/gitbook-cli"
+  "devDependencies": {
+    "honkit": "^4.0.4"
   }
 }
