@@ -1,6 +1,6 @@
 # Summary
 
-* [MARKDOWN](markdown/README.md)
+* [MARKDOWN](markdown/index.md)
 * [BASH](bash/index.md)
 * [TMUX](bash/tmux.md)
 * [NVIM](bash/vim/mappings.md)
