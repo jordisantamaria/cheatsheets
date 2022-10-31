@@ -86,3 +86,6 @@
 - [React hooks collection](https://github.com/streamich/react-use)
 - [React code snippets](https://github.com/30-seconds/30-seconds-of-react)
 - [Create github profile](https://www.profileme.dev/)
+- [Figma ui kit](https://www.untitledui.com/)
+- [Clean code](https://github.com/ryanmcdermott/clean-code-javascript)
+- [Javascript algorithms](https://github.com/trekhleb/javascript-algorithms)

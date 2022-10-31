@@ -60,27 +60,30 @@ Terminal
 ===============================================================================
 
 ```
-cdf                    # Change to finder directory
-ofd                    # Open finder with current directory
+cdf                           # Change to finder directory
+ofd                           # Open finder with current directory
 
-alias                  # List all terminal alias
-alias | grep 'regex'   # Filter alias
+alias                         # List all terminal alias
+alias | grep 'regex'          # Filter alias
 
-alt-c                  # Fuzy find directorys
-C-t                    # Fuzy find file & directorys
-C-r                    # Fuzy find command history
+alt-c                         # Fuzy find directorys
+C-t                           # Fuzy find file & directorys
+C-r                           # Fuzy find command history
 
-Esc Esc                # Sudo command, or last command If empty command.
+Esc Esc                       # Sudo command, or last command If empty command.
 
-d                      # Last used directorys list
-[n]                    # Press a number to jump to a directory list with d
+d                             # Last used directorys list
+[n]                           # Press a number to jump to a directory list with d
 
-C-a                    # Move to start of line
-C-e                    # Move to end of line
-C-u                    # Remove line
-C-w                    # Remove word
+C-a                           # Move to start of line
+C-e                           # Move to end of line
+C-u                           # Remove line
+C-w                           # Remove word
 
-neofetch               # OS Info
+neofetch                      # OS Info
+
+sudo ss -lptn 'sport = :5432' # find pid using port 5432
+kill pid                      # stop service using pid
 ```
 
 ## Jira
@@ -117,6 +120,13 @@ dcupb             # docker-compose up --build
 dcupd             # docker-compose up -d
 ```
 
+Apache
+==============================================================================
+
+```
+/etc/init.d/apache2 stop    # stop apache
+/etc/init.d/apache2 start   # start apache
+```
 
 Kitty
 ===============================================================================
