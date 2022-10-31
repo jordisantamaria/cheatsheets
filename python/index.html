@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Python · GitBook</title>
+        <title>Python · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="HonKit 4.0.4">
         
         
         
@@ -17,7 +16,7 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
@@ -33,8 +32,6 @@
     
 
     
-        
-        <link rel="stylesheet" href="../styles/website.css">
         
     
         
@@ -68,7 +65,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -104,9 +101,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../markdown/">
+        <li class="chapter " data-level="1.2" data-path="../markdown/README.md">
             
-                <a href="../markdown/">
+                <span>
             
                     
                     MARKDOWN
@@ -201,8 +198,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -275,7 +272,15 @@ str.splitlines()                     # Split \n or \r into array
 &apos;TestHook&apos;.removeprefix(&apos;Test&apos;)      # &apos;Hook&apos;
 
 list = str.split(sep, maxsplit)      # Split by sep in max indexes of maxsplit
+first, *others = str.split(sep, maxsplit)      # Split by sep in max indexes of maxsplit
 &quot;,&quot;.join(list)
+</code></pre><h2 id="dates">Dates</h2>
+<pre><code>from datetime import date, timedelta, datetime
+
+date = datetime.strptime(&apos;2021/03/02&apos;, &apos;%Y/%m/%d&apos;)     # string to date
+date.strftime(&quot;%Y%m%d&quot;)                                # date to string with format
+week_ago = date.today() - timedelta(days=7)
+date &gt; week_ago
 </code></pre><h1 id="type-casting">Type casting</h1>
 <pre><code>str(variable)      # Cast anything to string
 int(variable)      # Cast anything to int, If not possible, ValueError
@@ -392,7 +397,6 @@ combination = {**numbers, **letters}
 </ul>
 <pre><code>with open(&apos;filename&apos;) as file:
   data = file.read()                  # Return string with all text
-  data = file.readLine()              # Read one line
   data = file.readlines()             # Return array of lines
 </code></pre><h2 id="write">Write</h2>
 <ul>
@@ -663,6 +667,7 @@ def test_the_unknown():
 def test_eval(test_input, expected):
     assert eval(test_input) == expected
 </code></pre><h1 id="pandas">Pandas</h1>
+<h2 id="basic-operations">Basic operations</h2>
 <pre><code>df.head(n)                                 # Return first n rows, default 5
 df.tail(n)                                 # Return last n rows, default 5
 df.info()                                  # To see type of column values and missing values
@@ -683,7 +688,17 @@ serie.values                              # Array with values of the serie
 s = pd.Series([1, 3, 5, np.nan, 6, 8])    # Create serie
 s.str.lower()                             # Series values to lowercase
 </code></pre><h2 id="dataframe">Dataframe</h2>
-<pre><code>df = pd.DataFrame(dict)
+<ul>
+<li>Axis
+```
+axis=1            # Columns
+axis=&apos;columns&apos;</li>
+</ul>
+<p>axis=0            # First column values &quot;index&quot;
+axis=&apos;index&apos;</p>
+<pre><code>
+
+</code></pre><p>df = pd.DataFrame(dict)
 df.dtypes                                  # Types of columns
 df.index                                   # Index of each row
 df.columns.values                          # Column names array
@@ -691,17 +706,20 @@ df.to_numpy()                              # Convert df to numpy array
 df.T                                       # Transpose data
 df.sort_index(axis=1, ascending=False)     # Sort by column names
 df.sort_values(by=&quot;date&quot;)                  # Sort by values of a column
-df.apply(function)                         # Apply a function to data
-</code></pre><ul>
-<li>Create Dataframe with dates index</li>
-</ul>
-<pre><code>dates = pd.date_range(&quot;20130101&quot;, periods=6)
-pd.DataFrame(dict, index=dates)
-</code></pre><h2 id="missing-data">Missing data</h2>
-<p>Missing data have value <code>np.nan</code></p>
-<pre><code>df1.dropna(how=&quot;any&quot;)                # Remove any row with some missing data
+df.apply(function)                         # Apply a function to data</p>
+<pre><code>
+- Create Dataframe with dates index
+</code></pre><p>dates = pd.date_range(&quot;20130101&quot;, periods=6)
+pd.DataFrame(dict, index=dates)</p>
+<pre><code>
+## Missing data
+
+Missing data have value `np.nan`
+</code></pre><p>df1.dropna(how=&quot;any&quot;)                # Remove any row with some missing data
 df1.fillna(value=5)                  # Filling missing data
-</code></pre>
+df1.combine_first(df2)               # Filling missing data of df1 with df2
+```</p>
+
                                 
                                 </section>
                             
@@ -744,12 +762,56 @@ df1.fillna(value=5)                  # Filling missing data
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.7","depth":1,"next":{"title":"Resources","level":"1.8","depth":1,"path":"resources/index.md","ref":"resources/index.md","articles":[]},"previous":{"title":"Clean code","level":"1.6","depth":1,"path":"cleanCode/index.md","ref":"cleanCode/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/index.md","mtime":"2021-05-09T05:26:42.463Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:17:56.474Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.7","depth":1,"next":{"title":"Resources","level":"1.8","depth":1,"path":"resources/index.md","ref":"resources/index.md","articles":[]},"previous":{"title":"Clean code","level":"1.6","depth":1,"path":"cleanCode/index.md","ref":"cleanCode/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"website":"https://jordisantamaria.github.io/cheatsheets/"},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/index.md","mtime":"2022-10-31T07:44:09.154Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-31T07:44:17.624Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -767,10 +829,6 @@ df1.fillna(value=5)                  # Filling missing data
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

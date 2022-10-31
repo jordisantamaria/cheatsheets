@@ -1,6 +1,6 @@
 Create dto as a class instead of interface, because interfaces in build are lost.
 
-## Providers
+# Providers
 
 - Use to be able to inject dependencies objects.
 - They should use @Injectable()
@@ -30,6 +30,7 @@ export class CatsModule {}
 ## Dynamic modules
 
 Using method forRoot.
+
 ```typescript
 import { Module, DynamicModule } from '@nestjs/common';
 import { createDatabaseProviders } from './database.providers';
@@ -64,7 +65,7 @@ export class AppModule {}
 
 # Middleware
 
-Midlewares are applied in configure of the module.
+Midlewares are applied in *configure* of the module.
 
 ```typescript
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
@@ -86,6 +87,7 @@ export class AppModule implements NestModule {
 ## Pipes
 
 To check If request params are valid
+
 ```
 @Get(':id')
 async findOne(@Param('id', ParseIntPipe) id: number) {
@@ -139,7 +141,7 @@ export class CatsController {}
 
 ## Interceptors
 
-To do smth before and at the end of a request, for example logging, build response,
+To do something before and at the end of a request, for example logging, build response,
 build error response...
 
 ```
