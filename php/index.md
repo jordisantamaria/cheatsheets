@@ -1,3 +1,23 @@
+# Get started
+
+- Create project
+```
+curl -s "https://laravel.build/project-name" | bash
+# with breeze include tailwind and login / register pages
+composer require laravel/breeze --dev         
+php artisan breeze:install
+ 
+php artisan migrate
+npm install
+npm run dev
+```
+
+- Update styles with Vite
+
+```
+yarn watch
+```
+
 # To fix permissions in storage/laravel.log
 
 ```
