@@ -12,5 +12,6 @@ docker-compose ps                        # Check which services are running
 docker-compose logs                      # Watch docker-compose services logs until now
 docker-compose logs -f                   # Follow new docker-compose service logs, keep watching
 docker-compose exec [service-name] sh    # Access inside docker service-name image with bash
+docker system prune -a                   # Clean up, delete everthing not currently used
 ```
 
