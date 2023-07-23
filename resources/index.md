@@ -81,6 +81,12 @@
 - Firebase
 - Supabase
 
+## Hosting
+
+Fly.io
+Netlify
+AWS
+
 # Others
 
 - [Front-end Checklist](https://github.com/thedaviddias/Front-End-Checklist)
