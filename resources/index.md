@@ -75,6 +75,18 @@
 
 - [Book](https://github.com/ole3021/Resources/blob/master/Ebooks/Tools/tmux%20-%20Productive%20Mouse-Free%20Development.pdf)
 
+## No-code backends
+
+- Appwrite (recommended)
+- Firebase
+- Supabase
+
+## Hosting
+
+Fly.io
+Netlify
+AWS
+
 # Others
 
 - [Front-end Checklist](https://github.com/thedaviddias/Front-End-Checklist)
