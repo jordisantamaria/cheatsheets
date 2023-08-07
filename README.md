@@ -1,5 +1,8 @@
 # Programming Cheat-sheets
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
+[![Twitter: JordiSantamar1a](https://img.shields.io/twitter/follow/JordiSantamar1a.svg?style=social)](https://twitter.com/JordiSantamar1a)
+
 website: [website](https://jordisantamaria.github.io/cheatsheets/)
 
 Source code: https://github.com/jordisantamaria/cheatsheets
