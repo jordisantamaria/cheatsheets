@@ -16,7 +16,7 @@ What is remix
 
 - **Hide sensible data from HTML**: Manage sensible data in server side from a loader().
 
-- **Optimized compiler**: Don't use webpack.
+- **Optimized compiler**: Don't use webpack. Use Vite instead, it's much faster.
 
 - **Can pre-fetch not only components, also fetch data**: Page transitions are instant.
 
@@ -28,8 +28,7 @@ Remix architecture
 The workflow in remix development consist in 3 main folders:
 
 1. **Routes**: Components with paths accessible in url, same as pages in nextjs.
-2. **Models**: API repositories, get data from database for routes.
-3. **Prisma**: Define database schema and generate seeds.
+2. **Prisma**: Define database schema and generate seeds.
 
 In case to use remix only as frontend, only would use **1.Routes** and fetch API rest from action and loader of a component.
 
