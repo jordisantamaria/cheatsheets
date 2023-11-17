@@ -109,3 +109,8 @@ Routing
 /routes/$.tsx               => /*              All other routes
 ```
 
+## Providing API REST
+
+Use resource routes, It provides an API rest similar to express (If I were building a REST API, I would prefer this over express.)
+
+https://remix.run/docs/en/1.18.1/guides/resource-routes
